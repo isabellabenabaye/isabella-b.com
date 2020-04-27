@@ -1,0 +1,19 @@
+{{/* Display author list. */}}
+
+{{- $taxonomy := "authors" }}
+{{ if .Param $taxonomy }}
+  {{ $link_authors := site.Params.link_authors | default true }}
+  {{ range $index, $value := (.GetTerms $taxonomy) }}
+    {{- /* Check if a profile was created for this user. */ -}}
+    {{- $profile_page := isset .Page.Params "superuser" -}}
+
+    {{- if gt $index 0 }}, {{ end -}}
+    <span>
+      {{- if and $profile_page $link_authors -}}
+        <a href="{{.RelPermalink}}">{{ .LinkTitle }}</a>
+      {{- else -}}
+        {{ .LinkTitle }}
+      {{- end -}}
+    </span>
+  {{- end -}}
+{{- end -}}

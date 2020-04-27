@@ -1,0 +1,11 @@
+# Font style metadata
+name = "my_fonts"
+
+# Optional Google font URL
+google_fonts = "Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono|Noto+Sans+JP:wght@100|Manrope|Lora:wght@500|Fira+Code|Karla|Work+Sans:wght@200|Oxygen:wght@300|Hind:wght@300|Inter"
+
+# Font families
+heading_font = "Lora"
+body_font = "Inter"
+nav_font = "Inter"
+mono_font = "Fira Code"
