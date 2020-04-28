@@ -1,0 +1,21 @@
+# Theme metadata
+name = "isabella"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#B8F2E6"
+
+# Menu
+menu_primary = "#FAF3DD"
+menu_text = "#FFA69E"
+menu_text_active = "#B8F2E6"
+menu_title = "#fff"
+
+# Backgrounds
+background = "#AED9E0"
+home_section_odd = "#F7F7F7"
+home_section_even = "#F7F7F7"
+
+font = "rose"

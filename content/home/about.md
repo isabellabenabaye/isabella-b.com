@@ -22,6 +22,6 @@ author = "admin"
   # color = "navy"
   
   # Background gradient.
-  gradient_start = "#C6F7E4"
-  gradient_end = "#F7F7E6"
+  gradient_start = "#FAF3DD"
+  gradient_end = "#F7F7F7"
 +++
