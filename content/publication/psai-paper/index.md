@@ -35,3 +35,7 @@ tags:
 #url_source: '#'
 #url_video: '#'
 ---
+
+You can find my co-authors here:
+* [Patricia Rose Donato](https://www.linkedin.com/in/patriciarosedonato/)
+* [John D. Eustaquio](https://ph.linkedin.com/in/john-eustaquio-1a297032)

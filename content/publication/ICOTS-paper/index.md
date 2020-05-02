@@ -32,3 +32,7 @@ url_slides: ""
 url_source: ""
 url_video: ""
 ---
+You can find my co-authors here:
+* [Dominic Dayta](https://dominicdayta.com)
+* [Patricia Rose Donato](https://www.linkedin.com/in/patriciarosedonato/)
+* [Sean Oliver Escalante](https://www.linkedin.com/in/sean-oliver-escalante-205b0819b)
