@@ -10,8 +10,8 @@ primary = "#EF476F"
 # Menu
 menu_primary = "#F7F7F7"
 menu_text = "#FCA311"
-menu_text_active = "#FCA311"
-menu_title = "#fff"
+menu_text_active = "#0EAD69"
+menu_title = "#118AB2"
 
 # Backgrounds
 background = "#F7F7F7"

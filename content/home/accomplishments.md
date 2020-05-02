@@ -47,6 +47,7 @@ date_format = "Jan 2006"
   date_start = "2017-07-01"
   date_end = ""
   description = "Co-author of the paper titled, “Understanding the Micro-Level Factors Influencing the Ideal Number of Children and Contraceptive Intention and Practice of Filipino Women: A Call for Attention on Filipino Women with Unmet Fertility Preference.”"
+
 [design.background]
   # Apply a background color, gradient, or image.
   #   Uncomment (by removing `#`) an option to apply it.
@@ -58,9 +59,6 @@ date_format = "Jan 2006"
   
   # Background gradient.
   gradient_start = "#F7F7F7"
-  gradient_end = "#AED9E0"
+  gradient_end = "#A5DDC5"
 
-[design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["30px", "0", "10px", "0"]
 +++

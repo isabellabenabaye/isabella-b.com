@@ -35,6 +35,9 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/isabellabenabaye
+- icon: cv
+  icon_pack: ai
+  link: files/cv.pdf
 superuser: true
 title: Isabella Benabaye
 user_groups:

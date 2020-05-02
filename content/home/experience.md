@@ -3,7 +3,7 @@
 widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
 title = "Experience"
 subtitle = ""
@@ -75,8 +75,8 @@ date_format = "Jan 2006"
   # color = "navy"
   
   # Background gradient.
-  gradient_start = "#AED9E0"
-  gradient_end = "#F7F7F7"
+  gradient_start = "#F7F7F7"
+  gradient_end = "#FAE8BF"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
