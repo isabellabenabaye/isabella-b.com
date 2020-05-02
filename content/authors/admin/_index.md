@@ -21,8 +21,11 @@ email: "isabellabenabaye@gmail.com"
 #organizations:
 #- name: Stanford University
 #  url: ""
-role: 
+role: Los Angeles, CA
 social:
+- icon: cv
+  icon_pack: ai
+  link: files/cv.pdf
 - icon: linkedin-in
   icon_pack: fab
   link: https://www.linkedin.com/in/isabella-benabaye/
@@ -35,9 +38,6 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/isabellabenabaye
-- icon: cv
-  icon_pack: ai
-  link: files/cv.pdf
 superuser: true
 title: Isabella Benabaye
 user_groups:

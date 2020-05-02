@@ -21,13 +21,13 @@ subtitle = ""
   # Default filter index (e.g. 0 corresponds to the first `[[filter_button]]` instance below).
   filter_default = 0
   
- # [[content.filter_button]]
-  #  name = "All"
-   # tag = "*"
-  
   [[content.filter_button]]
-    name = "Visualizations"
-    tag = "Data Visualizations"
+    name = "All"
+    tag = "*"
+  
+#  [[content.filter_button]]
+#    name = "Visualizations"
+#    tag = "Data Visualizations"
   
   [[content.filter_button]]
     name = "Tidy Tuesday"
@@ -75,8 +75,8 @@ subtitle = ""
  css_class = ""
 
 
-[design.spacing]
+ [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["50px", "0", "55px", "0"]
+  padding = ["50px", "0px", "55px", "0px"]
 +++
 

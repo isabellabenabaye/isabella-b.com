@@ -24,4 +24,8 @@ author = "admin"
   # Background gradient.
   gradient_start = "#F7F7F7"
   gradient_end = "#AED9E0"
+
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["40px", "0", "40px", "0"]
 +++
