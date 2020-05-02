@@ -27,13 +27,13 @@ date_format = "Jan 2006"
   description = """
   Experience with projects primarily in the banking industry using SAS Data Integration Studio and SAS Enterprise Guide.
    
-  ● Gathered business rules & requirements for mapping data from multiple sources to form a consolidated data mart to be used for reporting   
+  → Gathered business rules & requirements for mapping data from multiple sources to form a consolidated data mart to be used for reporting   
    
-  ● Developed, tested, and deployed both reusable and custom components of ETL processes using SAS and SQL code  
+  → Developed, tested, and deployed both reusable and custom components of ETL processes using SAS and SQL code  
    
-  ● Optimized existing SAS Data Integration Studio jobs/code that produced reports   
+  → Optimized existing SAS Data Integration Studio jobs/code that produced reports   
      
-  ● Modified custom scenarios of an existing SAS Anti-Money Laundering (AML) solution’s Alert Generating Process to meet new requirements of the bank Outside of the banking industry, was also a SAS RTDM developer for a telecommunications company.
+  → Modified custom scenarios of an existing SAS Anti-Money Laundering (AML) solution’s Alert Generating Process to meet new requirements of the bank Outside of the banking industry, was also a SAS RTDM developer for a telecommunications company.
   """
 
 [[experience]]

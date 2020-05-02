@@ -61,4 +61,8 @@ date_format = "Jan 2006"
   gradient_start = "#F7F7F7"
   gradient_end = "#A5DDC5"
 
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["50px", "0", "70px", "0"]
+
 +++
