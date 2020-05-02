@@ -5,16 +5,16 @@ name = "isabella"
 light = true
 
 # Primary
-primary = "#B8F2E6"
+primary = "#EF476F"
 
 # Menu
-menu_primary = "#FAF3DD"
-menu_text = "#5E6472"
-menu_text_active = "#B8F2E6"
+menu_primary = "#F7F7F7"
+menu_text = "#FCA311"
+menu_text_active = "#FCA311"
 menu_title = "#fff"
 
 # Backgrounds
-background = "#AED9E0"
+background = "#F7F7F7"
 home_section_odd = "#F7F7F7"
 home_section_even = "#F7F7F7"
 

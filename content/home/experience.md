@@ -55,4 +55,30 @@ date_format = "Jan 2006"
   date_end = "2017-07-14"
   description = """Underwent six weeks of hands-on and classroom training using the following tools and solutions: Base SAS Software, SAS Enterprise Guide, SAS Data Integration Studio, SAS Visual Analytics, SAS Enterprise Miner, SAS Customer Intelligence Studio.
   """
+
+# [[experience]]
+#  title = "🎓 Bachelor of Science in Statistics"
+#  company = "Univeristy of the Philippines"
+#  location = "Manila, Philippines"
+#  date_start = "2013-06-01"
+#  date_end = "2017-06-14"
+  
+
+
+[design.background]
+  # Apply a background color, gradient, or image.
+  #   Uncomment (by removing `#`) an option to apply it.
+  #   Choose a light or dark text color by setting `text_color_light`.
+  #   Any HTML color name or Hex value is valid.
+
+  # Background color.
+  # color = "navy"
+  
+  # Background gradient.
+  gradient_start = "#AED9E0"
+  gradient_end = "#F7F7F7"
+
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["10px", "0", "10px", "0"]
 +++

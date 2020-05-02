@@ -27,6 +27,8 @@ date_format = "2006"
   date_start = "2013-10-01"
   date_end = "2017-01-01"
   description = ""
-
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["0px", "0", "25px", "0"]
 
 +++

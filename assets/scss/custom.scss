@@ -7,6 +7,7 @@
   background: $sta-menu-primary;
   box-shadow: none;
   font-size: #{$sta-font-size-small}px;
+  font-weight: 900 !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -49,7 +50,7 @@
       }
 
       &.active {
-        font-weight: bold !important;
+        font-weight: 900 !important;
         color: $sta-menu-text-active !important;
       }
     }
@@ -322,4 +323,9 @@ ul.nav-icons li.nav-item a.nav-link {
 
 .card:hover .card-image.hover-overlay:after {
   opacity: 0.6;
+}
+
+
+.section-heading h1 {
+  margin: 0 0 0px 0;
 }
