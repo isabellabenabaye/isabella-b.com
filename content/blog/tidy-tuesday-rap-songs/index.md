@@ -8,7 +8,7 @@ tags:
   - Data Visualizations
   - Tidy Tuesday
   - rstats
-summary: 'Data from BBC Music.'
+summary: 'Data from BBC Music'
 authors: []
 external_link: ''
 image:
