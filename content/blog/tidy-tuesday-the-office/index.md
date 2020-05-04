@@ -32,8 +32,9 @@ The data this week comes from the [`schrute` R package](https://bradlindblad.git
 The first visualization I made was of the episode ratings of the entire
 series, grouped by season. The width of the violin plot indicates the
 density of the episodes with that particular rating.   
-![Source: data.world. Graph: Isabella
-Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/12_theoffice/The%20Office%20IMDb%20Ratings.png?raw=true) Labeled above are the
+{{% staticref "files/tidy-tuesday/The Office IMDb Ratings.png" %}}![Source: data.world. Graph: Isabella
+Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/12_theoffice/The%20Office%20IMDb%20Ratings.png?raw=true){{% /staticref %}}
+Labeled above are the
 highest rated episodes per season, except in the cases of season 1 and
 8, which have their lowest rated episodes labeled. Unsurprisingly, those
 two seasons were the lowest rated overall of the whole series. “Goodbye,
@@ -46,8 +47,9 @@ of 9.6.
 
 I also wanted to look into who wrote the episodes and see if there were
 any particular writers who did the most episodes.  
-![Source: `schrute`. Graph: Isabella
-Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/12_theoffice/The%20Office%20Writers.png?raw=true) Mindy Kaling wrote 20 episodes
+{{% staticref "files/tidy-tuesday/The Office Writers.png" %}}![Source: `schrute`. Graph: Isabella
+Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/12_theoffice/The%20Office%20Writers.png?raw=true){{% /staticref %}} 
+Mindy Kaling wrote 20 episodes
 (including “Goodbye, Michael” 💗), while BJ Novak wrote the second
 most at 15. Gene Stupnitsky and Lee Eisenberg are next with 14. There
 were 10 episodes without writer data.    

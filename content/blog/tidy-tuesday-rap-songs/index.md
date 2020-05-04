@@ -2,6 +2,7 @@
 title: 'Tidy Tuesday Week 16: Best Rap Songs'
 author: Isabella Benabaye
 date: '2020-04-21'
+reading_time: true
 slug: tidy-tuesday-rap-songs
 categories: []
 tags:
