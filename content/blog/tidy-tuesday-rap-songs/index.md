@@ -1,5 +1,5 @@
 ---
-title: 'Tidy Tuesday Week 16: Best Rap Songs'
+title: 'What are the “best” hip hop songs?'
 author: Isabella Benabaye
 date: '2020-04-21'
 reading_time: true
@@ -9,7 +9,7 @@ tags:
   - Data Visualizations
   - Tidy Tuesday
   - rstats
-summary: 'Data from BBC Music'
+summary: '[Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)’s Week 16 dataset from BBC Music'
 authors: []
 external_link: ''
 image:

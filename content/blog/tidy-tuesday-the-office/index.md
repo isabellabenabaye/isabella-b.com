@@ -1,14 +1,15 @@
 ---
-title: 'Tidy Tuesday Week 12: The Office'
+title: 'Looking at The Office’s IMDb Ratings and Writers'
 author: Isabella Benabaye
 date: '2020-03-29'
+reading_time: true
 slug: tidy-tuesday-the-office
 categories: []
 tags:
   - Data Visualizations
   - Tidy Tuesday
   - rstats
-summary: 'Data from the [`schrute` R package](https://bradlindblad.github.io/schrute/index.html) and data.world'
+summary: '[Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)’s Week 12 dataset from the [`schrute` R package](https://bradlindblad.github.io/schrute/index.html) and data.world'
 authors: []
 external_link: ''
 image:
