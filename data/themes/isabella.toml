@@ -19,3 +19,4 @@ home_section_odd = "#F7F7F7"
 home_section_even = "#F7F7F7"
 
 font = "rose"
+link = "#D90429"
