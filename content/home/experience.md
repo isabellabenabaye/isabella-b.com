@@ -33,7 +33,9 @@ date_format = "Jan 2006"
    
   → Optimized existing SAS Data Integration Studio jobs/code that produced reports   
      
-  → Modified custom scenarios of an existing SAS Anti-Money Laundering (AML) solution’s Alert Generating Process to meet new requirements of the bank Outside of the banking industry, was also a SAS RTDM developer for a telecommunications company.
+  → Modified custom scenarios of an existing SAS Anti-Money Laundering (AML) solution’s Alert Generating Process to meet new requirements of the bank 
+  
+  Outside of the banking industry, was also a SAS RTDM developer for a telecommunications company.
   """
 
 [[experience]]
