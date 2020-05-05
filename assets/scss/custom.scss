@@ -6,7 +6,7 @@
   height: 70px;
   background: $sta-menu-primary;
   box-shadow: none;
-  font-size: #{$sta-font-size-small}px;
+  font-size: 18px;
   font-weight: 900 !important;
   position: fixed;
   top: 0;
@@ -328,4 +328,11 @@ ul.nav-icons li.nav-item a.nav-link {
 
 .section-heading h1 {
   margin: 0 0 0px 0;
+}
+
+.article-container {
+  max-width: 850px;
+  padding: 0 20px 0 20px;
+  margin: 0 auto 0 auto;
+  font-size: 20px;
 }
