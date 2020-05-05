@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Experience"
-subtitle = ""
+subtitle = "Technical Skills:\nSQL, SAS, R, Python, Tableau"
 
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
