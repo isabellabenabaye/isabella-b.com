@@ -14,8 +14,8 @@
     {{ range $idx, $key := sort $page.Params.item ".date_start" "desc" }}
       <div class="card experience course">
         <div class="card-body">
-          {{- with .url -}}<a href="{{.}}" target="_blank" rel="noopener">{{- end -}}
-          <h4 class="card-title exp-title text-muted my-0">{{.title | markdownify | emojify}}</h4>
+          <i class="fas fa-database"></i> SQL  &emsp; &emsp; &emsp; <i class="fab fa-r-project"></i>  &emsp; &emsp; &emsp; <i class="fab fa-python"></i> Python &emsp; &emsp; &emsp; Tableau
+          <br> SAS Base&ensp;<span class="middot-divider"></span>&ensp;SAS Data Integration Studio&ensp;<span class="middot-divider"></span>&ensp;SAS Enterprise Guide
           {{- with .url -}}</a>{{- end -}}
         </div>
       </div>

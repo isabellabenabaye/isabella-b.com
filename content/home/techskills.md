@@ -7,7 +7,7 @@ weight = 45  # Order that this section will appear.
 # ... Put Your Section Options Here (title etc.) ...
 title = "Technical Skills"
 [[item]]
-  title = "SQL, R, Python, Tableau <br> SAS Base, SAS Data Integration Studio, SAS Enterprise Guide"
+  title = "SQL, R, Python, Tableau"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
