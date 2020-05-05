@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Experience"
-subtitle = "Technical Skills:\nSQL, SAS, R, Python, Tableau"
+subtitle = ""
 
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
@@ -82,5 +82,5 @@ date_format = "Jan 2006"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["10px", "0", "10px", "0"]
+  padding = ["0px", "0", "10px", "0"]
 +++
