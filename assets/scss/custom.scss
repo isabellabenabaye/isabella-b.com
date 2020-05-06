@@ -331,8 +331,93 @@ ul.nav-icons li.nav-item a.nav-link {
 }
 
 .article-container {
-  max-width: 850px;
+  max-width: 825px;
   padding: 0 20px 0 20px;
   margin: 0 auto 0 auto;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+/*************************************************
+ *  Article Alerts (Shortcode) and Asides (Mmark)
+ **************************************************/
+
+/* Style asides as Bootstrap alerts. */
+.article-style aside {
+  @extend .alert;
+}
+
+/* Asides use <p> block element whereas alerts use <div>. */
+.article-style aside p,
+div.alert > div {
+  position: relative;
+  display: block;
+  font-size: 0.8rem;
+  margin-left: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.alert div > * {
+  margin-bottom: .5rem;  /* Use smaller paragraph spacing than usual. */
+}
+
+div.alert div > :last-child {
+  margin-bottom: 0;
+}
+
+.article-style aside p::before,
+div.alert > div:first-child::before {
+  position: absolute;
+  top: -0.3rem;
+  left: -2rem;
+  font-size: 1.4rem;
+  color: #0EAD69;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f05a';
+  width: 1rem;
+  text-align: left;
+}
+
+div.alert-warning > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #ff3860;
+  content: '\f071';
+}
+
+.article-style aside a,
+div.alert a {
+  color: currentColor;
+  text-decoration: none;
+  border-bottom: solid 1px currentColor;
+}
+
+.article-style aside,
+.alert-note {
+  color: #26547C;
+  background-color: #F7F7F7;
+  border-color: #0EAD69;
+}
+
+.alert-warning {
+  color: #cd0930;
+  background-color: #fff5f7;
+  border-color: #ff3860;
+}
+
+
+code {
+  @include font-size($code-font-size);
+  color: #2196BA;
+  border-radius: 3px;
+  background: #fff;
+  
+/* this is the part that takes out the shadow & the only edit */
+  word-wrap: break-word;
+
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+    color: inherit;
+  }
 }
