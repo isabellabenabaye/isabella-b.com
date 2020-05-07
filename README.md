@@ -1,0 +1,1 @@
+My site was made with the `blogdown` package and the [Academic theme](https://sourcethemes.com/academic/) for [Hugo](https://gohugo.io).
