@@ -6,7 +6,7 @@ slug: hugo-academic-customization
 summary: "Sharing some of the ways I customized this site for anyone that would like to make similar adjustments to theirs ✨"
 authors: []
 tags: [hugo academic, academic theme, hugo, tutorial, customization]
-categories: [tutorial]
+categories: [tutorial,hugo,academic theme]
 date: '2020-05-05'
 reading_time: true
 
@@ -59,13 +59,16 @@ An important thing to know before we begin is how Hugo uses [template lookup](ht
 {{% /alert %}}
 
 **What I'll be covering:**
-- [Full list of **theme colors** you can customize](#theme-colors-you-can-customize)
-- [**About widget** without a summary](#about-widget-without-a-summary)
-- [**Removing the box-shadow** in the navigation bar and cards](#removing-box-shadows)
-- [From **'posts' to 'blog'**](#from-posts-to-blog)
-- [Changing the **date displayed on posts** to the date created instead of last modified](#changing-displayed-post-dates)
-- [Adjusting post **font size & page width**](#adjusting-post-font-size--page-width)
-- [Customizing the **alert notes/warnings**](#customizing-the-alert-noteswarnings)
+- [Full list of theme colors you can customize](#full-list-of-theme-colors-you-can-customize)
+- [About widget without a summary](#about-widget-without-a-summary)
+    - [Using my `about.html`](#using-my-abouthtml)
+    - [Adjusting the `html` yourself](#adjusting-the-html-yourself)
+- [Removing box-shadows](#removing-box-shadows)
+- [From 'posts' to 'blog'](#from-posts-to-blog)
+- [Changing displayed post dates](#changing-displayed-post-dates)
+- [Adjusting post font size & page width](#adjusting-post-font-size--page-width)
+- [Customizing the alert notes/warnings](#customizing-the-alert-noteswarnings)
+- [That's all for now!](#thats-all-for-now)
 <br />   
 <br />
 
