@@ -26,7 +26,7 @@ slides: ''
 Since hip hop is one of my favorite genres, I was really excited to
 create the visualizations for this week. There is a total of 311 songs
 that made it to the top 5 list of 107 ‘critics’ chosen by BBC Music.  
-{{% staticref "files/tidy-tuesday/All songs.png" %}}![Source: BBC Music. Graph: Isabella Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/16_rap_songs/All%20songs.png?raw=true){{% /staticref %}}
+{{< figure src="All songs.png" title="" lightbox="true" >}}
 
 It’s notable the Jay-Z has the most songs in the list with 15, Kendrick
 Lamar coming in second with 10.
@@ -36,8 +36,7 @@ classifies as hip-hop and music experts – critics, industry figures,
 artists, and academics. The outcome of their survey sure was
 interesting, but of course the song rankings depend heavily on the
 critic’s preferences. Let’s look a little into that.  
-{{% staticref "files/tidy-tuesday/Critics - countries.png" %}}![Source: BBC Music. Graph: Isabella
-Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/16_rap_songs/Critics%20-%20countries.png?raw=true){{% /staticref %}}
+{{< figure src="Critics - countries.png" title="" lightbox="true" >}}
 
 The critics come from 13 countries overall, but unsurprisingly are
 predominantly from the United States.  
@@ -59,8 +58,7 @@ first chart, but the text would have to be small since some artist’s
 names were so long. I still made it though, and it is best viewed full
 screen, but it would probably be best to have an interactive plot to
 better view this data.
-{{% staticref "files/tidy-tuesday/All songs - artists.png" %}}![Source: BBC Music. Graph: Isabella
-Benabaye.](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/16_rap_songs/All%20songs%20-%20artists.png?raw=true){{% /staticref %}}
+{{< figure src="All songs - artists.png" title="" lightbox="true" >}}
 
 I also just learned how to use `gganimate` and wanted to try out animating the original as my first animated plot:
 {{% staticref "files/tidy-tuesday/All songs - animated.gif" %}}![](https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/16_rap_songs/All%20songs%20-%20animated.gif?raw=true){{% /staticref %}}
