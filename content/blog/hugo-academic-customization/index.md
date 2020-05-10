@@ -56,7 +56,8 @@ An important thing to know before we begin is how Hugo uses [template lookup](ht
  >For example, say we wish to add some HTML code to the navigation bar. Let’s copy the relevant file `themes/academic/layouts/partials/navbar.html` to `layouts/partials/navbar.html` (at the root of your site, not in `themes/academic/`), creating the `layouts/partials/` folders if they do not already exist. Now you can add the HTML code you want to your copy of the file, which will override Academic’s version.
 
 **At the time of this post, Academic's latest release is v4.8.0.**
-{{% /alert %}}
+{{% /alert %}}   
+<br /> 
 
 **What I'll be covering:**
 - [Full list of theme colors you can customize](#full-list-of-theme-colors-you-can-customize)
@@ -69,7 +70,7 @@ An important thing to know before we begin is how Hugo uses [template lookup](ht
 - [Adjusting post font size & page width](#adjusting-post-font-size--page-width)
 - [Customizing the alert notes/warnings](#customizing-the-alert-noteswarnings)
 - [That's all for now!](#thats-all-for-now)
-<br />   
+  
 <br />
 
 

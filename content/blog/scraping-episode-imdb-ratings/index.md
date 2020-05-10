@@ -56,7 +56,7 @@ First, you'll need to navigate to the series of your choice's season 1 page that
 
 {{< figure src="01_season_page.png" title="" lightbox="true" >}}
 
-Get the url of that page. It should be structured like this:   
+Get the url of that page. It should be structured like this:     
 
 ht<span>tp://ww</span>w.imdb.com/title/<span style="background-color: #ffd850">tt1439629</span>/episodes?season=1       
 

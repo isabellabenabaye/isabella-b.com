@@ -399,6 +399,7 @@ div.alert a {
   background-color: #F7F7F7;
   border-color: #0EAD69;
 /*  border-style: dashed; */
+  box-shadow: 5px 5px 0 0 #0EAD69;
 }
 
 .alert-warning {
@@ -406,20 +407,99 @@ div.alert a {
   background-color: #fff5f7;
   border-color: #ff3860;
   border-style: dotted;
+  box-shadow: 6px 6px 0 0 #ff3860;
 }
 
 
+pre,
 code {
-  @include font-size($code-font-size);
+  font-family: $sta-font-mono, monospace;
   color: #2196BA;
-  border-radius: 3px;
-  background: #fff;
-  
-/* this is the part that takes out the shadow & the only edit */
-  word-wrap: break-word;
+  background-color: #ffffff;
+}
 
-  // Streamline the style when inside anchors to avoid broken underline and more
-  a > & {
-    color: inherit;
-  }
+pre {
+  margin: 0 0 1rem 0;
+  background-color: rgb(248, 248, 248); /* Match default highlight theme. */
+  border-color: rgb(248, 248, 248);
+  border: 15px;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #FFF588;
+}
+
+pre code {
+  white-space: pre; /* Override Bootstrap to preserve line breaks in code. */
+  overflow-x: auto;
+}
+
+
+/*************************************************
+ *  Button size override
+ *************************************************/
+
+ .btn {
+  padding: .5rem;
+  font-size: .8rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+
+.btn-links .btn {
+  padding: 5px .5rem 5px .5rem;
+  line-height: 1;
+  box-shadow: 3px 3px 0 0 #0D9F5F;
+  color: #0D9F5F;
+  border-color: #0D9F5F;
+  background-color: $sta-menu_primary !important;
+}
+
+.btn-links .btn:hover {
+  padding: 5px .5rem 5px .5rem;
+  line-height: 1;
+  box-shadow: 3px 3px 0 0 #0D9F5F;
+  color: $sta-menu_primary;
+  border-color: $sta-menu_primary;
+  background-color: #0D9F5F !important;
+
+}
+
+.btn.btn-sm {
+  padding: 5px .4rem 5px .4rem;
+  font-size: .6rem;
+  border-radius: .2rem;
+}
+
+/*************************************************
+ *  Toolbar Buttons
+ **************************************************/
+
+.btn-toolbar .btn {
+  font-size: 0.9rem;
+  padding: 10px 14px 9px;
+  border: none;
+}
+
+.btn-toolbar .btn:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.btn-toolbar .btn:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.btn-toolbar .btn.btn-primary:hover,
+.btn-toolbar .btn.btn-primary:focus {
+  background-color: $sta-primary-light !important;
+}
+
+.btn-toolbar .btn.btn-primary:active,
+.btn-toolbar .btn.btn-primary.active {
+  background-color: $sta-primary-dark !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem $sta-primary-light;
 }
