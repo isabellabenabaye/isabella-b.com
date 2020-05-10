@@ -47,6 +47,7 @@ In *this* tutorial I will *not* be redundant in explaining what they already did
 
 [^1]: In the tutorial, they have extra sections where they control the crawl-rate & monitor the loop as it's still going, but we won't do that here because series' have much less episodes (they scraped 2000+ movies) so that's not necessary.
 <br>    
+<br>
 <br>      
     
 # Breaking it down
@@ -137,7 +138,8 @@ episode_containers = html_soup.find_all('div', class_='info')
 ```
 
 `find_all()` returned a `ResultSet` object --`episode_containers`-- which is a list containing all of the 25 `<div class="info" ...> </div>`s.
-<br>    
+<br>
+<br>                 
 
 ## Extracting each variable that we need
 
