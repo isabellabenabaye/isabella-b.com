@@ -45,10 +45,9 @@ Since their tutorial already does a great job at explaining the basics of [ident
 
 In *this* tutorial I will *not* be redundant in explaining what they already did[^1]; instead, I'll be doing many similar steps, but they will be specifically for taking episode ratings (same for any TV series) instead of movie ratings.
 
-[^1]: In the tutorial, they have extra sections where they control the crawl-rate & monitor the loop as it's still going, but we won't do that here because series' have much less episodes (they scraped 2000+ movies) so that's not necessary.
+[^1]: In the tutorial, they have extra sections where they control the crawl-rate & monitor the loop as it's still going, but we won't do that here because series' have much less episodes (they scraped 2000+ movies) so that's not necessary.       
 <br>    
-<br>
-<br>      
+<br>     
     
 # Breaking it down
 First, you'll need to navigate to the series of your choice's season 1 page that lists all of that season's episodes. The series I will be using is Community. It should look like this:
