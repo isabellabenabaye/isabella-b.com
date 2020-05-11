@@ -234,14 +234,16 @@ episode_containers[0].find('div', class_='item_description').text.strip()
 
 # Final code-- Putting it all together
 
-Now that we know how to get each variable, we need to iterate for each episode and each season. This will require two `for` loops. The output will be a list that we will make into a pandas DataFrame. The comments in the code explain each step.
+Now that we know how to get each variable, we need to iterate for each episode and each season. This will require two `for` loops. For the **per season** loop, you'll have to adjust the `range()` depending on how many seasons are in the show you're scraping.    
+
+The output will be a list that we will make into a pandas DataFrame. The comments in the code explain each step.
 
 
 ```python
 # Initializing the series that the loop will populate
 community_episodes = []
 
-# For every season in the series
+# For every season in the series-- range depends on the show
 for sn in range(1,7):
     # Request from the server the content of the web page by using get(), and store the server’s response in the variable response
     response = get('https://www.imdb.com/title/tt1439629/episodes?season=' + str(sn))
