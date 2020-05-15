@@ -214,6 +214,11 @@ It is the same thing for the total votes, except it's under a different class.
 ```python
 episode_containers[0].find('span', class_='ipl-rating-star__total-votes').text
 ```
+
+
+
+
+    '(3,187)'
 <br> 
 
 ### Episode description
