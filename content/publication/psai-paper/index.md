@@ -12,9 +12,11 @@ image:
   focal_point: ""
   preview_only: false
 links:
-- name: PSAI
+- name: PDF
   url: http://www.psai.ph/tps_details.php?id=103
-- name: Slides
+  icon_pack: fas
+  icon: file
+- name: slides
   url: "files/PSAI Paper Slides.pdf"
   icon_pack: far
   icon: image

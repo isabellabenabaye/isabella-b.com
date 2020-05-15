@@ -24,12 +24,18 @@ tags:
 - Conference Papers
 
 links:
-- name: Slides
+- name: PDF
+  url: https://iase-web.org/icots/10/proceedings/pdfs/ICOTS10_1H2.pdf
+  icon_pack: fas
+  icon: file
+- name: slides
   url: "files/ICOTS Presentation.pdf"
+  icon_pack: far
+  icon: image
 title: 
 url_code: ""
 url_dataset: ""
-url_pdf: https://iase-web.org/icots/10/proceedings/pdfs/ICOTS10_1H2.pdf
+url_pdf: 
 url_poster: ""
 url_project: ""
 url_slides: ""
