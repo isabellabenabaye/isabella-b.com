@@ -14,6 +14,10 @@ image:
 links:
 - name: PSAI
   url: http://www.psai.ph/tps_details.php?id=103
+- name: Slides
+  url: "files/PSAI Paper Slides.pdf"
+  icon_pack: far
+  icon: image
 #projects:
 #- internal-project
 publication: '*The Philippine Statistician, vol. 66, no. 2*'

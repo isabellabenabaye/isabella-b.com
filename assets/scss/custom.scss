@@ -386,6 +386,12 @@ div.alert-warning > div:first-child::before {
   content: '\f071';
 }
 
+div.alert-look > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0a4';
+}
+
 .article-style aside a,
 div.alert a {
   color: currentColor;
@@ -395,6 +401,14 @@ div.alert a {
 
 .article-style aside,
 .alert-note {
+  color: #26547C;
+  background-color: #F7F7F7;
+  border-color: #0EAD69;
+/*  border-style: dashed; */
+  box-shadow: 5px 5px 0 0 #0EAD69;
+}
+
+.alert-look {
   color: #26547C;
   background-color: #F7F7F7;
   border-color: #0EAD69;

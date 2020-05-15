@@ -22,6 +22,10 @@ publishDate: "2018-07-01T00:00:00Z"
 summary: Presented Paper in the 10th International Conference on Teaching Statistics (ICOTS 10) @ Kyoto, Japan.
 tags:
 - Conference Papers
+
+links:
+- name: Slides
+  url: "files/ICOTS Presentation.pdf"
 title: 
 url_code: ""
 url_dataset: ""
