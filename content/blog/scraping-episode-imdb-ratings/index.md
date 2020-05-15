@@ -204,7 +204,7 @@ episode_containers[0].find('div', class_='ipl-rating-star__rating').text
 
 
 
-    ['7.8', '(3,178)']
+    '7.8'
 <br> 
 
 ### Total votes
