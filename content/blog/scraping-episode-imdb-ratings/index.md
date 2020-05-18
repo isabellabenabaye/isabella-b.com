@@ -31,6 +31,11 @@ links:
    icon_pack: fab
    icon: kaggle
 
+- name: 
+  url: https://medium.com/@isabellabenabaye/scraping-tv-show-epsiode-imdb-ratings-using-python-beautifulsoup-7a9e09c4fbe5
+  icon_pack: fab
+  icon: medium-m
+
 url_code: ""
 url_pdf: ""
 url_slides: ""
