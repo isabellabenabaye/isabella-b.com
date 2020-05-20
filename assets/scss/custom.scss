@@ -537,3 +537,22 @@ pre code {
   background-color: #0D9F5F !important;
   justify-content: center; 
 }
+
+
+/*************************************************
+ *  Links
+ **************************************************/
+
+ .article-style a {
+  color: rgba(0,0,0,0.8);
+  border-bottom: 1.5px #EF476F dotted;
+  cursor: pointer;
+}
+
+.article-style  a:hover {
+  border-bottom: 1.5px $sta-link-hover dotted;
+  text-decoration: none !important;
+  color: $sta-link-hover;
+  cursor: pointer;
+  transition: color 0.6s ease;
+}
