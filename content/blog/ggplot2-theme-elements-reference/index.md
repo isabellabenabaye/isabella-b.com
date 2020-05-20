@@ -9,7 +9,7 @@ tags:
   - Data Visualizations
   - ggplot2
   - rstats
-summary: 'Inspired by [Henry Wang❜s](https://henrywang.nl/ggplot2-theme-elements-demonstration/) ❝ggplot2 Theme Elements Demonstration❞, I created one for myself displaying all of the elements I frequently use and always google. Feel free to download and use it as well!'
+summary: 'Inspired by [Henry Wang❜s](https://twitter.com/henrywangnl) [❝ggplot2 Theme Elements Demonstration❞](https://henrywang.nl/ggplot2-theme-elements-demonstration/), I created one for myself displaying all of the elements I frequently use and always google. Feel free to download and use it as well!'
 
 links:
  - name: code

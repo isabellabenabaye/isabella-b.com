@@ -9,6 +9,7 @@ tags:
   - Data Visualizations
   - Tidy Tuesday
   - rstats
+  - ggplot2
 summary: '[Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)’s Week 12 dataset from the [`schrute` R package](https://bradlindblad.github.io/schrute/index.html) and data.world'
 links:
  - name: code

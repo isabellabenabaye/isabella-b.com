@@ -2,7 +2,7 @@
 title: "May is Asian and Pacific Islander American Heritage Month ✨"
 summary: "Read more about it in this **New York Times** article: [Why the Fastest Growing Population in America Is The Least Likely to Fill Out the Census](https://www.nytimes.com/2020/02/14/us/asian-american-census.html)"
 authors: []
-tags: [data visualizations, Asian and Pacific Islander American Heritage Month, APAHM, AAPI, APAHM2020]
+tags: [data visualizations, Asian and Pacific Islander American Heritage Month, APAHM, AAPI, APAHM2020, ggplot2]
 categories: [data visualizations, APAHM]
 date: "2020-05-14T00:00:00Z"
 

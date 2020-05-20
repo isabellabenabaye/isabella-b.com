@@ -9,6 +9,7 @@ tags:
   - Data Visualizations
   - Tidy Tuesday
   - rstats
+  - ggplot2
 summary: '[Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)’s Week 16 dataset from BBC Music'
 links:
  - name: code
