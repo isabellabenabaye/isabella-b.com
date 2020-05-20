@@ -10,6 +10,11 @@ tags:
   - Tidy Tuesday
   - rstats
 summary: '[Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)’s Week 12 dataset from the [`schrute` R package](https://bradlindblad.github.io/schrute/index.html) and data.world'
+links:
+ - name: code
+   url: https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/12_theoffice/theoffice.R
+   icon_pack: fab
+   icon: github
 authors: []
 external_link: ''
 image:

@@ -10,13 +10,18 @@ tags:
   - Tidy Tuesday
   - rstats
 summary: '[Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)’s Week 16 dataset from BBC Music'
+links:
+ - name: code
+   url: https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/16_rap_songs/16_rap_songs.R
+   icon_pack: fab
+   icon: github
 authors: []
 external_link: ''
 image:
   caption: ''
   focal_point: ''
   preview_only: yes
-url_code: 'https://github.com/isabellabenabaye/tidy-tuesday/blob/master/2020/16_rap_songs/16_rap_songs.R'
+url_code: ''
 url_pdf: ''
 url_slides: ''
 url_video: ''

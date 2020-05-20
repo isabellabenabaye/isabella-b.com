@@ -517,3 +517,23 @@ pre code {
 .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem $sta-primary-light;
 }
+
+.btn-articles .btn {
+  padding: 5px .5rem 5px .5rem;
+  line-height: 1;
+  box-shadow: 3px 3px 0 0 #0D9F5F;
+  color: #0D9F5F;
+  border-color: #0D9F5F;
+  background-color: $sta-menu_primary !important;
+  justify-content: center; 
+}
+
+.btn-articles .btn:hover {
+  padding: 5px .5rem 5px .5rem;
+  line-height: 1;
+  box-shadow: 3px 3px 0 0 #0D9F5F;
+  color: $sta-menu_primary;
+  border-color: $sta-menu_primary;
+  background-color: #0D9F5F !important;
+  justify-content: center; 
+}
