@@ -8,7 +8,7 @@ tags:
   - ggplot2
   - rstats
   
-summary: 'Inspired by [Henry Wang](https://twitter.com/henrywangnl)❜s ❝[ggplot2 Theme Elements Demonstration](https://henrywang.nl/ggplot2-theme-elements-demonstration/)❞, I created one for myself displaying all of the elements I frequently use and always google.  Feel free to download and use it as well! 
+summary: 'Inspired by [Henry Wang](https://twitter.com/henrywangnl)❜s ❝[ggplot2 Theme Elements Demonstration](https://henrywang.nl/ggplot2-theme-elements-demonstration/)❞, I created one for myself displaying all of the elements I frequently use and always google.
 <p class="btn-articles"><a href="https://isabella-b.com/blog/ggplot2-theme-elements-reference" class="btn btn-sm">PDF/PNG <i class="fas fa-chevron-circle-right" aria-hidden="true"> </i></a></p>'
 
 external_link: https://isabella-b.com/blog/ggplot2-theme-elements-reference
