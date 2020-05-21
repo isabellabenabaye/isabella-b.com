@@ -485,8 +485,31 @@ pre code {
 }
 
 /*************************************************
- *  Toolbar Buttons
+ *  Buttons
  **************************************************/
+.btn {
+  padding: .5 rem;
+  font-size: .8rem;
+  line-height: .5;
+  border-radius: .3rem;
+}
+
+.btn-links .btn {
+  padding: .3rem;
+}
+
+.btn-links .btn:hover {
+  padding: .3rem;
+  color: $sta-menu_primary;
+  border-color: $sta-menu_primary;
+  background-color: #0D9F5F !important;
+}
+
+.btn.btn-sm {
+  padding: .3rem;
+  font-size: .6rem;
+  border-radius: .2rem;
+}
 
 .btn-toolbar .btn {
   font-size: 0.9rem;
@@ -515,11 +538,12 @@ pre code {
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
+  padding: .3rem;
   box-shadow: 0 0 0 .2rem $sta-primary-light;
 }
 
 .btn-articles .btn {
-  padding: 5px .5rem 5px .5rem;
+  padding: .3rem;
   line-height: 1;
   box-shadow: 3px 3px 0 0 #0D9F5F;
   color: #0D9F5F;
@@ -529,7 +553,7 @@ pre code {
 }
 
 .btn-articles .btn:hover {
-  padding: 5px .5rem 5px .5rem;
+  padding: .3rem;
   line-height: 1;
   box-shadow: 3px 3px 0 0 #0D9F5F;
   color: $sta-menu_primary;
