@@ -556,3 +556,26 @@ pre code {
   cursor: pointer;
   transition: color 0.6s ease;
 }
+
+/*************************************************
+ *  Compact (stream) list view
+ **************************************************/
+.media.stream-item {
+  margin-bottom: 5rem;
+}
+
+.media.stream-item .article-style,
+.card-simple .article-style {
+  margin-top: 15px;
+  font-size: 0.8rem;
+}
+
+.media.stream-item .stream-meta {
+  margin-top: 20px;
+}
+
+.media.stream-item img {
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
