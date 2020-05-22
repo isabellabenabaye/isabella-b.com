@@ -1,15 +1,15 @@
 ---
-title: 'ggplot2 Theme Elements Reference Sheet'
-author: Isabella Benabaye
-date: '2020-05-19'
-reading_time: true
-slug: ggplot2-theme-elements-reference
-categories: [ggplot2]
-tags:
-  - Data Visualizations
-  - ggplot2
-  - rstats
-summary: 'Inspired by [Henry Wang](https://twitter.com/henrywangnl)❜s ❝[ggplot2 Theme Elements Demonstration](https://henrywang.nl/ggplot2-theme-elements-demonstration/)❞, I created one for myself displaying all of the elements I frequently use and always google. Feel free to download and use it as well!'
+title: "ggplot2 Theme Elements Reference Sheet"
+summary: "Inspired by [Henry Wang](https://twitter.com/henrywangnl)❜s ❝[ggplot2 Theme Elements Demonstration](https://henrywang.nl/ggplot2-theme-elements-demonstration/)❞, I created one for myself displaying all of the elements I frequently use and always google. Feel free to download and use it as well!"
+authors: []
+tags: [data visualizations, ggplot2, rstats]
+categories: [ggplot2, rstats, reference]
+date: "2020-05-19T00:00:00Z"
+
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: true
 
 links:
  - name: code
@@ -20,16 +20,10 @@ links:
 #   url: https://twitter.com/_isabellamb/status/1261162040107823104?s=20
 #   icon_pack: fab
 #   icon: twitter
-authors: []
-external_link: ''
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: yes
-url_pdf: ''
-url_slides: ''
-url_video: ''
-slides: ''
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
 ---
 {{< figure src="ggplot2-theme-elements-reference.png" title="" lightbox="true" >}}
 
