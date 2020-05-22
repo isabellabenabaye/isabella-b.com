@@ -21,9 +21,11 @@ author = "admin"
   # Background color.
   # color = "navy"
   
-  # Background gradient.
+  # Background gradient. 
+#  image = "otis-redding.png"  # Name of image in `static/img/`.
   gradient_start = "#F7F7F7"
   gradient_end = "#AED9E0"
+  
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.

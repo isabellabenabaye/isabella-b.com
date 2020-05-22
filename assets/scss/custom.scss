@@ -5,6 +5,7 @@
  .navbar {
   height: 70px;
   background: $sta-menu-primary;
+  background-image: url(/img/otis-redding.png);
   box-shadow: none;
   font-size: 18px;
   font-weight: 900 !important;
@@ -32,6 +33,7 @@
       .navbar-nav {
         overflow-x: auto;
         white-space: nowrap;
+        background-image: url(/img/otis-redding.png);
         -webkit-overflow-scrolling: touch;
       }
     }
@@ -602,4 +604,27 @@ pre code {
   max-width: 300px;
   height: auto;
   object-fit: cover;
+}
+
+body {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: inherit;
+  color: inherit;
+  background-color: $sta-background;
+  background-image: url(/img/otis-redding.png);
+  margin-top: 70px; /* Offset body content by navbar height. */
+  padding-top: 0;
+  counter-reset: captions;
+}
+@include media-breakpoint-down(md) { /* Match max-width of .nav-bar query. */
+  body {
+    margin-top: 50px; /* Offset body content by navbar height. */
+  }
+}
+
+
+
+.home-section {
+  background-image: url('/img/otis-redding.png');
 }
