@@ -232,7 +232,7 @@ Create `assets/scss/custom.scss` in your root if it doesn't already exist. Paste
 
 ## Customizing the alert notes & warnings (div tips)
 {{% alert note %}}
-If you're using an R markdown document, site, bookdown book, Distill site, or blogdown .Rmd post, check out [this awesome post](http://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) by [Desirée De Leon](https://twitter.com/dcossyle) who presents an easy way to do this with Pandoc style custom divs.
+If you're using an R markdown document, site, bookdown book, Distill site, or blogdown `.Rmd` post, check out [this awesome post](http://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) by [Desirée De Leon](https://twitter.com/dcossyle) who presents an easy way to do this with Pandoc style custom divs. My instructions are for those using `.md` for their posts.
 {{% /alert %}}
 All of the options to edit the formatting of the alert notes and warnings can be found in `themes\hugo-academic\assets\scss\academic\_root.scss` under this heading, which you can use your text editor to find:
 ```
