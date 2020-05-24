@@ -613,6 +613,7 @@ body {
   color: inherit;
   background-color: $sta-background;
   background-image: url(/img/otis-redding.png);
+  background-attachment: fixed;
   margin-top: 70px; /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
