@@ -175,6 +175,10 @@ Create `assets/scss/custom.scss` in your root if it doesn't already exist. Paste
 <br />
 
 ## From 'posts' to 'blog'
+{{% alert note %}}
+**UPDATE**   
+Since the writing of this post, I discovered a section in the Academic theme docs that shows another (easier) way to do this using permalinks. You can find it [here](https://sourcethemes.com/academic/docs/customization/#permalinks) under **Example 2**.
+{{% /alert %}}
 Instead of your posts having the default slug `your-site.com/posts/your-post`, you can change it to `your-site.com/blog/your-post` by doing the following:
 - Rename the `posts` folder in your root `content/` to `blog`, or create a folder in `content/` called `blog`
 - Copy `themes/hugo-academic/layouts/section/post.html` to your root `layouts/section/`
