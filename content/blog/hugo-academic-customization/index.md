@@ -68,7 +68,7 @@ An important thing to know before we begin is how Hugo uses [template lookup](ht
 - [From 'posts' to 'blog'](#from-posts-to-blog)
 - [Changing displayed post dates](#changing-displayed-post-dates)
 - [Adjusting post font size & page width](#adjusting-post-font-size--page-width)
-- [Customizing the alert notes/warnings](#customizing-the-alert-noteswarnings)
+- [Customizing the alert notes & warnings (div tips)](#customizing-the-alert-notes--warnings-div-tips)
 - [That's all for now!](#thats-all-for-now)
   
 <br />
@@ -176,7 +176,6 @@ Create `assets/scss/custom.scss` in your root if it doesn't already exist. Paste
 
 ## From 'posts' to 'blog'
 {{% alert note %}}
-**UPDATE**   
 Since the writing of this post, I discovered a section in the Academic theme docs that shows another (easier) way to do this using permalinks. You can find it [here](https://sourcethemes.com/academic/docs/customization/#permalinks) under **Example 2**.
 {{% /alert %}}
 Instead of your posts having the default slug `your-site.com/posts/your-post`, you can change it to `your-site.com/blog/your-post` by doing the following:
@@ -231,7 +230,10 @@ Create `assets/scss/custom.scss` in your root if it doesn't already exist. Paste
 ```   
 <br />
 
-## Customizing the alert notes/warnings
+## Customizing the alert notes & warnings (div tips)
+{{% alert note %}}
+If you're using an R markdown document, site, bookdown book, Distill site, or blogdown .Rmd post, check out [this awesome post](http://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) by [Desirée De Leon](https://twitter.com/dcossyle) who presents an easy way to do this with Pandoc style custom divs.
+{{% /alert %}}
 All of the options to edit the formatting of the alert notes and warnings can be found in `themes\hugo-academic\assets\scss\academic\_root.scss` under this heading, which you can use your text editor to find:
 ```
 /*************************************************
