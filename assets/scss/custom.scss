@@ -30,6 +30,7 @@
       width: 100%;
       overflow: hidden;
 
+        /* add background image */
       .navbar-nav {
         overflow-x: auto;
         white-space: nowrap;
@@ -330,6 +331,12 @@ ul.nav-icons li.nav-item a.nav-link {
 
 .section-heading h1 {
   margin: 0 0 0px 0;
+  font-family: Karla;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -2px;
+  color: #585858;
+
 }
 
 .article-container {
@@ -606,6 +613,10 @@ pre code {
   object-fit: cover;
 }
 
+/*************************************************
+ *  Add background image (grainy look)
+ **************************************************/
+
 body {
   font-family: inherit;
   font-size: 1rem;
@@ -625,7 +636,17 @@ body {
 }
 
 
-
 .home-section {
   background-image: url('/img/otis-redding.png');
+}
+
+/*************************************************
+ *  Archive page headers
+ **************************************************/
+
+.universal-wrapper h1 {
+  font-family: Karla;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 2.5rem;
 }
