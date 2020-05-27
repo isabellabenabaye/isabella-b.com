@@ -1,3 +1,13 @@
+/* headers in posts */
+.article-style h1, h2, h3, h4 {
+  font-family: 'Miriam Libre';
+}
+
+/* titles on blog index */
+.article-title {
+  font-family: Calistoga-Regular;
+  font-weight: 300;
+}
 /*************************************************
  *  Navigation bar
  **************************************************/
@@ -118,7 +128,8 @@
   // Set v-padding to 5px to align with 50/70px responsive max navbar heights.
   padding-top: 5px;
   padding-bottom: 5px;
-  font-weight: bold;
+  font-family: 'Calistoga-Regular';
+  font-weight: 300;
   position: relative;
   z-index: 1030;  // For z-index clickable mobile logo.
 }
@@ -328,15 +339,20 @@ ul.nav-icons li.nav-item a.nav-link {
   opacity: 0.6;
 }
 
-
+/* homepage section headers */
 .section-heading h1 {
   margin: 0 0 0px 0;
-  font-family: Karla;
-  font-weight: 900;
+  font-weight: 300;
   font-size: 2rem;
   letter-spacing: -2px;
   color: #585858;
 
+}
+
+/* homepage about title */ 
+.portrait-title h2 {
+  font-family: Calistoga-Regular;
+  font-weight: 300;
 }
 
 .article-container {
@@ -635,7 +651,7 @@ body {
   }
 }
 
-
+/* homepage */
 .home-section {
   background-image: url('/img/otis-redding.png');
 }
@@ -645,8 +661,13 @@ body {
  **************************************************/
 
 .universal-wrapper h1 {
-  font-family: Karla;
-  font-weight: 900;
+  font-weight: 300;
   letter-spacing: -2px;
   margin-bottom: 2.5rem;
+}
+
+/* Calistoga font import */
+@font-face {
+  font-family: 'Calistoga-Regular';
+  src: url('../fonts/Calistoga-Regular.ttf') format('truetype');
 }

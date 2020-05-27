@@ -7,7 +7,7 @@
         {{- if site.Params.logo -}}
         <img src="{{ printf "/img/%s" site.Params.logo | relURL }}" alt="{{ site.Title }}">
         {{- else -}}
-        {{ if not .IsHome }}{{- site.Title -}}{{- end -}}
+        {{ if not .IsHome }}{{- "isabella" -}}{{- end -}}
         {{- end -}}
       </a>
       {{ if or site.Menus.main .IsTranslated }}

@@ -2,10 +2,10 @@
 name = "my_fonts"
 
 # Optional Google font URL
-google_fonts = "Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono|Noto+Serif+JP|Manrope|Lora:wght@700|Fira+Code|Karla|Work+Sans:wght@200|Oxygen:wght@300|Hind:wght@300|Inter|Libre+Baskerville:wght@400;700|Alice|Kurale|Fauna+One|Neuton:wght@300|DM+Serif+Text|Lilita+One|Marcellus|Miriam+Libre:wght@400;700|Shrikhand"
+google_fonts = "Fira+Code|Inter|Miriam+Libre:wght@400;700|Karla"
 
 # Font families
-heading_font = "Miriam Libre"
+heading_font = "Calistoga-Regular"
 body_font = "Inter"
 nav_font = "Karla"
 mono_font = "Fira Code"
