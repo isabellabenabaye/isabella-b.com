@@ -1,11 +1,14 @@
 /* headers in posts */
 .article-style h1, h2, h3, h4 {
-  font-family: 'Miriam Libre';
+  font-family: 'DM Mono';
+  letter-spacing: -.04rem;
+  font-weight: normal;
 }
 
 /* titles on blog index */
 .article-title {
   font-family: Calistoga-Regular;
+  letter-spacing: 0px;
   font-weight: 300;
 }
 /*************************************************
