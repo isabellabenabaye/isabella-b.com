@@ -19,6 +19,10 @@
   url = "#featured"
   weight = 40
 
+[[main]]
+  name = "about"
+  url = "about"
+  weight = 10
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.

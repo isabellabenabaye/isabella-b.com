@@ -2,7 +2,7 @@
 name = "my_fonts"
 
 # Optional Google font URL
-google_fonts = "Fira+Code|Inter|Miriam+Libre:wght@400;700|Karla|DM+Mono"
+google_fonts = "Fira+Code|Inter|Miriam+Libre:wght@400;700|Karla|DM+Mono|Work+Sans"
 
 # Font families
 heading_font = "Calistoga-Regular"

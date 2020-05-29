@@ -342,6 +342,62 @@ ul.nav-icons li.nav-item a.nav-link {
   opacity: 0.6;
 }
 
+/*************************************************
+ *  About page
+ **************************************************/
+
+.card-about {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #fff;
+  box-shadow: 8px 8px 0 0 #2196BA;
+  transition: all 0.2s ease-out;
+  border: 1px solid #2196BA;
+  border-radius: 5px;
+  padding: 2rem;
+  font-family: 'Work Sans';
+  font-size: .98rem;
+}
+
+.about-page a {
+  color: rgba(0,0,0,0.8);
+  border-bottom: 1.5px #D90429 dotted;
+  cursor: pointer;
+}
+
+.about-page  a:hover {
+  border-bottom: 1.5px #0EAD69 dotted;
+  text-decoration: none !important;
+  color: #0EAD69;
+  cursor: pointer;
+  transition: color 0.6s ease;
+}
+
+.about-page .row {
+  height: calc(100vh - 85px);
+  display: flex;
+  align-items: center;
+}
+
+.about-page h1 {
+  text-align: right;
+  margin-bottom: 25rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .about-page h1 {
+    text-align: left;
+    margin-bottom: 0rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-page h1 {
+    text-align: left;
+    margin-bottom: 0rem;
+  }
+}
+
 /* homepage section headers */
 .section-heading h1 {
   margin: 0 0 0px 0;
@@ -358,6 +414,7 @@ ul.nav-icons li.nav-item a.nav-link {
   font-weight: 300;
 }
 
+/* page widths */
 .article-container {
   max-width: 825px;
   padding: 0 20px 0 20px;
