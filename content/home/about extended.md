@@ -1,9 +1,9 @@
 +++
 # About widget.
-widget = "about_isabella"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "about_isabella_extended"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
-weight = 15  # Order that this section will appear in.
+active = true  # Activate this widget? true/false
+weight = 10  # Order that this section will appear in.
 
 #title = "Biography"
 
@@ -29,5 +29,5 @@ author = "admin"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["40px", "0", "40px", "0"]
+  padding = ["1rem", "0", "3rem", "0"]
 +++

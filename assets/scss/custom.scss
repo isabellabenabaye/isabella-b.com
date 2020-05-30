@@ -353,19 +353,20 @@ ul.nav-icons li.nav-item a.nav-link {
   box-shadow: 8px 8px 0 0 #2196BA;
   transition: all 0.2s ease-out;
   border: 1px solid #2196BA;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 2rem;
   font-family: 'Work Sans';
   font-size: .98rem;
+  background-color: #F7F7F7;
 }
 
-.about-page a {
+.card-about a {
   color: rgba(0,0,0,0.8);
   border-bottom: 1.5px #D90429 dotted;
   cursor: pointer;
 }
 
-.about-page  a:hover {
+.card-about a:hover {
   border-bottom: 1.5px #0EAD69 dotted;
   text-decoration: none !important;
   color: #0EAD69;
@@ -398,6 +399,59 @@ ul.nav-icons li.nav-item a.nav-link {
   }
 }
 
+/*************************************************
+ *  About widget - home page
+ **************************************************/
+ .avatar {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  margin-left: 8rem;
+}
+
+ .card-about-outer {
+  padding-right: 6rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .card-about-outer {
+    padding: 2rem;
+    text-align: center;
+  }
+  .avatar {
+    width: 270px;
+    height: 270px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-about-outer {
+    padding: 2rem;
+    text-align: center;
+  }
+  .avatar {
+    width: 270px;
+    height: 270px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+}
+
+/* network icon size */
+ .md-icon {
+  font-size: 1.5rem;
+}
+
+
+/* homepage about title */ 
+.portrait-title h2 {
+  font-family: Calistoga-Regular;
+  font-weight: 300;
+}
+
+
 /* homepage section headers */
 .section-heading h1 {
   margin: 0 0 0px 0;
@@ -408,18 +462,52 @@ ul.nav-icons li.nav-item a.nav-link {
 
 }
 
-/* homepage about title */ 
-.portrait-title h2 {
-  font-family: Calistoga-Regular;
-  font-weight: 300;
-}
-
 /* page widths */
 .article-container {
   max-width: 825px;
   padding: 0 20px 0 20px;
   margin: 0 auto 0 auto;
   font-size: 18px;
+}
+
+/*************************************************
+ *  Projects widget - home page
+ **************************************************/
+
+.projects-container {
+  padding: 0 0.25rem 0.25rem 0.25rem;
+}
+
+.project-card {
+  margin: 0; /* Set to Isotope's gutter size */
+  position: relative;
+  width: calc(33.3% - 6*0.2rem); /* Fluid 3 columns (inc. 20px gutter) */
+}
+@media screen and (max-width: 1199px) {
+  .project-card {
+    width: calc(50% - 4*0.2rem); /* Fluid 2 columns (inc. 20px gutter) */
+  }
+}
+@media screen and (max-width: 768px) {
+  .project-card {
+    width: 100%; /* 1 column */
+  }
+}
+
+.project-item {
+  margin: 0;
+}
+
+.project-card.project-item .card {
+  margin: 0.2rem 0.2rem 0.4rem 0.2rem ; /* Set to Isotope's gutter size */
+}
+
+.project-card .card {
+  margin: 0; /* Remove default card margin and use Isotope gutter */
+}
+
+.project-showcase .project-item {
+  margin-bottom: 3rem;
 }
 
 /*************************************************

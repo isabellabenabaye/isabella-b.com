@@ -1,0 +1,62 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+{{ $author := "" }}
+{{ if .author }}
+  {{ $author = .author }}
+{{ else }}
+  {{ $author = $page.Params.author }}
+{{end}}
+
+{{ $person_page_path := (printf "/authors/%s" $author) }}
+{{ $person_page := site.GetPage $person_page_path }}
+{{ if not $person_page }}
+  {{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your About widget and create an associated author page if one does not already exist. See https://sourcethemes.com/academic/docs/page-builder/#about " $person_page_path }}
+{{end}}
+{{ $person := $person_page.Params }}
+{{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ $avatar_shape := site.Params.avatar.shape | default "circle" }}
+
+<!-- About widget -->
+<div class="about-widget">
+<div class="row">
+  <div class="col-12 col-lg-5">
+    <br>
+    {{ $avatar_image := $avatar.Fill "250x250 Center" }}   
+    <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">        
+  </div>
+  <div class="col-12 col-lg-7 card-about-outer"> 
+    <h1>Isabella Benabaye</h1>        
+      <div class="card-about" style="padding:1rem;padding-bottom:0.25rem;">
+        Hi! Welcome to my personal site. I <a href="/blog">blog</a> about the things I learn, mostly in R and python, and you can find my latest work and <a href="/#experience">experience</a> below. <a href="/about">More about me <i class="fas fa-long-arrow-alt-right"></i></a>
+        <br>
+        <br>
+        <ul class="network-icon" aria-hidden="true">
+          <li>
+              <p class="btn-articles"><a href="/files/cv.pdf" class="btn"><b>Resume</b></i></a></p>
+          </li> &emsp;
+          <li>
+            <a href="mailto:isabellabenabaye@gmail.com" style="color:black;border-bottom:none;"> 
+              <i class="fas fa-at md-icon"></i>
+            </a> &ensp;
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/isabella-benabaye/" style="color:black;border-bottom:none;">
+              <i class="fab fa-linkedin-in md-icon"></i>
+            </a> &ensp;
+          </li>
+          <li>
+            <a href="https://github.com/isabellabenabaye" style="color:black;border-bottom:none;">
+              <i class="fab fa-github md-icon"></i>
+            </a> &ensp;
+          </li>
+          <li>
+            <a href="https://twitter.com/_isabellamb" style="color:black;border-bottom:none;">
+              <i class="fab fa-twitter md-icon"></i>
+            </a>
+          </li>
+        </ul> 
+      </div>
+  </div>
+</div>
+</div>
