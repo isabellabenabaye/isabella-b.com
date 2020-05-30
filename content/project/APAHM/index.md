@@ -7,5 +7,6 @@ image:
 summary: "A visualization I made for Asian and Pacific Islander American Heritage Month ✨"
 tags:
 - Data Visualizations
+- featured
 title: 
 ---

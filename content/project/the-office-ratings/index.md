@@ -1,12 +1,12 @@
 ---
 date: "2020-03-28T00:00:00Z"
-external_link: https://isabella-b.com/blog/tidy-tuesday-the-office
+external_link: /blog/tidy-tuesday-the-office
 image:
-#  caption: Photo by Toa Heftiba on Unsplash
   focal_point: Smart
-summary: Tidy Tuesday, Week 12
+summary: Looking at The Office❜s IMDb ratings
 tags:
 - Tidy Tuesday
 - Data Visualizations
+- featured
 title: 
 ---

@@ -1,12 +1,12 @@
 ---
 date: "2020-04-26T00:00:00Z"
-external_link: https://github.com/isabellabenabaye/cal-poly-advanced-r/blob/master/week_2/Part one.png
+external_link: /blog/recreating-vaccines-plot
 image:
-#  caption: Photo by Toa Heftiba on Unsplash
   focal_point: Smart
-summary: Cal Poly's Stat 431 - Week 2, Lab pt.1
+summary: Recreation of a [visualization](https://wellcome.ac.uk/reports/wellcome-global-monitor/2018#&gid=1&pid=9) originally published by Wellcome Global Monitor in 2018.
 tags:
 - Data Visualizations
 - Stat 431
+- featured
 title:
 ---

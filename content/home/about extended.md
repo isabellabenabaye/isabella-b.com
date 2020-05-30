@@ -29,5 +29,5 @@ author = "admin"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["1rem", "0", "3rem", "0"]
+  padding = ["1rem", "0", "4rem", "0"]
 +++

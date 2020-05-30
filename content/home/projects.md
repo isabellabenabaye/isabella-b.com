@@ -23,7 +23,7 @@ subtitle = ""
   
   [[content.filter_button]]
     name = "All"
-    tag = "*"
+    tag = "featured"
   
 #  [[content.filter_button]]
 #    name = "Visualizations"
