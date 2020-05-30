@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "IMBd ratings of all 110 Community (2009 - 2015) episodes"
+title: "IMDb ratings of all 110 Community (2009 - 2015) episodes"
 summary: ""
 authors: []
 tags: [web scraping, data visualizations]
