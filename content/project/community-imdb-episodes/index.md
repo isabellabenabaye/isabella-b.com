@@ -42,7 +42,7 @@ The red and blue make it easy to see which are the series' worst and best episod
 
 We can also see that the series mostly ended each season strong and that the first half of the series was generally higher rated than the second half.
 
-To check out the distributions of each season and visualize them in a different way, I made a beeswarm plot. To make it, I used my visualization tool of choice, R and `ggplot2`. The annotated episodes are the two highest rated, season 1's episode 23 "Modern Warfare" & season 3's episode 4 "Remedial Chaos Theory", both with a rating of 9.8, along with the final episode and the last appearances of two of the core cast members.
+To focus more on the distributions of each season and visualize them in a different way, I made a beeswarm plot. To make it, I used my visualization tool of choice, R and `ggplot2`. The annotated episodes are the two highest rated, season 1's episode 23 "Modern Warfare" & season 3's episode 4 "Remedial Chaos Theory" (both with a rating of 9.8), along with the series finale and the last appearances of two of the core cast members.
 
 {{< figure src="Community Episodes.png" title="" lightbox="true" >}}
 
