@@ -473,15 +473,18 @@ ul.nav-icons li.nav-item a.nav-link {
 /*************************************************
  *  Projects widget - home page
  **************************************************/
+ .projects-container-main {
+  padding: 0 0.25rem 0.25rem 0.25rem;
+}
 
 .projects-container {
-  padding: 0 0.25rem 0.25rem 0.25rem;
+  padding: 0;
 }
 
 .project-card {
   margin: 0; /* Set to Isotope's gutter size */
   position: relative;
-  width: calc(33.3% - 6*0.2rem); /* Fluid 3 columns (inc. 20px gutter) */
+  width: calc(33.3% - 6*0.15rem); /* Fluid 3 columns (inc. 20px gutter) */
 }
 @media screen and (max-width: 1199px) {
   .project-card {
@@ -494,11 +497,8 @@ ul.nav-icons li.nav-item a.nav-link {
   }
 }
 
-.project-item {
-  margin: 0;
-}
 
-.project-card.project-item .card {
+.project-card .project-item .card {
   margin: 0.2rem 0.2rem 0.4rem 0.2rem ; /* Set to Isotope's gutter size */
 }
 

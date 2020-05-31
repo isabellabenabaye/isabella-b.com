@@ -21,7 +21,7 @@
 {{ else }}
 {{/* Single column layout. */}}
 
-<div class="margin-auto">
+<div class="margin-auto projects-container-main">
 
   <div class="center-text">
     {{ with $st.Title }}<h1 class="mt-0">{{ . | markdownify | emojify }}</h1>{{ end }}
@@ -34,7 +34,7 @@
 
     {{ if $st.Params.content.filter_button }}
 
-      {{ $filter_default := default (int $st.Params.content.filter_default) 0 }}
+      {{ $filter_default := default (int $st.Params.content.filter_default) 0 }}   
 
       {{/* Parse default filter tag from front matter in the form of either tag name or CSS class name. */}}
       {{ $default_filter_tag_raw := (index $st.Params.content.filter_button ($filter_default)).tag }}
@@ -49,8 +49,8 @@
       {{ if gt (len $st.Params.content.filter_button) 1 }}
       <div class="project-toolbar">
         <div class="project-filters">
-          <div class="btn-toolbar">
-            <div class="btn-group flex-wrap" style="padding-left:0.5rem;">
+          <div class="btn-toolbar"> 
+            <div class="btn-group flex-wrap projects-container-main">
               {{ range $idx, $item := $st.Params.content.filter_button }}
                 {{/* Parse filter tag from front matter in the form of either tag name or CSS class name. */}}
                 {{ $data_filter := printf ".js-id-%s" (replace .tag " " "-") }}
