@@ -402,15 +402,15 @@ ul.nav-icons li.nav-item a.nav-link {
 /*************************************************
  *  About widget - home page
  **************************************************/
- .avatar {
+.about-widget .avatar {
   width: 250px;
   height: 250px;
   margin: 0 auto;
-  margin-left: 8rem;
+  margin-left: 4rem;
 }
 
  .card-about-outer {
-  padding-right: 6rem;
+  padding-right: 5rem;
 }
 
 @media screen and (max-width: 1199px) {
@@ -418,7 +418,7 @@ ul.nav-icons li.nav-item a.nav-link {
     padding: 2rem;
     text-align: center;
   }
-  .avatar {
+  .about-widget .avatar {
     width: 270px;
     height: 270px;
     margin: 0 auto;
@@ -431,7 +431,7 @@ ul.nav-icons li.nav-item a.nav-link {
     padding: 2rem;
     text-align: center;
   }
-  .avatar {
+  .about-widget .avatar {
     width: 270px;
     height: 270px;
     margin: 0 auto;
