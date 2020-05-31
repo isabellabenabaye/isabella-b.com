@@ -21,7 +21,7 @@ email: "isabellabenabaye@gmail.com"
 #organizations:
 #- name: Stanford University
 #  url: ""
-role: Los Angeles, CA
+role: Data Analyst in Los Angeles, CA
 social:
 - icon: cv
   icon_pack: ai
@@ -44,4 +44,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-
+Portfolio & personal blog. On this site you can find my experience, publications, and latest work. I also blog about the things I learn, mostly in R and python.
