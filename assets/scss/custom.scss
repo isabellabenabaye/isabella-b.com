@@ -230,10 +230,15 @@ ul.nav-icons li.nav-item a.nav-link {
  .card-simple {
   background: #fff;
   box-shadow: none;
-  border: 1px solid rgba(0,0,0,.09);
+  border: 0px solid rgba(0,0,0,.09);
   border-radius: 3px;
   margin-top: 20px;
   padding: 15px 20px 15px 20px;
+  transition: all 0.2s ease-out;
+}
+
+.card-simple:hover {
+  box-shadow: 6px 6px 2px 0 rgba(33, 150, 186, 0.808);
 }
 
 .card-simple:first-of-type {
@@ -257,6 +262,7 @@ ul.nav-icons li.nav-item a.nav-link {
   background: #fff;
   box-shadow: none;
   transition: all 0.2s ease-out;
+  border: 0px solid rgba(0,0,0,.09);
 }
 
 .card .card-image {
@@ -327,11 +333,12 @@ ul.nav-icons li.nav-item a.nav-link {
   content: '\f0c1';
   text-align: center;
   font-size: 3rem;
-  color: #666;
+  color: rgba(0,0,0,.09);
+  border: 0px solid rgba(0,0,0,.09);
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 6px 6px 2px 0 rgba(33, 150, 186, 0.808);
 }
 
 .card:hover .card-image.hover-overlay:before {
@@ -473,22 +480,31 @@ ul.nav-icons li.nav-item a.nav-link {
 /*************************************************
  *  Projects widget - home page
  **************************************************/
+ .home-section, .wg-portfolio .container {
+   padding-left: 0;
+   padding-right: 0;
+ }
+
+ .home-section, .wg-portfolio .btn-toolbar {
+  padding: 0.6rem;
+}
+
  .projects-container-main {
-  padding: 0 0.25rem 0.25rem 0.25rem;
+  padding: 0;
 }
 
 .projects-container {
-  padding: 0;
+  padding: 0.5rem;
 }
 
 .project-card {
   margin: 0; /* Set to Isotope's gutter size */
   position: relative;
-  width: calc(33.3% - 6*0.15rem); /* Fluid 3 columns (inc. 20px gutter) */
+  width: calc(33.3% - 6*0.16rem); /* Fluid 3 columns (inc. 20px gutter) */
 }
 @media screen and (max-width: 1199px) {
   .project-card {
-    width: calc(50% - 4*0.2rem); /* Fluid 2 columns (inc. 20px gutter) */
+    width: calc(50% - 4*0.24rem); /* Fluid 2 columns (inc. 20px gutter) */
   }
 }
 @media screen and (max-width: 768px) {
@@ -496,7 +512,6 @@ ul.nav-icons li.nav-item a.nav-link {
     width: 100%; /* 1 column */
   }
 }
-
 
 .project-card .project-item .card {
   margin: 0.2rem 0.2rem 0.4rem 0.2rem ; /* Set to Isotope's gutter size */
