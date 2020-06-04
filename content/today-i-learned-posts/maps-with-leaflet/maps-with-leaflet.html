@@ -1,0 +1,251 @@
+---
+title: APIs & Interactive Maps with Leaflet
+author: ''
+date: '2020-06-01'
+slug: maps-with-leaflet
+categories: [100DaysOfCode, interactive maps, APIs, stat 431]
+tags: [100DaysOfCode, interactive maps, APIs, stat 431]
+summary: 'Requesting and mapping the International Space Station❜s pass times over U.S. state capitals.'
+authors: []
+reading_time: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+type: today-i-learned
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<p>Today I did made my first API requests in R! Using the Open Notify API, I pulled the information of when the International Space Station (ISS) is scheduled to pass over United States state capitals then mapped them using <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>. This exercise is part of lab 3 in the curriculum of <a href="https://cal-poly-advanced-r.github.io/STAT-431/">Cal Poly’s Stat 431</a>.</p>
+<p><a href="http://open-notify.org/Open-Notify-API/ISS-Pass-Times/">This</a> Open-Notify API provides predictions of pass times for a given location when given the corresponding latitude and longitude.</p>
+<div id="u.s.-state-captials-information" class="section level1">
+<h1>U.S. State Captials Information</h1>
+<p>To get the latitudes and longitudes of US state capitals, I used <a href="https://people.sc.fsu.edu/~jburkardt/datasets/states/states.html">this resource</a>.</p>
+<pre class="r"><code>library(tidyverse)
+library(httr)     ## for working with the API
+library(jsonlite) ## to work with the JSON data
+
+# Get the long &amp; lats of all the US state capitals
+capitals &lt;- read.table(&quot;https://people.sc.fsu.edu/~jburkardt/datasets/states/state_capitals_ll.txt&quot;, col.names = c(&quot;state&quot;,&quot;latitude&quot;,&quot;longitude&quot;))
+
+# Get the state capital names
+capital_names &lt;- read.table(&quot;https://people.sc.fsu.edu/~jburkardt/datasets/states/state_capitals_name.txt&quot;, col.names = c(&quot;state&quot;,&quot;capital&quot;))
+
+capitals &lt;- bind_cols(capitals, capital_names)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">state</th>
+<th align="right">latitude</th>
+<th align="right">longitude</th>
+<th align="left">state1</th>
+<th align="left">capital</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AL</td>
+<td align="right">32.36154</td>
+<td align="right">-86.27912</td>
+<td align="left">AL</td>
+<td align="left">Montgomery</td>
+</tr>
+<tr class="even">
+<td align="left">AK</td>
+<td align="right">58.30194</td>
+<td align="right">-134.41974</td>
+<td align="left">AK</td>
+<td align="left">Juneau</td>
+</tr>
+<tr class="odd">
+<td align="left">AZ</td>
+<td align="right">33.44846</td>
+<td align="right">-112.07384</td>
+<td align="left">AZ</td>
+<td align="left">Phoenix</td>
+</tr>
+<tr class="even">
+<td align="left">AR</td>
+<td align="right">34.73601</td>
+<td align="right">-92.33112</td>
+<td align="left">AR</td>
+<td align="left">Little Rock</td>
+</tr>
+<tr class="odd">
+<td align="left">CA</td>
+<td align="right">38.55560</td>
+<td align="right">-121.46893</td>
+<td align="left">CA</td>
+<td align="left">Sacramento</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="pass-times-for-u.s.-state-captials" class="section level1">
+<h1>Pass Times for U.S. State Captials</h1>
+<p>After getting the capitals information, I requested the ISS data from the Open Notify API. To see the structure of the response and how to get the information I needed, I looked at the information for one capital first.</p>
+<pre class="r"><code># Getting the data for the first state
+response &lt;- GET(&quot;http://api.open-notify.org/iss-pass.json&quot;, query = list(lat = capitals$latitude[1], lon = capitals$longitude[1]))
+
+# Extract the data from the response
+data = fromJSON(rawToChar(response$content))
+
+# Looking at the first pass time
+data$response[1,]</code></pre>
+<pre><code>##   duration   risetime
+## 1      453 1591229618</code></pre>
+<pre class="r"><code># Convert unix time to datetime
+as.POSIXct(as.numeric(data$response[1,][2]), origin=&quot;1970-01-01&quot;)</code></pre>
+<pre><code>## [1] &quot;2020-06-03 17:13:38 PDT&quot;</code></pre>
+<p>Now that I knew the structure of the data, I iterated the process of requesting the next three pass times from the API for each state capital.</p>
+<pre class="r"><code># Initialize dataframe
+capitals_pass_times &lt;- tibble(state = character(),
+       capital = character(),
+       lat = numeric(),
+       lon = numeric(),
+       duration = numeric(),
+       risetime_num = character(),
+       risetime = numeric())
+
+# Loop for all states
+for (s in 1:nrow(capitals)) {
+  # Getting the data for the first state
+  response &lt;- GET(&quot;http://api.open-notify.org/iss-pass.json&quot;, query = list(lat = capitals$latitude[s], lon = capitals$longitude[s]))
+  # Extract the data from the response
+  data = fromJSON(rawToChar(response$content))
+  
+  # Add the next 3 predicted pass times to dataframe
+  for (i in 1:3) {
+  capitals_pass_times &lt;- capitals_pass_times %&gt;% add_row(state = capitals$state[s],
+       capital = capitals$capital[s],
+       lat = capitals$latitude[s], 
+       lon = capitals$longitude[s],
+       duration = as.numeric(data$response[i,][&quot;duration&quot;]),
+       risetime_num = paste0(&quot;risetime_&quot;,i),
+       risetime = as.numeric(data$response[i,][&quot;risetime&quot;]))
+  }
+}</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">state</th>
+<th align="left">capital</th>
+<th align="right">lat</th>
+<th align="right">lon</th>
+<th align="right">duration</th>
+<th align="left">risetime_num</th>
+<th align="right">risetime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AL</td>
+<td align="left">Montgomery</td>
+<td align="right">32.36154</td>
+<td align="right">-86.27912</td>
+<td align="right">453</td>
+<td align="left">risetime_1</td>
+<td align="right">1591229618</td>
+</tr>
+<tr class="even">
+<td align="left">AL</td>
+<td align="left">Montgomery</td>
+<td align="right">32.36154</td>
+<td align="right">-86.27912</td>
+<td align="right">640</td>
+<td align="left">risetime_2</td>
+<td align="right">1591235377</td>
+</tr>
+<tr class="odd">
+<td align="left">AL</td>
+<td align="left">Montgomery</td>
+<td align="right">32.36154</td>
+<td align="right">-86.27912</td>
+<td align="right">563</td>
+<td align="left">risetime_3</td>
+<td align="right">1591241207</td>
+</tr>
+<tr class="even">
+<td align="left">AK</td>
+<td align="left">Juneau</td>
+<td align="right">58.30194</td>
+<td align="right">-134.41974</td>
+<td align="right">594</td>
+<td align="left">risetime_1</td>
+<td align="right">1591228991</td>
+</tr>
+<tr class="odd">
+<td align="left">AK</td>
+<td align="left">Juneau</td>
+<td align="right">58.30194</td>
+<td align="right">-134.41974</td>
+<td align="right">619</td>
+<td align="left">risetime_2</td>
+<td align="right">1591234747</td>
+</tr>
+<tr class="even">
+<td align="left">AK</td>
+<td align="left">Juneau</td>
+<td align="right">58.30194</td>
+<td align="right">-134.41974</td>
+<td align="right">587</td>
+<td align="left">risetime_3</td>
+<td align="right">1591240530</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mapping-the-capitals-displaying-the-pass-times" class="section level1">
+<h1>Mapping the Capitals &amp; Displaying the Pass Times</h1>
+<p>Using the <code>{leaflet}</code> package, I made a map with the US state capitals showing the next three predicted pass times for each capital. When hovering over a capital, the next predicted pass time will show. When clicking a capital, you’ll be able to see the next three predicted pass times.</p>
+<pre class="r"><code>library(leaflet)
+
+# Pivot table
+capitals_pass_times &lt;- pivot_wider(capitals_pass_times, id_cols = c(state,capital,lat,lon), names_from = risetime_num, values_from = risetime)
+
+# Convert unix time to datetime
+capitals_pass_times &lt;- capitals_pass_times %&gt;% 
+  mutate_at(c(&quot;risetime_1&quot;, &quot;risetime_2&quot;, &quot;risetime_3&quot;), ~as.POSIXct(., origin=&quot;1970-01-01&quot;)) %&gt;% 
+  arrange(risetime_1)
+
+# Get ISS icon
+ISSicon &lt;- makeIcon(iconUrl = &quot;http://open-notify.org/Open-Notify-API/map/ISSIcon.png&quot;,
+    iconWidth = 15, iconHeight = 15)
+
+# Map with leaflet
+m &lt;- leaflet(data = capitals_pass_times) %&gt;%
+  addTiles() %&gt;%  # Add default OpenStreetMap map tiles
+  addMarkers(lng = ~lon, lat = ~lat,
+             label = paste0(capitals_pass_times$capital, &quot;, &quot;,  capitals_pass_times$state, &quot; - Next predicted passtime: &quot;, capitals_pass_times$risetime_1),
+             popup = paste0(capitals_pass_times$capital, &quot;, &quot;,  capitals_pass_times$state,  &quot; - Next predicted passtimes: &quot;, capitals_pass_times$risetime_1, &quot;, &quot;, capitals_pass_times$risetime_2, &quot;, &quot;, capitals_pass_times$risetime_3), 
+             icon = ISSicon)
+
+m</code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[21.30895,58.301935,47.042418,44.931109,38.555605,39.160949,43.613739,46.595805,40.7547,48.813343,41.145548,39.7391667,44.367966,33.448457,35.667231,44.95,40.809868,41.590939,39.04,43.074722,35.482309,38.572954,39.78325,42.7335,39.790942,34.736009,39.962245,38.197274,36.165,38.349497,40.269789,44.26639,42.659829,32.32,38.913,38.972945,40.221741,43.220093,41.767,39.161921,33.76,37.54,44.323535,42.2352,41.82355,32.361538,35.771,34,30.266667,30.45809,30.4518,18.2208,38.913],[-157.826182,-134.41974,-122.893077,-123.029159,-121.468926,-119.753877,-116.237651,-112.027031,-111.892622,-100.779004,-104.802042,-104.984167,-100.336378,-112.073844,-105.964575,-93.094,-96.675345,-93.620866,-95.69,-89.384444,-97.534994,-92.189283,-89.650373,-84.5467,-86.147685,-92.331122,-83.000647,-84.86311,-86.784,-81.633294,-76.875613,-72.57194,-73.781339,-90.207,-77.013,-76.501157,-74.756138,-71.549127,-72.677,-75.526755,-84.39,-77.46,-69.765261,-71.0275,-71.422132,-86.279118,-78.638,-81.035,-97.75,-91.140229,-84.27277,-66.5901,77.013],{"iconUrl":{"data":"http://open-notify.org/Open-Notify-API/map/ISSIcon.png","index":0},"iconWidth":15,"iconHeight":15},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Honolulu, HI - Next predicted passtimes: 2020-06-03 16:55:19, 2020-06-03 23:31:14, 2020-06-04 01:07:00","Juneau, AK - Next predicted passtimes: 2020-06-03 17:03:11, 2020-06-03 18:39:07, 2020-06-03 20:15:30","Olympia, WA - Next predicted passtimes: 2020-06-03 17:03:51, 2020-06-03 18:41:04, 2020-06-03 20:17:56","Salem, OR - Next predicted passtimes: 2020-06-03 17:03:52, 2020-06-03 18:41:16, 2020-06-03 20:18:10","Sacramento, CA - Next predicted passtimes: 2020-06-03 17:04:48, 2020-06-03 18:42:43, 2020-06-03 20:19:28","Carson City, NV - Next predicted passtimes: 2020-06-03 17:05:06, 2020-06-03 18:42:53, 2020-06-03 20:19:37","Boise, ID - Next predicted passtimes: 2020-06-03 17:05:19, 2020-06-03 18:42:40, 2020-06-03 20:19:29","Helena, MT - Next predicted passtimes: 2020-06-03 17:05:55, 2020-06-03 18:42:59, 2020-06-03 20:19:51","Salt Lake City, UT - Next predicted passtimes: 2020-06-03 17:06:35, 2020-06-03 18:43:54, 2020-06-03 20:20:38","Bismarck, ND - Next predicted passtimes: 2020-06-03 17:07:47, 2020-06-03 18:44:38, 2020-06-03 20:21:51","Cheyenne, WY - Next predicted passtimes: 2020-06-03 17:07:58, 2020-06-03 18:45:00, 2020-06-03 20:21:48","Denver, CO - Next predicted passtimes: 2020-06-03 17:08:12, 2020-06-03 18:45:14, 2020-06-03 20:21:58","Pierre, SD - Next predicted passtimes: 2020-06-03 17:08:18, 2020-06-03 18:45:13, 2020-06-03 20:22:18","Phoenix, AZ - Next predicted passtimes: 2020-06-03 17:08:46, 2020-06-03 18:45:49, 2020-06-03 20:21:57","Santa Fe, NM - Next predicted passtimes: 2020-06-03 17:09:08, 2020-06-03 18:46:01, 2020-06-03 20:22:28","St Paul, MN - Next predicted passtimes: 2020-06-03 17:09:31, 2020-06-03 18:46:21, 2020-06-03 20:23:53","Lincoln, NE - Next predicted passtimes: 2020-06-03 17:09:33, 2020-06-03 18:46:22, 2020-06-03 20:23:26","Des Moines, IA - Next predicted passtimes: 2020-06-03 17:09:57, 2020-06-03 18:46:44, 2020-06-03 20:24:01","Topeka, KS - Next predicted passtimes: 2020-06-03 17:10:07, 2020-06-03 18:46:50, 2020-06-03 20:23:51","Madison, WI - Next predicted passtimes: 2020-06-03 17:10:26, 2020-06-03 18:47:14, 2020-06-03 20:24:59","Oklahoma City, OK - Next predicted passtimes: 2020-06-03 17:10:48, 2020-06-03 18:47:18, 2020-06-03 20:23:58","Jefferson City, MO - Next predicted passtimes: 2020-06-03 17:10:50, 2020-06-03 18:47:29, 2020-06-03 20:24:40","Springfield, IL - Next predicted passtimes: 2020-06-03 17:10:59, 2020-06-03 18:47:41, 2020-06-03 20:25:09","Lansing, MI - Next predicted passtimes: 2020-06-03 17:11:18, 2020-06-03 18:48:07, 2020-06-03 20:26:34","Indianapolis, IN - Next predicted passtimes: 2020-06-03 17:11:34, 2020-06-03 18:48:16, 2020-06-03 20:26:06","Little Rock, AR - Next predicted passtimes: 2020-06-03 17:11:55, 2020-06-03 18:48:13, 2020-06-03 20:25:07","Columbus, OH - Next predicted passtimes: 2020-06-03 17:12:03, 2020-06-03 18:48:47, 2020-06-03 20:27:08","Frankfort, KY - Next predicted passtimes: 2020-06-03 17:12:08, 2020-06-03 18:48:44, 2020-06-03 20:26:35","Nashville, TN - Next predicted passtimes: 2020-06-03 17:12:20, 2020-06-03 18:48:47, 2020-06-03 20:26:14","Charleston, WV - Next predicted passtimes: 2020-06-03 17:12:36, 2020-06-03 18:49:16, 2020-06-03 20:27:40","Harrisburg, PA - Next predicted passtimes: 2020-06-03 17:12:58, 2020-06-03 18:49:51, 2020-06-04 09:56:25","Montpelier, VT - Next predicted passtimes: 2020-06-03 17:13:03, 2020-06-03 18:50:19, 2020-06-04 09:57:49","Albany, NY - Next predicted passtimes: 2020-06-03 17:13:05, 2020-06-03 18:50:12, 2020-06-04 09:57:16","Jackson, MS - Next predicted passtimes: 2020-06-03 17:13:09, 2020-06-03 18:49:04, 2020-06-03 20:25:54","District of Columbia, DC - Next predicted passtimes: 2020-06-03 17:13:13, 2020-06-03 18:50:01, 2020-06-03 20:30:30","Annapolis, MD - Next predicted passtimes: 2020-06-03 17:13:17, 2020-06-03 18:50:06, 2020-06-04 09:56:02","Trenton, NJ - Next predicted passtimes: 2020-06-03 17:13:19, 2020-06-03 18:50:17, 2020-06-04 09:56:30","Concord, NH - Next predicted passtimes: 2020-06-03 17:13:22, 2020-06-03 18:50:39, 2020-06-04 09:57:34","Hartford, CT - Next predicted passtimes: 2020-06-03 17:13:24, 2020-06-03 18:50:32, 2020-06-04 09:57:04","Dover, DE - Next predicted passtimes: 2020-06-03 17:13:24, 2020-06-03 18:50:16, 2020-06-04 09:56:09","Atlanta, GA - Next predicted passtimes: 2020-06-03 17:13:24, 2020-06-03 18:49:37, 2020-06-03 20:27:06","Richmond, VA - Next predicted passtimes: 2020-06-03 17:13:26, 2020-06-03 18:50:08, 2020-06-03 20:29:36","Augusta, ME - Next predicted passtimes: 2020-06-03 17:13:31, 2020-06-03 18:50:59, 2020-06-04 09:57:59","Boston, MA - Next predicted passtimes: 2020-06-03 17:13:36, 2020-06-03 18:50:51, 2020-06-04 09:57:19","Providence, RI - Next predicted passtimes: 2020-06-03 17:13:36, 2020-06-03 18:50:48, 2020-06-04 09:57:11","Montgomery, AL - Next predicted passtimes: 2020-06-03 17:13:38, 2020-06-03 18:49:37, 2020-06-03 20:26:47","Raleigh, NC - Next predicted passtimes: 2020-06-03 17:13:39, 2020-06-03 18:50:12, 2020-06-03 20:28:53","Columbia, SC - Next predicted passtimes: 2020-06-03 17:13:47, 2020-06-03 18:50:06, 2020-06-03 20:28:04","Austin, TX - Next predicted passtimes: 2020-06-03 17:13:59, 2020-06-03 18:48:40, 2020-06-03 20:24:49","Baton Rouge, LA - Next predicted passtimes: 2020-06-03 17:14:01, 2020-06-03 18:49:25, 2020-06-03 20:25:59","Tallahassee, FL - Next predicted passtimes: 2020-06-03 17:14:38, 2020-06-03 18:50:20, 2020-06-03 20:27:31","San Juan, PR - Next predicted passtimes: 2020-06-03 17:21:02, 2020-06-03 18:55:35, 2020-06-03 20:34:29","District of Columbia, US - Next predicted passtimes: 2020-06-03 23:06:03, 2020-06-04 00:39:56, 2020-06-04 02:17:14"],null,null,null,["Honolulu, HI - Next predicted passtime: 2020-06-03 16:55:19","Juneau, AK - Next predicted passtime: 2020-06-03 17:03:11","Olympia, WA - Next predicted passtime: 2020-06-03 17:03:51","Salem, OR - Next predicted passtime: 2020-06-03 17:03:52","Sacramento, CA - Next predicted passtime: 2020-06-03 17:04:48","Carson City, NV - Next predicted passtime: 2020-06-03 17:05:06","Boise, ID - Next predicted passtime: 2020-06-03 17:05:19","Helena, MT - Next predicted passtime: 2020-06-03 17:05:55","Salt Lake City, UT - Next predicted passtime: 2020-06-03 17:06:35","Bismarck, ND - Next predicted passtime: 2020-06-03 17:07:47","Cheyenne, WY - Next predicted passtime: 2020-06-03 17:07:58","Denver, CO - Next predicted passtime: 2020-06-03 17:08:12","Pierre, SD - Next predicted passtime: 2020-06-03 17:08:18","Phoenix, AZ - Next predicted passtime: 2020-06-03 17:08:46","Santa Fe, NM - Next predicted passtime: 2020-06-03 17:09:08","St Paul, MN - Next predicted passtime: 2020-06-03 17:09:31","Lincoln, NE - Next predicted passtime: 2020-06-03 17:09:33","Des Moines, IA - Next predicted passtime: 2020-06-03 17:09:57","Topeka, KS - Next predicted passtime: 2020-06-03 17:10:07","Madison, WI - Next predicted passtime: 2020-06-03 17:10:26","Oklahoma City, OK - Next predicted passtime: 2020-06-03 17:10:48","Jefferson City, MO - Next predicted passtime: 2020-06-03 17:10:50","Springfield, IL - Next predicted passtime: 2020-06-03 17:10:59","Lansing, MI - Next predicted passtime: 2020-06-03 17:11:18","Indianapolis, IN - Next predicted passtime: 2020-06-03 17:11:34","Little Rock, AR - Next predicted passtime: 2020-06-03 17:11:55","Columbus, OH - Next predicted passtime: 2020-06-03 17:12:03","Frankfort, KY - Next predicted passtime: 2020-06-03 17:12:08","Nashville, TN - Next predicted passtime: 2020-06-03 17:12:20","Charleston, WV - Next predicted passtime: 2020-06-03 17:12:36","Harrisburg, PA - Next predicted passtime: 2020-06-03 17:12:58","Montpelier, VT - Next predicted passtime: 2020-06-03 17:13:03","Albany, NY - Next predicted passtime: 2020-06-03 17:13:05","Jackson, MS - Next predicted passtime: 2020-06-03 17:13:09","District of Columbia, DC - Next predicted passtime: 2020-06-03 17:13:13","Annapolis, MD - Next predicted passtime: 2020-06-03 17:13:17","Trenton, NJ - Next predicted passtime: 2020-06-03 17:13:19","Concord, NH - Next predicted passtime: 2020-06-03 17:13:22","Hartford, CT - Next predicted passtime: 2020-06-03 17:13:24","Dover, DE - Next predicted passtime: 2020-06-03 17:13:24","Atlanta, GA - Next predicted passtime: 2020-06-03 17:13:24","Richmond, VA - Next predicted passtime: 2020-06-03 17:13:26","Augusta, ME - Next predicted passtime: 2020-06-03 17:13:31","Boston, MA - Next predicted passtime: 2020-06-03 17:13:36","Providence, RI - Next predicted passtime: 2020-06-03 17:13:36","Montgomery, AL - Next predicted passtime: 2020-06-03 17:13:38","Raleigh, NC - Next predicted passtime: 2020-06-03 17:13:39","Columbia, SC - Next predicted passtime: 2020-06-03 17:13:47","Austin, TX - Next predicted passtime: 2020-06-03 17:13:59","Baton Rouge, LA - Next predicted passtime: 2020-06-03 17:14:01","Tallahassee, FL - Next predicted passtime: 2020-06-03 17:14:38","San Juan, PR - Next predicted passtime: 2020-06-03 17:21:02","District of Columbia, US - Next predicted passtime: 2020-06-03 23:06:03"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[18.2208,58.301935],"lng":[-157.826182,77.013]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="drawing-the-route-of-the-iss" class="section level1">
+<h1>Drawing the Route of the ISS</h1>
+<p>To see the expected pass order of the ISS, I added polylines in order of pass times.</p>
+<pre class="r"><code>route &lt;- leaflet(data = capitals_pass_times) %&gt;%
+  addTiles() %&gt;%  # Add default OpenStreetMap map tiles
+  addPolylines(lat = ~lat, lng = ~lon, color = &quot;red&quot;) %&gt;% 
+  addMarkers(lng = ~lon, lat = ~lat, 
+             label = paste0(capitals_pass_times$capital, &quot;, &quot;,  capitals_pass_times$state, &quot; - Next predicted passtime: &quot;, capitals_pass_times$risetime_1),
+             popup = paste0(capitals_pass_times$capital, &quot;, &quot;,  capitals_pass_times$state,  &quot; - Next predicted passtimes: &quot;, capitals_pass_times$risetime_1, &quot;, &quot;, capitals_pass_times$risetime_2, &quot;, &quot;, capitals_pass_times$risetime_3), 
+             icon = ISSicon)
+
+route</code></pre>
+<div id="htmlwidget-2" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPolylines","args":[[[[{"lng":[-157.826182,-134.41974,-122.893077,-123.029159,-121.468926,-119.753877,-116.237651,-112.027031,-111.892622,-100.779004,-104.802042,-104.984167,-100.336378,-112.073844,-105.964575,-93.094,-96.675345,-93.620866,-95.69,-89.384444,-97.534994,-92.189283,-89.650373,-84.5467,-86.147685,-92.331122,-83.000647,-84.86311,-86.784,-81.633294,-76.875613,-72.57194,-73.781339,-90.207,-77.013,-76.501157,-74.756138,-71.549127,-72.677,-75.526755,-84.39,-77.46,-69.765261,-71.0275,-71.422132,-86.279118,-78.638,-81.035,-97.75,-91.140229,-84.27277,-66.5901,77.013],"lat":[21.30895,58.301935,47.042418,44.931109,38.555605,39.160949,43.613739,46.595805,40.7547,48.813343,41.145548,39.7391667,44.367966,33.448457,35.667231,44.95,40.809868,41.590939,39.04,43.074722,35.482309,38.572954,39.78325,42.7335,39.790942,34.736009,39.962245,38.197274,36.165,38.349497,40.269789,44.26639,42.659829,32.32,38.913,38.972945,40.221741,43.220093,41.767,39.161921,33.76,37.54,44.323535,42.2352,41.82355,32.361538,35.771,34,30.266667,30.45809,30.4518,18.2208,38.913]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"red","weight":5,"opacity":0.5,"fill":false,"fillColor":"red","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[[21.30895,58.301935,47.042418,44.931109,38.555605,39.160949,43.613739,46.595805,40.7547,48.813343,41.145548,39.7391667,44.367966,33.448457,35.667231,44.95,40.809868,41.590939,39.04,43.074722,35.482309,38.572954,39.78325,42.7335,39.790942,34.736009,39.962245,38.197274,36.165,38.349497,40.269789,44.26639,42.659829,32.32,38.913,38.972945,40.221741,43.220093,41.767,39.161921,33.76,37.54,44.323535,42.2352,41.82355,32.361538,35.771,34,30.266667,30.45809,30.4518,18.2208,38.913],[-157.826182,-134.41974,-122.893077,-123.029159,-121.468926,-119.753877,-116.237651,-112.027031,-111.892622,-100.779004,-104.802042,-104.984167,-100.336378,-112.073844,-105.964575,-93.094,-96.675345,-93.620866,-95.69,-89.384444,-97.534994,-92.189283,-89.650373,-84.5467,-86.147685,-92.331122,-83.000647,-84.86311,-86.784,-81.633294,-76.875613,-72.57194,-73.781339,-90.207,-77.013,-76.501157,-74.756138,-71.549127,-72.677,-75.526755,-84.39,-77.46,-69.765261,-71.0275,-71.422132,-86.279118,-78.638,-81.035,-97.75,-91.140229,-84.27277,-66.5901,77.013],{"iconUrl":{"data":"http://open-notify.org/Open-Notify-API/map/ISSIcon.png","index":0},"iconWidth":15,"iconHeight":15},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Honolulu, HI - Next predicted passtimes: 2020-06-03 16:55:19, 2020-06-03 23:31:14, 2020-06-04 01:07:00","Juneau, AK - Next predicted passtimes: 2020-06-03 17:03:11, 2020-06-03 18:39:07, 2020-06-03 20:15:30","Olympia, WA - Next predicted passtimes: 2020-06-03 17:03:51, 2020-06-03 18:41:04, 2020-06-03 20:17:56","Salem, OR - Next predicted passtimes: 2020-06-03 17:03:52, 2020-06-03 18:41:16, 2020-06-03 20:18:10","Sacramento, CA - Next predicted passtimes: 2020-06-03 17:04:48, 2020-06-03 18:42:43, 2020-06-03 20:19:28","Carson City, NV - Next predicted passtimes: 2020-06-03 17:05:06, 2020-06-03 18:42:53, 2020-06-03 20:19:37","Boise, ID - Next predicted passtimes: 2020-06-03 17:05:19, 2020-06-03 18:42:40, 2020-06-03 20:19:29","Helena, MT - Next predicted passtimes: 2020-06-03 17:05:55, 2020-06-03 18:42:59, 2020-06-03 20:19:51","Salt Lake City, UT - Next predicted passtimes: 2020-06-03 17:06:35, 2020-06-03 18:43:54, 2020-06-03 20:20:38","Bismarck, ND - Next predicted passtimes: 2020-06-03 17:07:47, 2020-06-03 18:44:38, 2020-06-03 20:21:51","Cheyenne, WY - Next predicted passtimes: 2020-06-03 17:07:58, 2020-06-03 18:45:00, 2020-06-03 20:21:48","Denver, CO - Next predicted passtimes: 2020-06-03 17:08:12, 2020-06-03 18:45:14, 2020-06-03 20:21:58","Pierre, SD - Next predicted passtimes: 2020-06-03 17:08:18, 2020-06-03 18:45:13, 2020-06-03 20:22:18","Phoenix, AZ - Next predicted passtimes: 2020-06-03 17:08:46, 2020-06-03 18:45:49, 2020-06-03 20:21:57","Santa Fe, NM - Next predicted passtimes: 2020-06-03 17:09:08, 2020-06-03 18:46:01, 2020-06-03 20:22:28","St Paul, MN - Next predicted passtimes: 2020-06-03 17:09:31, 2020-06-03 18:46:21, 2020-06-03 20:23:53","Lincoln, NE - Next predicted passtimes: 2020-06-03 17:09:33, 2020-06-03 18:46:22, 2020-06-03 20:23:26","Des Moines, IA - Next predicted passtimes: 2020-06-03 17:09:57, 2020-06-03 18:46:44, 2020-06-03 20:24:01","Topeka, KS - Next predicted passtimes: 2020-06-03 17:10:07, 2020-06-03 18:46:50, 2020-06-03 20:23:51","Madison, WI - Next predicted passtimes: 2020-06-03 17:10:26, 2020-06-03 18:47:14, 2020-06-03 20:24:59","Oklahoma City, OK - Next predicted passtimes: 2020-06-03 17:10:48, 2020-06-03 18:47:18, 2020-06-03 20:23:58","Jefferson City, MO - Next predicted passtimes: 2020-06-03 17:10:50, 2020-06-03 18:47:29, 2020-06-03 20:24:40","Springfield, IL - Next predicted passtimes: 2020-06-03 17:10:59, 2020-06-03 18:47:41, 2020-06-03 20:25:09","Lansing, MI - Next predicted passtimes: 2020-06-03 17:11:18, 2020-06-03 18:48:07, 2020-06-03 20:26:34","Indianapolis, IN - Next predicted passtimes: 2020-06-03 17:11:34, 2020-06-03 18:48:16, 2020-06-03 20:26:06","Little Rock, AR - Next predicted passtimes: 2020-06-03 17:11:55, 2020-06-03 18:48:13, 2020-06-03 20:25:07","Columbus, OH - Next predicted passtimes: 2020-06-03 17:12:03, 2020-06-03 18:48:47, 2020-06-03 20:27:08","Frankfort, KY - Next predicted passtimes: 2020-06-03 17:12:08, 2020-06-03 18:48:44, 2020-06-03 20:26:35","Nashville, TN - Next predicted passtimes: 2020-06-03 17:12:20, 2020-06-03 18:48:47, 2020-06-03 20:26:14","Charleston, WV - Next predicted passtimes: 2020-06-03 17:12:36, 2020-06-03 18:49:16, 2020-06-03 20:27:40","Harrisburg, PA - Next predicted passtimes: 2020-06-03 17:12:58, 2020-06-03 18:49:51, 2020-06-04 09:56:25","Montpelier, VT - Next predicted passtimes: 2020-06-03 17:13:03, 2020-06-03 18:50:19, 2020-06-04 09:57:49","Albany, NY - Next predicted passtimes: 2020-06-03 17:13:05, 2020-06-03 18:50:12, 2020-06-04 09:57:16","Jackson, MS - Next predicted passtimes: 2020-06-03 17:13:09, 2020-06-03 18:49:04, 2020-06-03 20:25:54","District of Columbia, DC - Next predicted passtimes: 2020-06-03 17:13:13, 2020-06-03 18:50:01, 2020-06-03 20:30:30","Annapolis, MD - Next predicted passtimes: 2020-06-03 17:13:17, 2020-06-03 18:50:06, 2020-06-04 09:56:02","Trenton, NJ - Next predicted passtimes: 2020-06-03 17:13:19, 2020-06-03 18:50:17, 2020-06-04 09:56:30","Concord, NH - Next predicted passtimes: 2020-06-03 17:13:22, 2020-06-03 18:50:39, 2020-06-04 09:57:34","Hartford, CT - Next predicted passtimes: 2020-06-03 17:13:24, 2020-06-03 18:50:32, 2020-06-04 09:57:04","Dover, DE - Next predicted passtimes: 2020-06-03 17:13:24, 2020-06-03 18:50:16, 2020-06-04 09:56:09","Atlanta, GA - Next predicted passtimes: 2020-06-03 17:13:24, 2020-06-03 18:49:37, 2020-06-03 20:27:06","Richmond, VA - Next predicted passtimes: 2020-06-03 17:13:26, 2020-06-03 18:50:08, 2020-06-03 20:29:36","Augusta, ME - Next predicted passtimes: 2020-06-03 17:13:31, 2020-06-03 18:50:59, 2020-06-04 09:57:59","Boston, MA - Next predicted passtimes: 2020-06-03 17:13:36, 2020-06-03 18:50:51, 2020-06-04 09:57:19","Providence, RI - Next predicted passtimes: 2020-06-03 17:13:36, 2020-06-03 18:50:48, 2020-06-04 09:57:11","Montgomery, AL - Next predicted passtimes: 2020-06-03 17:13:38, 2020-06-03 18:49:37, 2020-06-03 20:26:47","Raleigh, NC - Next predicted passtimes: 2020-06-03 17:13:39, 2020-06-03 18:50:12, 2020-06-03 20:28:53","Columbia, SC - Next predicted passtimes: 2020-06-03 17:13:47, 2020-06-03 18:50:06, 2020-06-03 20:28:04","Austin, TX - Next predicted passtimes: 2020-06-03 17:13:59, 2020-06-03 18:48:40, 2020-06-03 20:24:49","Baton Rouge, LA - Next predicted passtimes: 2020-06-03 17:14:01, 2020-06-03 18:49:25, 2020-06-03 20:25:59","Tallahassee, FL - Next predicted passtimes: 2020-06-03 17:14:38, 2020-06-03 18:50:20, 2020-06-03 20:27:31","San Juan, PR - Next predicted passtimes: 2020-06-03 17:21:02, 2020-06-03 18:55:35, 2020-06-03 20:34:29","District of Columbia, US - Next predicted passtimes: 2020-06-03 23:06:03, 2020-06-04 00:39:56, 2020-06-04 02:17:14"],null,null,null,["Honolulu, HI - Next predicted passtime: 2020-06-03 16:55:19","Juneau, AK - Next predicted passtime: 2020-06-03 17:03:11","Olympia, WA - Next predicted passtime: 2020-06-03 17:03:51","Salem, OR - Next predicted passtime: 2020-06-03 17:03:52","Sacramento, CA - Next predicted passtime: 2020-06-03 17:04:48","Carson City, NV - Next predicted passtime: 2020-06-03 17:05:06","Boise, ID - Next predicted passtime: 2020-06-03 17:05:19","Helena, MT - Next predicted passtime: 2020-06-03 17:05:55","Salt Lake City, UT - Next predicted passtime: 2020-06-03 17:06:35","Bismarck, ND - Next predicted passtime: 2020-06-03 17:07:47","Cheyenne, WY - Next predicted passtime: 2020-06-03 17:07:58","Denver, CO - Next predicted passtime: 2020-06-03 17:08:12","Pierre, SD - Next predicted passtime: 2020-06-03 17:08:18","Phoenix, AZ - Next predicted passtime: 2020-06-03 17:08:46","Santa Fe, NM - Next predicted passtime: 2020-06-03 17:09:08","St Paul, MN - Next predicted passtime: 2020-06-03 17:09:31","Lincoln, NE - Next predicted passtime: 2020-06-03 17:09:33","Des Moines, IA - Next predicted passtime: 2020-06-03 17:09:57","Topeka, KS - Next predicted passtime: 2020-06-03 17:10:07","Madison, WI - Next predicted passtime: 2020-06-03 17:10:26","Oklahoma City, OK - Next predicted passtime: 2020-06-03 17:10:48","Jefferson City, MO - Next predicted passtime: 2020-06-03 17:10:50","Springfield, IL - Next predicted passtime: 2020-06-03 17:10:59","Lansing, MI - Next predicted passtime: 2020-06-03 17:11:18","Indianapolis, IN - Next predicted passtime: 2020-06-03 17:11:34","Little Rock, AR - Next predicted passtime: 2020-06-03 17:11:55","Columbus, OH - Next predicted passtime: 2020-06-03 17:12:03","Frankfort, KY - Next predicted passtime: 2020-06-03 17:12:08","Nashville, TN - Next predicted passtime: 2020-06-03 17:12:20","Charleston, WV - Next predicted passtime: 2020-06-03 17:12:36","Harrisburg, PA - Next predicted passtime: 2020-06-03 17:12:58","Montpelier, VT - Next predicted passtime: 2020-06-03 17:13:03","Albany, NY - Next predicted passtime: 2020-06-03 17:13:05","Jackson, MS - Next predicted passtime: 2020-06-03 17:13:09","District of Columbia, DC - Next predicted passtime: 2020-06-03 17:13:13","Annapolis, MD - Next predicted passtime: 2020-06-03 17:13:17","Trenton, NJ - Next predicted passtime: 2020-06-03 17:13:19","Concord, NH - Next predicted passtime: 2020-06-03 17:13:22","Hartford, CT - Next predicted passtime: 2020-06-03 17:13:24","Dover, DE - Next predicted passtime: 2020-06-03 17:13:24","Atlanta, GA - Next predicted passtime: 2020-06-03 17:13:24","Richmond, VA - Next predicted passtime: 2020-06-03 17:13:26","Augusta, ME - Next predicted passtime: 2020-06-03 17:13:31","Boston, MA - Next predicted passtime: 2020-06-03 17:13:36","Providence, RI - Next predicted passtime: 2020-06-03 17:13:36","Montgomery, AL - Next predicted passtime: 2020-06-03 17:13:38","Raleigh, NC - Next predicted passtime: 2020-06-03 17:13:39","Columbia, SC - Next predicted passtime: 2020-06-03 17:13:47","Austin, TX - Next predicted passtime: 2020-06-03 17:13:59","Baton Rouge, LA - Next predicted passtime: 2020-06-03 17:14:01","Tallahassee, FL - Next predicted passtime: 2020-06-03 17:14:38","San Juan, PR - Next predicted passtime: 2020-06-03 17:21:02","District of Columbia, US - Next predicted passtime: 2020-06-03 23:06:03"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[18.2208,58.301935],"lng":[-157.826182,77.013]}},"evals":[],"jsHooks":[]}</script>
+</div>

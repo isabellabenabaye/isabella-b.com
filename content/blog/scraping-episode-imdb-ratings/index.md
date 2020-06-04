@@ -53,8 +53,7 @@ In *this* tutorial I will *not* be redundant in explaining what they already did
 [^1]: In the tutorial, they have extra sections where they control the crawl-rate & monitor the loop as it's still going, but we won't do that here because series' have much less episodes (they scraped 2000+ movies) so that's not necessary.      
 
 
-<br>    
-<br>     
+<br>       
     
 # Breaking it down
 First, you'll need to navigate to the series of your choice's season 1 page that lists all of that season's episodes. The series I will be using is Community. It should look like this:

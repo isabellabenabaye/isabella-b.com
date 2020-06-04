@@ -1,8 +1,23 @@
 /* headers in posts */
+.article-style h1 {
+  font-size: 1.7rem;
+}
+.article-style h2 {
+  font-size: 1.5rem;
+}
+.article-style h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.article-style h4, h5, h6 {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .article-style h1, h2, h3, h4 {
-  font-family: 'DM Mono';
-  letter-spacing: -.04rem;
-  font-weight: normal;
+  font-family: 'Work Sans';
+  margin-top: 2rem;
+  font-weight: 500;
 }
 
 /* titles on blog index */
@@ -275,7 +290,7 @@ ul.nav-icons li.nav-item a.nav-link {
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.5;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .card h4 a {
@@ -290,7 +305,7 @@ ul.nav-icons li.nav-item a.nav-link {
 }
 
 .card .card-text {
-  padding: 0.75rem 1rem 0.75rem;
+  padding: 1rem;
 }
 
 .card .card-text p {
@@ -478,15 +493,24 @@ ul.nav-icons li.nav-item a.nav-link {
 }
 
 /*************************************************
- *  Projects widget - home page
+ *  Projects / TIL widget - home page
  **************************************************/
- .home-section, .wg-portfolio .container {
+ .home-section, .wg-portfolio, .container {
    padding-left: 0;
    padding-right: 0;
  }
 
- .home-section, .wg-portfolio .btn-toolbar {
+ .home-section, .wg-portfolio, .btn-toolbar {
   padding: 0.6rem;
+}
+
+.home-section, .wg-today-i-learned .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.home-section, .wg-today-i-learned .btn-toolbar {
+ padding: 0.6rem;
 }
 
  .projects-container-main {

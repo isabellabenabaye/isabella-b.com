@@ -108,6 +108,8 @@ link_hover = "#118AB2"
 <br />
 
 ## About widget without a summary
+
+{{< figure src="about-widget-example.png" title="About widget without a summary" lightbox="true" >}}
 If you only want to show your photo and social links in your `about` widget like I did, you'll need to override Academic's `about.html` located in `hugo-academic/layouts/partials/widgets` by putting in an html layout in your root `layouts/partials/widgets/`.    
 There are two ways you can approach this, by    
 (1 - **recommended**) using my `about.html` if you want it to be formatted exactly like [mine](https://isabella-b.com) is (centered, avatar & links only),    

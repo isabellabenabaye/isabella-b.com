@@ -1,0 +1,142 @@
+---
+title: APIs & Interactive Maps with Leaflet
+author: ''
+date: '2020-06-01'
+slug: maps-with-leaflet
+categories: [100DaysOfCode, interactive maps, APIs, stat 431]
+tags: [100DaysOfCode, interactive maps, APIs, stat 431]
+summary: 'Requesting and mapping the International Space Station❜s pass times over U.S. state capitals.'
+authors: []
+reading_time: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+type: today-i-learned
+---
+
+Today I made my first API requests in R! Using the Open Notify API, I pulled the information of when the International Space Station (ISS) is scheduled to pass over United States state capitals then mapped them using [`{leaflet}`](https://rstudio.github.io/leaflet/). This exercise is part of lab 3 in the curriculum of [Cal Poly's Stat 431](https://cal-poly-advanced-r.github.io/STAT-431/).
+
+[This](http://open-notify.org/Open-Notify-API/ISS-Pass-Times/) Open-Notify API provides predictions of pass times for a given location when given the corresponding latitude and longitude.
+
+# U.S. State Captials Information
+
+To get the latitudes and longitudes of US state capitals, I used [this resource](https://people.sc.fsu.edu/~jburkardt/datasets/states/states.html).
+
+```{r message=FALSE, warning=FALSE, results=FALSE}
+library(tidyverse)
+library(httr)     ## for working with the API
+library(jsonlite) ## to work with the JSON data
+
+# Get the long & lats of all the US state capitals
+capitals <- read.table("https://people.sc.fsu.edu/~jburkardt/datasets/states/state_capitals_ll.txt", col.names = c("state","latitude","longitude"))
+
+# Get the state capital names
+capital_names <- read.table("https://people.sc.fsu.edu/~jburkardt/datasets/states/state_capitals_name.txt", col.names = c("state","capital"))
+
+capitals <- bind_cols(capitals, capital_names)
+```
+```{r echo=FALSE}
+capitals %>% head(5) %>% knitr::kable()
+```
+
+
+# Pass Times for U.S. State Captials
+
+After getting the capitals information, I requested the ISS data from the Open Notify API. To see the structure of the response and how to get the information I needed, I looked at the information for one capital first.
+
+```{r}
+# Getting the data for the first state
+response <- GET("http://api.open-notify.org/iss-pass.json", query = list(lat = capitals$latitude[1], lon = capitals$longitude[1]))
+
+# Extract the data from the response
+data = fromJSON(rawToChar(response$content))
+
+# Looking at the first pass time
+data$response[1,]
+
+# Convert unix time to datetime
+as.POSIXct(as.numeric(data$response[1,][2]), origin="1970-01-01")
+```
+
+Now that I knew the structure of the data, I iterated the process of requesting the next three pass times from the API for each state capital.
+
+```{r}
+# Initialize dataframe
+capitals_pass_times <- tibble(state = character(),
+       capital = character(),
+       lat = numeric(),
+       lon = numeric(),
+       duration = numeric(),
+       risetime_num = character(),
+       risetime = numeric())
+
+# Loop for all states
+for (s in 1:nrow(capitals)) {
+  # Getting the data for the first state
+  response <- GET("http://api.open-notify.org/iss-pass.json", query = list(lat = capitals$latitude[s], lon = capitals$longitude[s]))
+  # Extract the data from the response
+  data = fromJSON(rawToChar(response$content))
+  
+  # Add the next 3 predicted pass times to dataframe
+  for (i in 1:3) {
+  capitals_pass_times <- capitals_pass_times %>% add_row(state = capitals$state[s],
+       capital = capitals$capital[s],
+       lat = capitals$latitude[s], 
+       lon = capitals$longitude[s],
+       duration = as.numeric(data$response[i,]["duration"]),
+       risetime_num = paste0("risetime_",i),
+       risetime = as.numeric(data$response[i,]["risetime"]))
+  }
+}
+```
+```{r echo=FALSE}
+capitals_pass_times %>% head(6) %>% knitr::kable()
+```
+
+
+# Mapping the Capitals & Displaying the Pass Times
+
+Using the `{leaflet}` package, I made a map with the US state capitals showing the next three predicted pass times for each capital. When hovering over a capital, the next predicted pass time will show. When clicking a capital, you'll be able to see the next three predicted pass times.
+
+```{r}
+library(leaflet)
+
+# Pivot table
+capitals_pass_times <- pivot_wider(capitals_pass_times, id_cols = c(state,capital,lat,lon), names_from = risetime_num, values_from = risetime)
+
+# Convert unix time to datetime
+capitals_pass_times <- capitals_pass_times %>% 
+  mutate_at(c("risetime_1", "risetime_2", "risetime_3"), ~as.POSIXct(., origin="1970-01-01")) %>% 
+  arrange(risetime_1)
+
+# Get ISS icon
+ISSicon <- makeIcon(iconUrl = "http://open-notify.org/Open-Notify-API/map/ISSIcon.png",
+    iconWidth = 15, iconHeight = 15)
+
+# Map with leaflet
+m <- leaflet(data = capitals_pass_times) %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng = ~lon, lat = ~lat,
+             label = paste0(capitals_pass_times$capital, ", ",  capitals_pass_times$state, " - Next predicted passtime: ", capitals_pass_times$risetime_1),
+             popup = paste0(capitals_pass_times$capital, ", ",  capitals_pass_times$state,  " - Next predicted passtimes: ", capitals_pass_times$risetime_1, ", ", capitals_pass_times$risetime_2, ", ", capitals_pass_times$risetime_3), 
+             icon = ISSicon)
+
+m
+```
+
+# Drawing the Route of the ISS
+
+To see the expected pass order of the ISS, I added polylines in order of pass times.
+
+```{r}
+route <- leaflet(data = capitals_pass_times) %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addPolylines(lat = ~lat, lng = ~lon, color = "red") %>% 
+  addMarkers(lng = ~lon, lat = ~lat, 
+             label = paste0(capitals_pass_times$capital, ", ",  capitals_pass_times$state, " - Next predicted passtime: ", capitals_pass_times$risetime_1),
+             popup = paste0(capitals_pass_times$capital, ", ",  capitals_pass_times$state,  " - Next predicted passtimes: ", capitals_pass_times$risetime_1, ", ", capitals_pass_times$risetime_2, ", ", capitals_pass_times$risetime_3), 
+             icon = ISSicon)
+
+route
+```
