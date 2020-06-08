@@ -529,11 +529,13 @@ ul.nav-icons li.nav-item a.nav-link {
 @media screen and (max-width: 1199px) {
   .project-card {
     width: calc(50% - 4*0.24rem); /* Fluid 2 columns (inc. 20px gutter) */
+    padding-right: 5px;
   }
 }
 @media screen and (max-width: 768px) {
   .project-card {
-    width: 100%; /* 1 column */
+    width: 98%; /* 1 column */
+    padding-right: 5px;
   }
 }
 
