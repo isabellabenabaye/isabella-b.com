@@ -9344,6 +9344,11 @@ ul.nav-icons li.nav-item a.nav-link {
   line-height: 1.5;
   text-transform: none; }
 
+.card h4 code {
+  font-size: 0.93rem;
+  color: #D90429;
+  background: rgba(226, 226, 226, 0.315); }
+
 .card h4 a {
   color: #000;
   border-bottom: solid 1px transparent; }
