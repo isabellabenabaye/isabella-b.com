@@ -22,8 +22,7 @@
 
 /* titles on blog index */
 .article-title {
-  font-family: Calistoga-Regular;
-  letter-spacing: 0px;
+  font-family: Calistoga;
   font-weight: 300;
 }
 /*************************************************
@@ -146,7 +145,7 @@
   // Set v-padding to 5px to align with 50/70px responsive max navbar heights.
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: 'Calistoga-Regular';
+  font-family: 'Calistoga';
   font-weight: 300;
   position: relative;
   z-index: 1030;  // For z-index clickable mobile logo.
@@ -466,22 +465,12 @@ ul.nav-icons li.nav-item a.nav-link {
   font-size: 1.5rem;
 }
 
-
-/* homepage about title */ 
-.portrait-title h2 {
-  font-family: Calistoga-Regular;
-  font-weight: 300;
-}
-
-
 /* homepage section headers */
 .section-heading h1 {
   margin: 0 0 0px 0;
   font-weight: 300;
   font-size: 2rem;
-  letter-spacing: -2px;
   color: #585858;
-
 }
 
 /* page widths */
@@ -858,10 +847,4 @@ body {
   font-weight: 300;
   letter-spacing: -2px;
   margin-bottom: 2.5rem;
-}
-
-/* Calistoga font import */
-@font-face {
-  font-family: 'Calistoga-Regular';
-  src: url('../fonts/Calistoga-Regular.ttf') format('truetype');
 }

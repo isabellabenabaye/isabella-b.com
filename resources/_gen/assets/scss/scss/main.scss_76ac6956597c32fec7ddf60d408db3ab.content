@@ -7208,7 +7208,7 @@ ul.task-list li input[type="checkbox"] {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Calistoga-Regular", sans-serif;
+  font-family: "Calistoga", sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -9146,8 +9146,7 @@ div.mermaid {
 
 /* titles on blog index */
 .article-title {
-  font-family: Calistoga-Regular;
-  letter-spacing: 0px;
+  font-family: Calistoga;
   font-weight: 300; }
 
 /*************************************************
@@ -9230,7 +9229,7 @@ div.mermaid {
 .navbar-brand {
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: 'Calistoga-Regular';
+  font-family: 'Calistoga';
   font-weight: 300;
   position: relative;
   z-index: 1030; }
@@ -9488,17 +9487,11 @@ ul.nav-icons li.nav-item a.nav-link {
 .md-icon {
   font-size: 1.5rem; }
 
-/* homepage about title */
-.portrait-title h2 {
-  font-family: Calistoga-Regular;
-  font-weight: 300; }
-
 /* homepage section headers */
 .section-heading h1 {
   margin: 0 0 0px 0;
   font-weight: 300;
   font-size: 2rem;
-  letter-spacing: -2px;
   color: #585858; }
 
 /* page widths */
@@ -9822,8 +9815,3 @@ body {
   font-weight: 300;
   letter-spacing: -2px;
   margin-bottom: 2.5rem; }
-
-/* Calistoga font import */
-@font-face {
-  font-family: 'Calistoga-Regular';
-  src: url("../fonts/Calistoga-Regular.ttf") format("truetype"); }
