@@ -11,6 +11,8 @@ image:
   focal_point: ""
   preview_only: true
 
+toc: true
+
 links:
  - name: "code"
    url: https://github.com/isabellabenabaye/tidy-tuesday/tree/master/2020/24_black achievements
@@ -46,24 +48,26 @@ The first boom in Black American firsts was in the **1860s**. In 1865 the 13th A
 
 ## Onward
 
-#### Movies you can watch right now
+### Movies you can watch right now
 [`I Am Not Your Negro`](https://en.wikipedia.org/wiki/I_Am_Not_Your_Negro) -- a 2016 documentary film based on James Baldwin's unfinished manuscript Remember This House that explores the history of racism in the United States through Baldwin's reminiscences of civil rights leaders Medgar Evers, Malcolm X, and Martin Luther King Jr., as well as his personal observations of American history, directed by Raoul Peck, free to watch on [Kanopy](https://www.kanopy.com/) with a library card or college/university login
 
 [`The Black Power Mixtape 1967-1975`](https://en.wikipedia.org/wiki/The_Black_Power_Mixtape_1967–1975) -- a documentary film that examines the evolution of the Black Power movement in American society from 1967 to 1975 as viewed through Swedish journalists and filmmakers, directed by Göran Olsson, free to watch on [YouTube](https://www.youtube.com/watch?v=O_dCL2F571Q)
 
 [`Selma`](https://en.wikipedia.org/wiki/Selma_(film)) --  a 2014 historical drama film based on the 1965 Selma to Montgomery voting rights marches, directed by Ava DuVernay and written by Paul Webb, free to rent for the month of June 2020
 
-#### History: Redlining
+### History: Redlining
 <iframe width="600" height="315" src="https://www.youtube.com/embed/e68CoE70Mk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Right now: Policing
+### Right now: Policing
 <iframe width="600" height="315" src="https://www.youtube.com/embed/km4uCOAzrbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="600" height="315" src="https://www.youtube.com/embed/Wf4cea5oObY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Right now: Looting and Economic/Social Inequality
+### Right now: Looting and Economic/Social Inequality
 <iframe width="600" height="315" src="https://www.youtube.com/embed/v4amCfVbA_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="600" height="315" src="https://www.youtube.com/embed/sb9_qGOa9Go" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Books
 
+A great resource is [Ibram X Kendi](https://www.ibramxkendi.com)'s ❝[An Antiracist Reading List](https://www.nytimes.com/2019/05/29/books/review/antiracist-reading-list-ibram-x-kendi.html)❞ and his own [How to Be an Antiracist](https://www.ibramxkendi.com/how-to-be-an-antiracist-1) and [Stamped From the Beginning: The Definitive History of Racist Ideas in America](https://www.ibramxkendi.com/stampedbook).
 
 
