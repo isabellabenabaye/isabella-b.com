@@ -38,20 +38,32 @@ In celebration of Black lives: A visualization of 479 records of Black Americans
 
 I'm not an expert on the deep history of the Black experience in America. I'm continuously learning however, and will share a *few* introductory resources (there are many, many more) to learn below.
 
-### Understanding the Roots
+## Understanding the Roots
 
 The first boom in Black American firsts was in the **1860s**. In 1865 the 13th Amendment was ratified, abolishing slavery, **except as punishment for a crime**. This loophole merely changed the form of slavery by criminalizing behavior and enabling the police to force freedmen who were arrested to work for the state. If you aren't familiar, a good entry point to this issue is the documentary [13th](https://en.wikipedia.org/wiki/13th_(film)) by director [Ava DuVernay](http://www.avaduvernay.com/about). It discusses its lasting effects on racial inequality, justice, and mass incarceration in America, going through the "suppression of African Americans by disenfranchisement, lynchings and Jim Crow; politicians declaring a war on drugs that weighs more heavily on minority communities and, by the late 20th century, mass incarceration of people of color in the United States." [^2] You can watch it on [Netflix](https://www.netflix.com/title/80091741) or [YouTube](https://www.youtube.com/watch?v=krfcq5pF8u8).
 
 [^2]: [13th (film), Wikipedia](https://en.wikipedia.org/wiki/13th_(film))
 
-### Onward
+## Onward
 
-**Movies you can watch right now**   
+#### Movies you can watch right now
 [`I Am Not Your Negro`](https://en.wikipedia.org/wiki/I_Am_Not_Your_Negro) -- a 2016 documentary film based on James Baldwin's unfinished manuscript Remember This House that explores the history of racism in the United States through Baldwin's reminiscences of civil rights leaders Medgar Evers, Malcolm X, and Martin Luther King Jr., as well as his personal observations of American history, directed by Raoul Peck, free to watch on [Kanopy](https://www.kanopy.com/) with a library card or college/university login
 
 [`The Black Power Mixtape 1967-1975`](https://en.wikipedia.org/wiki/The_Black_Power_Mixtape_1967–1975) -- a documentary film that examines the evolution of the Black Power movement in American society from 1967 to 1975 as viewed through Swedish journalists and filmmakers, directed by Göran Olsson, free to watch on [YouTube](https://www.youtube.com/watch?v=O_dCL2F571Q)
 
 [`Selma`](https://en.wikipedia.org/wiki/Selma_(film)) --  a 2014 historical drama film based on the 1965 Selma to Montgomery voting rights marches, directed by Ava DuVernay and written by Paul Webb, free to rent for the month of June 2020
+
+#### History: Redlining
+<iframe width="600" height="315" src="https://www.youtube.com/embed/e68CoE70Mk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Right now: Policing
+<iframe width="600" height="315" src="https://www.youtube.com/embed/km4uCOAzrbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="315" src="https://www.youtube.com/embed/Wf4cea5oObY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Right now: Looting and Economic/Social Inequality
+<iframe width="600" height="315" src="https://www.youtube.com/embed/v4amCfVbA_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="315" src="https://www.youtube.com/embed/sb9_qGOa9Go" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 
