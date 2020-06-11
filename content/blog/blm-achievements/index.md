@@ -55,12 +55,12 @@ The first boom in Black American firsts was in the **1860s**. In 1865 the 13th A
 
 [`Selma`](https://en.wikipedia.org/wiki/Selma_(film)) --  a 2014 historical drama film based on the 1965 Selma to Montgomery voting rights marches, directed by Ava DuVernay and written by Paul Webb, free to rent for the month of June 2020
 
-### History: Redlining
-<iframe width="600" height="315" src="https://www.youtube.com/embed/e68CoE70Mk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ### Right now: Policing
 <iframe width="600" height="315" src="https://www.youtube.com/embed/km4uCOAzrbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="600" height="315" src="https://www.youtube.com/embed/Wf4cea5oObY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### History: Redlining
+<iframe width="600" height="315" src="https://www.youtube.com/embed/e68CoE70Mk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Right now: Looting and Economic/Social Inequality
 <iframe width="600" height="315" src="https://www.youtube.com/embed/v4amCfVbA_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
