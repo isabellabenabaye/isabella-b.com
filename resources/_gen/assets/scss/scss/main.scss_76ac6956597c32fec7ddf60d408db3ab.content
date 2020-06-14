@@ -9269,9 +9269,9 @@ div.mermaid {
     background-color: #F7F7F7;
     text-align: center !important; }
   #navbar-main .main-menu-item .nav-item {
-    padding: 10px 15px !important; }
+    padding: 10px 25px !important; }
   #navbar-main .main-menu-item .nav-item .nav-link {
-    padding: 5px 15px !important; } }
+    padding: 5px 25px !important; } }
 
 ul.nav-icons {
   list-style-type: none;
