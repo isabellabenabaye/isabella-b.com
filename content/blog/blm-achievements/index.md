@@ -23,18 +23,14 @@ links:
    icon_pack: fab
    icon: wikipedia-w
  - name: ""
-   url: https://github.com/isabellabenabaye/tidy-tuesday/tree/master/2020/24_black achievements
+   url: https://twitter.com/_isabellamb/status/1270743273070460928?s=20
    icon_pack: fab
    icon: twitter
-# - name: share my tweet
-#   url: https://twitter.com/_isabellamb/status/1261162040107823104?s=20
-#   icon_pack: fab
-#   icon: twitter
 ---
 {{< figure src="featured.png" title="👆 enlarge" lightbox="true" >}}
 
 # Black Lives Matter. 
-In celebration of Black lives: A visualization of 479 records of Black Americans breaking the color barrier. "The first achievements by African Americans in various fields historically marked footholds, often leading to more widespread cultural change." [^1] The data is from Wikipedia's page "[List of African-American firsts](https://en.wikipedia.org/wiki/List_of_African-American_firsts)".
+In celebration of Black lives: A visualization of 479 records of Black Americans breaking the color barrier. ❝The first achievements by African Americans in various fields historically marked footholds, often leading to more widespread cultural change.❞ [^1] The data is from Wikipedia's page ❝[List of African-American firsts](https://en.wikipedia.org/wiki/List_of_African-American_firsts)❞.
 
 [^1]: From the data's source, [Wikipedia](https://en.wikipedia.org/wiki/List_of_African-American_firsts).
 
