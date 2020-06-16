@@ -15,7 +15,7 @@ type: today-i-learned
 Last week I was exploring the Los Angeles Times' [database](https://github.com/datadesk/los-angeles-police-killings-data) of police killings in L.A. County, trying to learn more about the Black and Latino communities that have been disproportionately affected by police violence based on data since 2000. I made a simple graphic about it that you can find in my [blog post](/blog/los-angeles-police-killings).
 
 I also used that data to practice some EDA and data visualization in python. The data includes the latitude and longitude of where each person killed by police died, so one of the things I tried was mapping them with Mapbox and `plotly` Express. This map shows the places of death of the people killed who were Black. 
-<iframe width="800" height="400" frameborder="0" scrolling="no" src="//plotly.com/~isabella-b/1.embed"></iframe>
+<iframe width="100%" height="400" frameborder="0" scrolling="no" src="//plotly.com/~isabella-b/1.embed"></iframe>
 
 To make this Mapbox map with Plotly you'll need a Mapbox account and a public Mapbox access token. This is easy to get, and the code to create the map is fairly simple. I will go through the whole process. 
 
