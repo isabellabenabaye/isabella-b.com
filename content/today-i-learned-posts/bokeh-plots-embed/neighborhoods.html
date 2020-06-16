@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Neighborhoods with the most Black police killings</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js" integrity="sha384-ufR9RFnRs6lniiaFvtJziE0YeidtAgBRH6ux2oUItHw5WTvE1zuk9uzhUU/FJXDp" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="43f9fee5-aa90-4d03-8cd5-edcdb8f7770a" data-root-id="3828"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="4161">
+          {"6f5ea0eb-4483-4d30-85d0-3cb9bc693733":{"roots":{"references":[{"attributes":{"below":[{"id":"3837"}],"center":[{"id":"3840"},{"id":"3843"}],"left":[{"id":"3841"}],"plot_height":400,"plot_width":750,"renderers":[{"id":"3861"}],"title":{"id":"3990"},"toolbar":{"id":"3851"},"toolbar_location":null,"x_range":{"id":"3829"},"x_scale":{"id":"3833"},"y_range":{"id":"3831"},"y_scale":{"id":"3835"}},"id":"3828","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"3842","type":"CategoricalTicker"},{"attributes":{"data":{"index":["Bellflower","Gardena","Vermont Square","Downtown","Green Meadows","Compton","Long Beach","Inglewood"],"neighborhood":[5,6,6,7,7,15,15,18]},"selected":{"id":"1129"},"selection_policy":{"id":"1128"}},"id":"1002","type":"ColumnDataSource"},{"attributes":{"formatter":{"id":"3994"},"major_label_text_font":"Rubik","major_label_text_font_size":"15pt","ticker":{"id":"3838"}},"id":"3837","type":"LinearAxis"},{"attributes":{},"id":"3849","type":"HelpTool"},{"attributes":{"source":{"id":"1002"}},"id":"3862","type":"CDSView"},{"attributes":{"text":""},"id":"3990","type":"Title"},{"attributes":{"data_source":{"id":"1002"},"glyph":{"id":"3859"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"3860"},"selection_glyph":null,"view":{"id":"3862"}},"id":"3861","type":"GlyphRenderer"},{"attributes":{},"id":"1129","type":"Selection"},{"attributes":{"formatter":{"id":"3992"},"major_label_text_font":"Rubik","major_label_text_font_size":"15pt","ticker":{"id":"3842"}},"id":"3841","type":"CategoricalAxis"},{"attributes":{"start":0},"id":"3829","type":"DataRange1d"},{"attributes":{},"id":"3838","type":"BasicTicker"},{"attributes":{"factors":["Bellflower","Gardena","Vermont Square","Downtown","Green Meadows","Compton","Long Beach","Inglewood"]},"id":"3831","type":"FactorRange"},{"attributes":{"axis":{"id":"3841"},"dimension":1,"ticker":null},"id":"3843","type":"Grid"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#DF8F44"},"height":{"value":0.95},"line_alpha":{"value":0.1},"line_color":{"value":"white"},"right":{"field":"neighborhood"},"y":{"field":"index"}},"id":"3860","type":"HBar"},{"attributes":{},"id":"3992","type":"CategoricalTickFormatter"},{"attributes":{},"id":"3994","type":"BasicTickFormatter"},{"attributes":{},"id":"3845","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"3850"}},"id":"3846","type":"BoxZoomTool"},{"attributes":{"callback":null,"mode":"hline","tooltips":[["Neighborhood","@index"],["Number of killnings","@neighborhood"]]},"id":"3863","type":"HoverTool"},{"attributes":{},"id":"3848","type":"ResetTool"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"3850","type":"BoxAnnotation"},{"attributes":{},"id":"1128","type":"UnionRenderers"},{"attributes":{"axis":{"id":"3837"},"ticker":null},"id":"3840","type":"Grid"},{"attributes":{},"id":"3833","type":"LinearScale"},{"attributes":{},"id":"3844","type":"PanTool"},{"attributes":{},"id":"3847","type":"SaveTool"},{"attributes":{"fill_color":{"value":"#DF8F44"},"height":{"value":0.95},"line_color":{"value":"white"},"right":{"field":"neighborhood"},"y":{"field":"index"}},"id":"3859","type":"HBar"},{"attributes":{},"id":"3835","type":"CategoricalScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"3844"},{"id":"3845"},{"id":"3846"},{"id":"3847"},{"id":"3848"},{"id":"3849"},{"id":"3863"}]},"id":"3851","type":"Toolbar"}],"root_ids":["3828"]},"title":"Bokeh Application","version":"2.0.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('4161').textContent;
+                  var render_items = [{"docid":"6f5ea0eb-4483-4d30-85d0-3cb9bc693733","root_ids":["3828"],"roots":{"3828":"43f9fee5-aa90-4d03-8cd5-edcdb8f7770a"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
