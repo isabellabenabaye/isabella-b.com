@@ -4,7 +4,7 @@ author: Isabella Benabaye
 date: '2020-04-21'
 reading_time: true
 slug: tidy-tuesday-rap-songs
-categories: [data visualizations, tidy tuesday]
+categories: [data visualizations, tidy tuesday, rstats]
 tags:
   - Data Visualizations
   - Tidy Tuesday

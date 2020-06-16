@@ -3,7 +3,7 @@ title: "Celebrating Black Americans’ Achievements"
 summary: "✊🏿✊🏾✊🏽 Black Lives Matter. In celebration of Black lives: A visualization of Black Americans breaking the color barrier & achieving firsts in various fields throughout history. I also share some introductory resources to the movement."
 authors: []
 tags: [data visualizations, ggplot2, rstats, tidy tuesday]
-categories: [ggplot2, rstats, tidy tuesday]
+categories: [data visualizations, rstats, tidy tuesday]
 date: "2020-06-09"
 
 image:

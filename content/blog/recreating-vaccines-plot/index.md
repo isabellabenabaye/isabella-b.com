@@ -3,7 +3,7 @@ title: "Improving a bad visualization"
 summary: "Recreation of a [visualization](https://wellcome.ac.uk/reports/wellcome-global-monitor/2018#&gid=1&pid=9) originally published by Wellcome Global Monitor in 2018."
 authors: []
 tags: [data visualizations, visualization makeover, Stat 431]
-categories: [data visualizations, visualization makeover]
+categories: [data visualizations, visualization makeover, rstats]
 date: "2020-04-26T00:00:00Z"
 
 image:

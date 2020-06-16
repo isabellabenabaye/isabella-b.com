@@ -3,7 +3,7 @@ title: "ggplot2 Theme Elements Reference Sheet"
 summary: "Inspired by [Henry Wang](https://twitter.com/henrywangnl)❜s ❝[ggplot2 Theme Elements Demonstration](https://henrywang.nl/ggplot2-theme-elements-demonstration/)❞, I created one for myself displaying all of the elements I frequently use and always google. Feel free to download and use it as well!"
 authors: []
 tags: [data visualizations, ggplot2, rstats]
-categories: [ggplot2, rstats, reference]
+categories: [rstats, reference]
 date: "2020-05-19T00:00:00Z"
 
 image:

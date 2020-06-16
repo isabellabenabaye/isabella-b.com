@@ -2,7 +2,7 @@
 title: Bar plots in `Bokeh` & How to Embed Them
 author: ''
 date: '2020-06-16'
-categories: [100DaysOfCode, python, bokeh]
+categories: [100DaysOfCode, python, bokeh, tutorial]
 tags: [100DaysOfCode, python, bokeh, L.A. police killings]
 summary: 'Creating my first simple `bokeh` bar plot-- an interactive version of my plot of the [neighborhoods where law enforcement in L.A. County killed the most Black people](/blog/los-angeles-police-killings/#full-graphic).'
 reading_time: yes

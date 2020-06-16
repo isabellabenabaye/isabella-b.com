@@ -2,7 +2,7 @@
 title: Scatter Plots on Mapbox with `plotly` Express in Python & How to Embed Them
 author: ''
 date: '2020-06-15'
-categories: [100DaysOfCode, python, mapbox, plotly]
+categories: [100DaysOfCode, python, mapbox, plotly, tutorial]
 tags: [100DaysOfCode, python, mapbox, plotly, L.A. police killings]
 summary: 'Creating my first interactive map with Mapbox to show where each Black person who was [killed by police in L.A. County](/blog/los-angeles-police-killings) died.'
 reading_time: yes

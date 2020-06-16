@@ -4,7 +4,7 @@ author: Isabella Benabaye
 date: '2020-03-29'
 reading_time: true
 slug: tidy-tuesday-the-office
-categories: [data visualizations, tidy tuesday]
+categories: [data visualizations, tidy tuesday, rstats]
 tags:
   - Data Visualizations
   - Tidy Tuesday
