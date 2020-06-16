@@ -25,13 +25,13 @@ subtitle = "A collection of mini-posts of the things I learn"
     name = "All"
     tag = "*"
   
-#  [[content.filter_button]]
-#    name = "Visualizations"
-#    tag = "Data Visualizations"
+  [[content.filter_button]]
+    name = "R"
+    tag = "rstats"
   
-#  [[content.filter_button]]
-#    name = "Tidy Tuesday"
-#    tag = "Tidy Tuesday"     
+  [[content.filter_button]]
+    name = "Python"
+    tag = "python"     
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
