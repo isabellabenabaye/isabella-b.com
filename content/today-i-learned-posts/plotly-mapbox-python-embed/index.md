@@ -11,6 +11,17 @@ image:
   focal_point: ''
   preview_only: true
 type: today-i-learned
+links:
+ - name: "code"
+   url: https://github.com/isabellabenabaye/los-angeles-police-killings/blob/master/LA-police-killings-map.ipynb
+   icon_pack: fab
+   icon: github
+ - name: "source"
+   url: https://github.com/datadesk/los-angeles-police-killings-data
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1272769156941668352?s=20
+   icon_pack: fab
+   icon: twitter
 ---
 Last week I was exploring the Los Angeles Times' [database](https://github.com/datadesk/los-angeles-police-killings-data) of police killings in L.A. County, trying to learn more about the Black and Latino communities that have been disproportionately affected by police violence based on data since 2000. I made a simple graphic about it that you can find in my [blog post](/blog/los-angeles-police-killings).
 

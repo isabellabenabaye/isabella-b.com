@@ -18,10 +18,10 @@ links:
    icon: github
  - name: "source"
    url: https://github.com/datadesk/los-angeles-police-killings-data
-# - name: ""
-#   url: https://github.com/isabellabenabaye/tidy-tuesday/tree/master/2020/24_black achievements
-#   icon_pack: fab
-#   icon: twitter
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1272047145554567168?s=20
+   icon_pack: fab
+   icon: twitter
 ---
 
 The [Los Angeles Times](https://www.latimes.com) published an [article](https://www.latimes.com/projects/los-angeles-police-killings-database/) on June 9 that went into the details of the killings by local law enforcement in Los Angeles County that were ruled a homicide since 2000. It was striking to me how in the last 20 years and after almost **900 deaths**, only **two officers were charged** as a result of shooting a civilian  while on duty. The Times shows the trend of deaths over time, highlighted how some communities are disproportionately affected by police violence, map the deaths across the county, and honor those who died by listing each and every one of their names. They discuss and visualize more, and I recommend you check it out. [<i class="fas fa-external-link-square-alt"></i>](https://www.latimes.com/projects/los-angeles-police-killings-database/)

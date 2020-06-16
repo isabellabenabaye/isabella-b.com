@@ -12,6 +12,17 @@ image:
   preview_only: true
 type: today-i-learned
 draft: false
+links:
+ - name: "code"
+   url: https://github.com/isabellabenabaye/los-angeles-police-killings/blob/master/LA-police-killings-EDA.ipynb
+   icon_pack: fab
+   icon: github
+ - name: "source"
+   url: https://github.com/datadesk/los-angeles-police-killings-data
+# - name: ""
+#   url: https://twitter.com/_isabellamb/status/1272047145554567168?s=20
+#   icon_pack: fab
+#   icon: twitter
 ---
 This is my second TIL post about exploring the Los Angeles Times' database of police killings in L.A. County. My first one was about [mapping where each Black person who was killed by police in L.A. County died](/today-i-learned-posts/plotly-mapbox-python-embed/). In my main [blog post](/blog/los-angeles-police-killings) I wanted to learn more about the Black and Latino communities that have been disproportionately affected by police violence and made a [simple graphic](/blog/los-angeles-police-killings/#full-graphic) about it. 
 
@@ -27,7 +38,7 @@ Hover to see the count:
     frameborder="0">
 </iframe>
 
-Creating this required one step before making the plot itself. Since this is a horizontal bar chart, we need to make a list of factors to pass into the categorical x-axis with the argument `y_range`. This DataFrame is my source for the plot:    
+Creating this required one step before making the plot itself. Since this is a horizontal bar chart, we need to make a list of factors to pass into the categorical x-axis with the argument `y_range` in `figure()`. This DataFrame is my source for the plot:    
 ```
 top_neighborhoods = killings_data[killings_data.race == 'black'].neighborhood.value_counts().head(7).to_frame().sort_values(by='neighborhood', ascending=True)
 ```
