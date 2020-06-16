@@ -3,7 +3,7 @@ title: Switching to `hugo serve` instead of `blogdown::serve_site()`
 author: ''
 date: '2020-06-07'
 categories: [100DaysOfCode, hugo, blogdown]
-tags: [100DaysOfCode, hugo, blogdown]
+tags: [100DaysOfCode, hugo, blogdown, rstats]
 summary: 'Should have done it sooner, it’s so much faster.'
 reading_time: yes
 image:
