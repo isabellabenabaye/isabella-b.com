@@ -1,5 +1,5 @@
 ---
-title: Scatter Plots on Mapbox with `plotly` Express in Python + How to Embed Them
+title: Scatter Plots on Mapbox with `plotly` Express in Python & How to Embed Them
 author: ''
 date: '2020-06-15'
 categories: [100DaysOfCode, python, mapbox, plotly]
@@ -76,6 +76,6 @@ py.plot(fig, filename = 'file-name', auto_open=True)
 ```
 Running that should open the plot in Chart Studio in your browser. In the bottom right there is an <i class="fas fa-code"></i> icon where `plotly` provides the code to the `<iframe>` you can use. 
 
-Now you can use the `<iframe>` to embed your interactive plotly visualization on any website! 
+Now you can use the `<iframe>` to embed your interactive `plotly` visualization on any website! 
 
 I hope you found this helpful. If you have any questions, feel free to comment below or [tweet/DM me](https://twitter.com/_isabellamb).
