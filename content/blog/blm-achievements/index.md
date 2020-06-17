@@ -40,7 +40,7 @@ I'm not an expert on the deep history of the Black experience in America. I'm co
 
 **Must watch:**
 <img src="https://www.wfae.org/sites/wfae/files/styles/medium/public/201907/teachingslavery.png" alt="" width="290" height="180" style="float:left;margin:10px 15px 15px 0px"> 
-*"In these videos, scholars and historians explore the Key Concepts of the Teaching Hard History framework by discussing slavery’s impact on the lives of enslaved people in what is now the United States and the nation’s development around the institution. They also explain how enslaved people influenced the nation, its culture and its history."*
+*"In these videos, scholars and historians explore the Key Concepts of the Teaching Hard History framework by <u>discussing slavery’s impact on the lives of enslaved people</u> in what is now the United States and the nation’s development around the institution. They also explain how <u>enslaved people influenced the nation, its culture and its history</u>."* [<i class="fas fa-external-link-square-alt"></i>](https://www.tolerance.org/frameworks/teaching-hard-history/american-slavery/key-concept-videos)
 
 <br>
 
