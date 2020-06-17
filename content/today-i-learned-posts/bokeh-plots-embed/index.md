@@ -28,7 +28,7 @@ This is my second TIL post about exploring the Los Angeles Times' database of po
 
 To try out a simple chart for my first experience with `Bokeh`, I decided to recreate this horizontal bar chart I made for the graphic of my main post:
 {{< figure src="neighborhoods.png" title="" lightbox="true" >}}
-Hover to see the count:
+#### Hover to see the count:
 <iframe src="/today-i-learned-posts/bokeh-plots-embed/neighborhoods.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
