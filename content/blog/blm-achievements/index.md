@@ -38,6 +38,12 @@ I'm not an expert on the deep history of the Black experience in America. I'm co
 
 ## Understanding the Roots
 
+**Must watch:**
+<img src="https://www.wfae.org/sites/wfae/files/styles/medium/public/201907/teachingslavery.png" alt="" width="290" height="180" style="float:left;margin:10px 15px 15px 0px"> 
+*"In these videos, scholars and historians explore the Key Concepts of the Teaching Hard History framework by discussing slavery’s impact on the lives of enslaved people in what is now the United States and the nation’s development around the institution. They also explain how enslaved people influenced the nation, its culture and its history."*
+
+<br>
+
 The first boom in Black American firsts was in the **1860s**. In 1865 the 13th Amendment was ratified, abolishing slavery, **except as punishment for a crime**. This loophole merely changed the form of slavery by criminalizing behavior and enabling the police to force freedmen who were arrested to work for the state. If you aren't familiar, a good entry point to this issue is the documentary [13th](https://en.wikipedia.org/wiki/13th_(film)) by director [Ava DuVernay](http://www.avaduvernay.com/about). It discusses its lasting effects on racial inequality, justice, and mass incarceration in America, going through the "suppression of African Americans by disenfranchisement, lynchings and Jim Crow; politicians declaring a war on drugs that weighs more heavily on minority communities and, by the late 20th century, mass incarceration of people of color in the United States." [^2] You can watch it on [Netflix](https://www.netflix.com/title/80091741) or [YouTube](https://www.youtube.com/watch?v=krfcq5pF8u8).
 
 [^2]: [13th (film), Wikipedia](https://en.wikipedia.org/wiki/13th_(film))
