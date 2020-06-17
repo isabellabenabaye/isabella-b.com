@@ -19,10 +19,14 @@ links:
    icon: github
  - name: "source"
    url: https://github.com/datadesk/los-angeles-police-killings-data
-# - name: ""
-#   url: https://twitter.com/_isabellamb/status/1272047145554567168?s=20
-#   icon_pack: fab
-#   icon: twitter
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1273095907584638976?s=20
+   icon_pack: fab
+   icon: twitter
+ - name: ""
+   url: https://dev.to/isabellabenabaye/bar-plots-in-bokeh-how-to-embed-them-58d2
+   icon_pack: fab
+   icon: dev
 ---
 This is my second TIL post about exploring the Los Angeles Times' database of police killings in L.A. County. My first one was about [mapping where each Black person who was killed by police in L.A. County died](/today-i-learned-posts/plotly-mapbox-python-embed/). In my main [blog post](/blog/los-angeles-police-killings) I wanted to learn more about the Black and Latino communities that have been disproportionately affected by police violence and made a [simple graphic](/blog/los-angeles-police-killings/#full-graphic) about it. 
 
