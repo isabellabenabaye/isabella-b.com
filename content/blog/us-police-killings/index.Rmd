@@ -1,36 +1,32 @@
 ---
 title: Fatal Shootings by U.S. Police Since 2015
 author: Isabella Benabaye
-date: '2020-06-26'
+date: '2020-06-27'
 slug: us-police-killings
-categories: [rstats, data visualization]
-tags: []
-summary: 'Looking at the number of fatal shootings in the U.S. by a police officer in every state and cities with at least 10 deaths. Data from [The Washington Post](https://github.com/washingtonpost/data-police-shootings).'
+categories: [rstats, data visualization, reactable]
+tags: [police killings, rstats, data visualization, the washington post, reactable]
+summary: 'Looking at the number of fatal shootings in the U.S. by an on-duty police officer in every state and cities with at least 10 deaths. Data from [The Washington Post](https://github.com/washingtonpost/data-police-shootings).'
 reading_time: yes
 external_link: ''
 image:
   caption: ''
   focal_point: ''
   preview_only: true
-url_code: ''
-url_pdf: ''
-url_slides: ''
-url_video: ''
-slides: ''
 toc: true
 links:
  - name: "source"
    url: https://github.com/washingtonpost/data-police-shootings
 output: hugodown::hugo_document
 ---
-<lastupdate> Tables last updated: `r Sys.time()` </lastupdate>
 
 The other day, I came across [The Washington Post's database](https://github.com/washingtonpost/data-police-shootings) of every **fatal shooting** in the United States by a **police officer in the line of duty** since January 1, 2015. 
 
 About the people and cases recorded, from their [`readme`](https://github.com/washingtonpost/data-police-shootings/blob/master/README.md):
 <blockquote>The Post is documenting only those shootings in which a police officer, in the line of duty, shot and killed a civilian — the circumstances that most closely parallel the 2014 killing of Michael Brown in Ferguson, Mo., which began the protest movement culminating in Black Lives Matter and an increased focus on police accountability nationwide. The Post is not tracking deaths of people in police custody, fatal shootings by off-duty officers or non-shooting deaths.</blockquote>
 
-I pulled the data and created the interactive tables below, where you can search for a state or city and see the number of killings in that area. By default they are sorted by total number of deaths per place, but you can also sort them by number of deaths by race.
+I pulled the data and created the interactive tables below, where you can search for a state or city and see the number of killings in that area. By default, they are sorted by the total number of deaths per place, but you can also sort them by the number of deaths by race.
+
+<lastupdate> Tables last updated: `r Sys.time()` </lastupdate>
 
 ### Fatal shootings in every <span style="color:#3fc1c9">U.S. state</span> since 2015
 ```{r message=FALSE, warning=FALSE, include=FALSE}
@@ -148,8 +144,11 @@ final_table_states <- reactable(
 
 `r final_table_states`
 <br>
-**California** has an alarmingly high number of fatal shootings as compared to Texas, with over 300 more deaths. **Hispanics** are highly disproportionally affected in both states, as well as in Arizona and New Mexico.
+**California** has a much higher number of fatal shootings as compared to Texas, with over 300 more deaths. **Hispanics** are highly disproportionally affected in both states, as well as in Arizona and New Mexico. 
 
+{{% alert look %}}
+It's important to note that these tables show the **raw counts** and don't include the populations of the areas, which you need to consider to have a holistic view of these cases. [This The Washington Post article](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/) takes that into account and reports that New Mexico, Alaska, and Oklahoma have the highest rates of shootings. 
+{{% /alert %}} 
 
 To narrow down the 2,798 cities in the database, I've only included the cities with 10 or more killings.
 
@@ -237,7 +236,7 @@ final_table_cities <- reactable(
 
 `r final_table_cities`
 <br>
-**Los Angeles**, the city with the most deaths in the state with the most deaths, has almost four times more killings than Bakersfield, the city with the second most in California. To see the cities in a certain state, for example you can search: `, CA`.
+**Los Angeles**, the city with the most deaths in the state with the most deaths, has almost four times more killings than Bakersfield, the city with the second-most in California. To see the cities in a certain state, for example, you can search: `, CA`.
 
 
 ### Racial demographics of the deaths vs. the <span style="color:#0EAD69">U.S. Population</span>
@@ -307,7 +306,12 @@ pop_table <- reactable(population,
 <br>
 Overall, the Black community appears to clearly be disproportionately affected by this kind of violence. To see where they have been particularly affected, you can sort the number of killings per city by the number of Black people killed.
 
+The Washington Post [article](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/) I mentioned earlier presents their findings from the data, including a great plot that visualizes how Black Americans are killed at a rate twice as high as that of white Americans. They also discuss how the rate of shootings has remained steady each year and map where they occur and the number of shootings per million people.
+
+
+
 ### More about the data
 <blockquote>In 2015, The Post began tracking more than a dozen details about each killing — including the race of the deceased, the circumstances of the shooting, whether the person was armed and whether the victim was experiencing a mental-health crisis — by culling local news reports, law enforcement websites and social media and by monitoring independent databases such as Killed by Police and Fatal Encounters. The Post conducted additional reporting in many cases.</blockquote>
 
-Read more about The Washington Post's project at their repository's `readme` [<i class="fas fa-external-link-square-alt"></i>](https://github.com/washingtonpost/data-police-shootings)
+Read more about The Washington Post's project and check out the data at their GitHub repository [<i class="fas fa-external-link-square-alt"></i>](https://github.com/washingtonpost/data-police-shootings)
+

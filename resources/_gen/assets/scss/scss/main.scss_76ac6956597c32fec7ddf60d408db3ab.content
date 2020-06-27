@@ -9571,6 +9571,7 @@ ul.nav-icons li.nav-item a.nav-link {
 div.alert > div {
   position: relative;
   display: block;
+  font-family: 'Work Sans';
   font-size: 0.8rem;
   margin-left: 1.7rem;
   margin-top: 0;
@@ -9615,14 +9616,14 @@ div.alert a {
 
 .article-style aside,
 .alert-note {
-  color: #26547C;
+  color: #313131;
   background-color: #F7F7F7;
   border-color: #0EAD69;
   /*  border-style: dashed; */
   box-shadow: 5px 5px 0 0 #0EAD69; }
 
 .alert-look {
-  color: #26547C;
+  color: #313131;
   background-color: #F7F7F7;
   border-color: #0EAD69;
   /*  border-style: dashed; */
@@ -9824,3 +9825,8 @@ body {
 lastupdate {
   font-family: 'Work Sans';
   font-size: 0.7rem; }
+
+.article-style blockquote {
+  font-family: 'Work Sans';
+  font-size: 13pt;
+  color: #0A5770; }
