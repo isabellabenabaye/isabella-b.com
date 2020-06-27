@@ -9820,3 +9820,7 @@ body {
   font-weight: 300;
   letter-spacing: -2px;
   margin-bottom: 2.5rem; }
+
+lastupdate {
+  font-family: 'Work Sans';
+  font-size: 0.7rem; }

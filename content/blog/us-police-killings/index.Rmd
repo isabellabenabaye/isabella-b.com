@@ -1,0 +1,313 @@
+---
+title: Fatal Shootings by U.S. Police Since 2015
+author: Isabella Benabaye
+date: '2020-06-26'
+slug: us-police-killings
+categories: [rstats, data visualization]
+tags: []
+summary: 'Looking at the number of fatal shootings in the U.S. by a police officer in every state and cities with at least 10 deaths. Data from [The Washington Post](https://github.com/washingtonpost/data-police-shootings).'
+reading_time: yes
+external_link: ''
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: true
+url_code: ''
+url_pdf: ''
+url_slides: ''
+url_video: ''
+slides: ''
+toc: true
+links:
+ - name: "source"
+   url: https://github.com/washingtonpost/data-police-shootings
+output: hugodown::hugo_document
+---
+<lastupdate> Tables last updated: `r Sys.time()` </lastupdate>
+
+The other day, I came across [The Washington Post's database](https://github.com/washingtonpost/data-police-shootings) of every **fatal shooting** in the United States by a **police officer in the line of duty** since January 1, 2015. 
+
+About the people and cases recorded, from their [`readme`](https://github.com/washingtonpost/data-police-shootings/blob/master/README.md):
+<blockquote>The Post is documenting only those shootings in which a police officer, in the line of duty, shot and killed a civilian — the circumstances that most closely parallel the 2014 killing of Michael Brown in Ferguson, Mo., which began the protest movement culminating in Black Lives Matter and an increased focus on police accountability nationwide. The Post is not tracking deaths of people in police custody, fatal shootings by off-duty officers or non-shooting deaths.</blockquote>
+
+I pulled the data and created the interactive tables below, where you can search for a state or city and see the number of killings in that area. By default they are sorted by total number of deaths per place, but you can also sort them by number of deaths by race.
+
+### Fatal shootings in every <span style="color:#3fc1c9">U.S. state</span> since 2015
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(reactable)
+library(htmltools)
+
+fatal_police_shootings <- read_csv("https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/fatal-police-shootings-data.csv")
+
+# bar chart
+bar_chart <- function(label, width = "100%", height = "18px", fill = "#3fc1c9", background = NULL) {
+  bar <- div(style = list(background = fill, width = width, height = height))
+  chart <- div(style = list(flexGrow = 1, marginLeft = "6px", background = background), bar)
+  div(style = list(display = "flex", alignItems = "center"), label, chart)
+}
+
+# state counts pre-pivot - used for cell shading
+state_counts <- fatal_police_shootings %>%
+  count(state, race, sort = TRUE)
+
+# state name data - get full state names
+states <- bind_cols(datasets::state.name, datasets::state.abb) %>%
+  rename(state_name = "...1",
+         state = "...2")
+
+# get percents
+state_data <- fatal_police_shootings %>%
+  left_join(states) %>%
+  count(state_name, race) %>%
+  ## make a column for each race
+  pivot_wider(id_cols = state_name, names_from = race, values_from = n, values_fill = 0) %>%
+  rename(unknown = `NA`) %>%
+  mutate(total = A + B + N + W + unknown + H + O,
+         W_perc = W/total *100,
+         B_perc = B/total *100,
+         H_perc = H/total *100,
+         A_perc = A/total *100,
+         N_perc = N/total *100,
+         O_perc = O/total *100,
+         unknown_perc = unknown/total *100)
+
+# main table
+state_table <- state_data %>%
+  select(state_name, total, W, H, B, A, N, O, unknown)
+
+# palette
+red_pal <- function(x) rgb(colorRamp(c("#ffeef1", "#f87274"), bias = 2)(x), maxColorValue = 255)
+
+# race column
+race_column <- function(col, class = NULL, ...){
+  colDef(
+    ...,
+    maxWidth = 80,
+    defaultSortOrder = "desc",
+    headerStyle = list(fontSize = "13px", fontWeight = 400),
+    style = function(value) {
+      normalized <- (value - min(state_counts[-1:-2,"n"])) / (max(state_counts[-1:-2,"n"]) - min(state_counts[-1:-2,"n"]))
+      if (value < 1) {
+        list(color = "#aaa", background = "#F7F7F7")
+      } else if (normalized > 0.99) {
+        list(background = "#f87274")
+      } else {
+        list(background = red_pal(normalized))
+      }
+    }
+  )
+}
+
+# grouped columns
+race_cols <- c("W", "B", "H", "A", "N", "O", "unknown")
+
+
+# reactable table
+final_table_states <- reactable(
+  data = state_table,
+  style = list(fontFamily = "Work Sans, sans-serif", fontSize = "14px", background = "#F7F7F7"),
+  defaultSorted = "total",
+  defaultPageSize = 15,
+  defaultColDef = colDef(class = "cell", headerClass = "header"),
+  highlight = TRUE,
+  searchable = TRUE,
+  compact = TRUE,
+  columnGroups = list(
+    colGroup(name = "Race of person killed", columns = race_cols)
+  ),
+  columns = list(
+    state_name = colDef(name = "State",
+                        minWidth = 140,
+                        style = list(fontWeight = 500)),
+    total = colDef(
+      name = "Number of killings",
+      defaultSortOrder = "desc",
+      minWidth = 160,
+      cell = function(value) {
+        width <- paste0(value * 100 / max(state_table$total), "%")
+        value <- format(value, big.mark = ",")
+        # Fix each label using the width of the widest number (incl. thousands separators)
+        value <- format(value, width = 4, justify = "right")
+        bar_chart(value, width = width)
+      },
+      # And left-align the columns
+      align = "left",
+      style = list(fontFamily = "DM Mono", whiteSpace = "pre")
+    ),
+    W = race_column(name = "White", col = "W"),
+    B = race_column(name = "Black", col = "B"),
+    H = race_column(name = "Hispanic", col = "H"),
+    A = race_column(name = "Asian", col = "A"),
+    N = race_column(name = "Native American", col = "N"),
+    O = race_column(name = "Other", col = "O"),
+    unknown = race_column(name = "Unknown", col = "unknown")
+  )
+)
+```
+
+`r final_table_states`
+<br>
+**California** has an alarmingly high number of fatal shootings as compared to Texas, with over 300 more deaths. **Hispanics** are highly disproportionally affected in both states, as well as in Arizona and New Mexico.
+
+
+To narrow down the 2,798 cities in the database, I've only included the cities with 10 or more killings.
+
+### <span style="color:#FCA311">U.S. cities</span> with at least 10 fatal shootings
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# Cities table -----
+# city counts pre-pivot - used for cell shading
+city_counts <- fatal_police_shootings %>%
+  mutate(city = paste0(city,", ",state)) %>%
+  count(city, race, sort = TRUE)
+
+# main table
+city_table <- fatal_police_shootings %>%
+  mutate(city = paste0(city,", ",state)) %>%
+  count(city, race) %>%
+  ## make a column for each race
+  pivot_wider(id_cols = city, names_from = race, values_from = n, values_fill = 0) %>%
+  rename(unknown = `NA`) %>%
+  mutate(total = A + B + N + W + unknown + H + O) %>%
+  select(city, total, W, H, B, A, N, O, unknown) %>%
+  filter(total >= 10)
+
+# race column
+race_column <- function(col, class = NULL, ...){
+  colDef(
+    ...,
+    maxWidth = 80,
+    defaultSortOrder = "desc",
+    headerStyle = list(fontSize = "13px", fontWeight = 400),
+    style = function(value) {
+      normalized <- (value - min(city_counts[-1:-2,"n"])) / (max(city_counts[-1:-2,"n"]) - min(city_counts[-1:-2,"n"]))
+      if (value < 1) {
+        list(color = "#aaa", background = "#F7F7F7")
+      } else if (normalized > 0.99) {
+        list(background = "#f87274")
+      } else {
+        list(background = red_pal(normalized))
+      }
+    }
+  )
+}
+
+# reactable table
+final_table_cities <- reactable(
+  data = city_table,
+  style = list(fontFamily = "Work Sans, sans-serif", fontSize = "14px", background = "#F7F7F7"),
+  defaultSorted = "total",
+  defaultPageSize = 15,
+  defaultColDef = colDef(class = "cell", headerClass = "header"),
+  highlight = TRUE,
+  searchable = TRUE,
+  compact = TRUE,
+  columnGroups = list(
+    colGroup(name = "Race of person killed", columns = race_cols)
+  ),
+  columns = list(
+    city = colDef(name = "State",
+                  minWidth = 140,
+                  style = list(fontWeight = 500)),
+    total = colDef(
+      name = "Number of killings",
+      defaultSortOrder = "desc",
+      minWidth = 160,
+      cell = function(value) {
+        width <- paste0(value * 100 / max(city_table$total), "%")
+        value <- format(value, big.mark = ",")
+        # Fix each label using the width of the widest number (incl. thousands separators)
+        value <- format(value, width = 4, justify = "right")
+        bar_chart(value, width = width, fill = "#FCA311")
+      },
+      # And left-align the columns
+      align = "left",
+      style = list(fontFamily = "DM Mono", whiteSpace = "pre")
+    ),
+    W = race_column(name = "White", col = "W"),
+    B = race_column(name = "Black", col = "B"),
+    H = race_column(name = "Hispanic", col = "H"),
+    A = race_column(name = "Asian", col = "A"),
+    N = race_column(name = "Native American", col = "N"),
+    O = race_column(name = "Other", col = "O"),
+    unknown = race_column(name = "Unknown", col = "unknown")
+  )
+)
+```
+
+`r final_table_cities`
+<br>
+**Los Angeles**, the city with the most deaths in the state with the most deaths, has almost four times more killings than Bakersfield, the city with the second most in California. To see the cities in a certain state, for example you can search: `, CA`.
+
+
+### Racial demographics of the deaths vs. the <span style="color:#0EAD69">U.S. Population</span>
+```{r message=FALSE, warning=FALSE, include=FALSE}
+population <- tribble(
+  ~race, ~perc, ~race_full,
+  "W", 60.1, "White",
+  "H", 18.5, "Hispanic",
+  "B", 13.4, "Black",
+  "A", 5.9, "Asian",
+  "N", 1.3, "Native American",
+  "O",0.8, "Other"
+)
+
+# pop data + overall deaths demographics
+population <- fatal_police_shootings %>%
+  count(race) %>%
+  summarise(race, perc_killed = n/sum(n) *100) %>%
+  inner_join(population) %>%
+  arrange(desc(perc)) %>%
+  select(race_full, perc, perc_killed)
+
+pop_table <- reactable(population,
+  style = list(fontFamily = "Work Sans, sans-serif", fontSize = "15px", background = "#F7F7F7"),
+  columns = list(
+    race_full = colDef(
+      name = "",
+      width = 150,
+      style = list(fontWeight = 500)
+    ),
+    perc = colDef(
+      name = "% of the population",
+      defaultSortOrder = "desc",
+      minWidth = 200,
+      cell = function(value) {
+        width <- paste0(value * 100 / max(population$perc), "%")
+        value <- paste0(value, "%")
+        # Fix each label using the width of the widest number (incl. thousands separators)
+        value <- format(value, width = 5, justify = "right")
+        bar_chart(value, width = width, fill = "#0EAD69")
+      },
+      # And left-align the columns
+      align = "left",
+      style = list(fontFamily = "DM Mono", whiteSpace = "pre"),
+      format = colFormat(percent = TRUE)
+    ),
+    perc_killed = colDef(
+      name = "% of those killed",
+      defaultSortOrder = "desc",
+      minWidth = 200,
+      cell = function(value) {
+        width <- paste0(value * 100 / max(population$perc), "%")
+        value <- paste0(round(value), "%")
+        # Fix each label using the width of the widest number (incl. thousands separators)
+        value <- format(value, width = 5, justify = "right")
+        bar_chart(value, width = width, fill = "#525252")
+      },
+      # And left-align the columns
+      align = "left",
+      style = list(fontFamily = "DM Mono", whiteSpace = "pre"),
+      format = colFormat(percent = TRUE)
+    )
+  )
+)
+```
+`r pop_table`
+<br>
+Overall, the Black community appears to clearly be disproportionately affected by this kind of violence. To see where they have been particularly affected, you can sort the number of killings per city by the number of Black people killed.
+
+### More about the data
+<blockquote>In 2015, The Post began tracking more than a dozen details about each killing — including the race of the deceased, the circumstances of the shooting, whether the person was armed and whether the victim was experiencing a mental-health crisis — by culling local news reports, law enforcement websites and social media and by monitoring independent databases such as Killed by Police and Fatal Encounters. The Post conducted additional reporting in many cases.</blockquote>
+
+Read more about The Washington Post's project at their repository's `readme` [<i class="fas fa-external-link-square-alt"></i>](https://github.com/washingtonpost/data-police-shootings)
