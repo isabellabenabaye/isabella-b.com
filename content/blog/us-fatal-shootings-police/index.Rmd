@@ -2,10 +2,9 @@
 title: Fatal Shootings by U.S. Police Since 2015
 author: Isabella Benabaye
 date: '2020-06-27'
-slug: us-police-killings
 categories: [rstats, data visualization, reactable]
 tags: [police killings, rstats, data visualization, the washington post, reactable]
-summary: 'Looking at the number of fatal shootings in the U.S. by an on-duty police officer in every state and cities with at least 10 deaths. Data from [The Washington Post](https://github.com/washingtonpost/data-police-shootings).'
+summary: 'Looking at the number of fatal shootings in the U.S. by on-duty police officers in every state and cities with at least 10 deaths. Data from [The Washington Post](https://github.com/washingtonpost/data-police-shootings).'
 reading_time: yes
 external_link: ''
 image:
