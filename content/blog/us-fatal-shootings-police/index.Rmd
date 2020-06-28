@@ -13,6 +13,10 @@ image:
   preview_only: true
 toc: true
 links:
+ - name: "code"
+   url: https://github.com/isabellabenabaye/isabella-b.com/blob/master/content/blog/us-fatal-shootings-police/index.Rmd
+   icon_pack: fab
+   icon: github
  - name: "source"
    url: https://github.com/washingtonpost/data-police-shootings
 output: hugodown::hugo_document
