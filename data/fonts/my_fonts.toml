@@ -5,7 +5,7 @@ name = "my_fonts"
 google_fonts = "Fira+Code|Inter|Miriam+Libre:wght@400;700|Karla|DM+Mono|Work+Sans|Calistoga"
 
 # Font families
-heading_font = "Calistoga"
+heading_font = "Gelica"
 body_font = "Inter"
 nav_font = "Karla"
 mono_font = "DM Mono"

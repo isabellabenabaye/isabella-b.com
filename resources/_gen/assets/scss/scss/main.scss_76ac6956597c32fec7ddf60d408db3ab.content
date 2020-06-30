@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Set Bootstrap variables */
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -5,6 +6,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("//hello.myfonts.net/count/3bd38a");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7208,7 +7210,7 @@ ul.task-list li input[type="checkbox"] {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Calistoga", sans-serif;
+  font-family: "Gelica", sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -9146,8 +9148,8 @@ div.mermaid {
 
 /* titles on blog index */
 .article-title {
-  font-family: Calistoga;
-  font-weight: 300; }
+  font-family: 'Gelica';
+  font-weight: 500; }
 
 /*************************************************
  *  Navigation bar
@@ -9229,8 +9231,8 @@ div.mermaid {
 .navbar-brand {
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: 'Calistoga';
-  font-weight: 300;
+  font-family: 'Gelica';
+  font-weight: 600;
   position: relative;
   z-index: 1030; }
 
@@ -9818,7 +9820,7 @@ body {
  *  Archive page headers
  **************************************************/
 .universal-wrapper h1 {
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: -2px;
   margin-bottom: 2.5rem; }
 
@@ -9830,3 +9832,117 @@ lastupdate {
   font-family: 'Work Sans';
   font-size: 13pt;
   color: #0A5770; }
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3920778, 2020-06-30T19:38:36-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Gelica-ExtraLight by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/extra-light/
+ * 
+ * Webfont: Gelica-ExtraLightItalic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/extra-light-italic/
+ * 
+ * Webfont: Gelica-Light by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/light/
+ * 
+ * Webfont: Gelica-LightItalic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/light-italic/
+ * 
+ * Webfont: Gelica-Regular by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/regular/
+ * 
+ * Webfont: Gelica-Italic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/italic/
+ * 
+ * Webfont: Gelica-Medium by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/medium/
+ * 
+ * Webfont: Gelica-MediumItalic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/medium-italic/
+ * 
+ * Webfont: Gelica-SemiBold by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/semi-bold/
+ * 
+ * Webfont: Gelica-SemiBoldItalic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/semi-bold-italic/
+ * 
+ * Webfont: Gelica-Bold by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/bold/
+ * 
+ * Webfont: Gelica-BoldItalic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/bold-italic/
+ * 
+ * Webfont: Gelica-Black by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/black/
+ * 
+ * Webfont: Gelica-BlackItalic by Schizotype
+ * URL: https://www.myfonts.com/fonts/schizotype/gelica/black-italic/
+ * 
+ * 
+ * Webfonts copyright: Copyright (c) 2020 by Schizotype. All rights reserved.
+ * 
+ * © 2020 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@font-face {
+  font-family: 'Gelica-LightItalic';
+  src: url("webFonts/Gelica-LightItalic/font.woff2") format("woff2"), url("webFonts/Gelica-LightItalic/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-Light';
+  src: url("webFonts/Gelica-Light/font.woff2") format("woff2"), url("webFonts/Gelica-Light/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-Regular';
+  src: url("webFonts/Gelica-Regular/font.woff2") format("woff2"), url("webFonts/Gelica-Regular/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-ExtraLightItalic';
+  src: url("webFonts/Gelica-ExtraLightItalic/font.woff2") format("woff2"), url("webFonts/Gelica-ExtraLightItalic/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-BlackItalic';
+  src: url("webFonts/Gelica-BlackItalic/font.woff2") format("woff2"), url("webFonts/Gelica-BlackItalic/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-BoldItalic';
+  src: url("webFonts/Gelica-BoldItalic/font.woff2") format("woff2"), url("webFonts/Gelica-BoldItalic/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-Black';
+  src: url("webFonts/Gelica-Black/font.woff2") format("woff2"), url("webFonts/Gelica-Black/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-ExtraLight';
+  src: url("webFonts/Gelica-ExtraLight/font.woff2") format("woff2"), url("webFonts/Gelica-ExtraLight/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-Bold';
+  src: url("webFonts/Gelica-Bold/font.woff2") format("woff2"), url("webFonts/Gelica-Bold/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-SemiBold';
+  src: url("webFonts/Gelica-SemiBold/font.woff2") format("woff2"), url("webFonts/Gelica-SemiBold/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-Medium';
+  src: url("webFonts/Gelica-Medium/font.woff2") format("woff2"), url("webFonts/Gelica-Medium/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-MediumItalic';
+  src: url("webFonts/Gelica-MediumItalic/font.woff2") format("woff2"), url("webFonts/Gelica-MediumItalic/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-SemiBoldItalic';
+  src: url("webFonts/Gelica-SemiBoldItalic/font.woff2") format("woff2"), url("webFonts/Gelica-SemiBoldItalic/font.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Gelica-Italic';
+  src: url("webFonts/Gelica-Italic/font.woff2") format("woff2"), url("webFonts/Gelica-Italic/font.woff") format("woff"); }
