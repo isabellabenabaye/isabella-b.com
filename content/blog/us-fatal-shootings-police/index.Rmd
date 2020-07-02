@@ -19,6 +19,10 @@ links:
    icon: github
  - name: "source"
    url: https://github.com/washingtonpost/data-police-shootings
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1277029159399645184?s=20
+   icon_pack: fab
+   icon: twitter
 output: hugodown::hugo_document
 ---
 
