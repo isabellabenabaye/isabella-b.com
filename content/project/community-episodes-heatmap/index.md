@@ -5,7 +5,6 @@ image:
   focal_point: Smart
 summary: 
 tags:
-- Data Visualizations
 - featured
 title: 
 ---

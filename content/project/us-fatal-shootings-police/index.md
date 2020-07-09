@@ -5,6 +5,5 @@ image:
   focal_point: Smart
 summary: "**Fatal Shootings** by U.S. Police Since 2015"
 tags:
-- Data Visualizations
 - featured
 ---

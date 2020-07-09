@@ -5,7 +5,6 @@ image:
   focal_point: Smart
 summary: Who are The Office episodes written by?
 tags:
-- Data Visualizations
 - Tidy Tuesday
 - featured
 title:

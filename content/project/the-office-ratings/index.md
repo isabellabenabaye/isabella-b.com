@@ -6,7 +6,6 @@ image:
 summary: Looking at The Office❜s IMDb ratings
 tags:
 - Tidy Tuesday
-- Data Visualizations
 - featured
 title: 
 ---

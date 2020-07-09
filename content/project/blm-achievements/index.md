@@ -5,7 +5,6 @@ image:
   focal_point: Smart
 summary: "In celebration of Black lives: A visualization of 479 records of Black Americans breaking the color barrier & achieving firsts in various fields throughout history"
 tags:
-- Data Visualizations
 - featured
 - Tidy Tuesday
 title: 
