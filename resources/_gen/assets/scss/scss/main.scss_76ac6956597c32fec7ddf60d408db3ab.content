@@ -9647,11 +9647,9 @@ pre {
   margin: 0 0 1rem 0;
   background-color: #f8f8f8;
   /* Match default highlight theme. */
-  border-color: #f8f8f8;
   border: 15px;
   font-size: 0.75rem;
-  border-radius: 5px;
-  box-shadow: 5px 5px 0 0 #FFF588; }
+  border-radius: 12px; }
 
 pre code {
   white-space: pre;
