@@ -1,42 +1,29 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
-title: "Ways You Can Further Customize the Academic Theme"
-slug: tidy-tuesday-rap-songs
-summary: ""
-authors: []
-tags: []
-categories: []
-date: '2020-04-21'
-reading_time: true
-
-external_link: ''
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+title: 
+subtitle: 'A waffle chart of each month in my life until age 70'
+summary: 'Visualizing my life (so far) with a waffle chart.'
+author: Isabella Benabaye
+date: ''
+slug: 
+categories:
+  - rstats
+  - data visualizations
+tags:
+  - 100DaysOfCode
+  - data visualizations
+  - ggplot2
+  - rstats
 image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
-
-# Custom links (optional).
-#   Uncomment and edit lines below to show custom links.
-# links:
-# - name: Follow
-#   url: https://twitter.com
-#   icon_pack: fab
-#   icon: twitter
-
-url_code: ""
-url_pdf: ""
-url_slides: ""
-url_video: ""
-
-# Slides (optional).
-#   Associate this project with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
-slides: ""
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+links:
+ - name: "code"
+   url: https://github.com/isabellabenabaye/life-chart
+   icon_pack: fab
+   icon: github
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1281368436073836545?s=20
+   icon_pack: fab
+   icon: twitter
 ---
