@@ -6,5 +6,5 @@ image:
 summary: "**Juneteenth** is a commemoration of the emancipation of 4 million enslaved African Americans & a celebration of freedom"
 tags:
 - featured
-- Tidy Tuesday
+- featured R
 ---

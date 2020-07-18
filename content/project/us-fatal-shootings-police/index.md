@@ -6,4 +6,5 @@ image:
 summary: "**Fatal Shootings** by U.S. Police Since 2015"
 tags:
 - featured
+- featured R
 ---

@@ -30,8 +30,12 @@ subtitle = ""
 #    tag = "Data Visualizations"
   
   [[content.filter_button]]
-    name = "Tidy Tuesday"
-    tag = "Tidy Tuesday"
+    name = "R"
+    tag = "featured R"
+
+  [[content.filter_button]]
+    name = "Python"
+    tag = "featured python"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.

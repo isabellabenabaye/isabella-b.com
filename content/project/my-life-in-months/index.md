@@ -5,6 +5,6 @@ image:
   focal_point: Smart
 summary: "**My life in months**: A waffle chart of each month in my life until age 70, made using R and [Sketchbook](https://sketchbook.com)."
 tags:
-- data visualizations
 - featured
+- featured R
 ---

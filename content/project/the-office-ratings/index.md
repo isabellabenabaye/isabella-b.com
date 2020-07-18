@@ -5,7 +5,7 @@ image:
   focal_point: Smart
 summary: Looking at The Office❜s IMDb ratings
 tags:
-- Tidy Tuesday
 - featured
+- featured R
 title: 
 ---

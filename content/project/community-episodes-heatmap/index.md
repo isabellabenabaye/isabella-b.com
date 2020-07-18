@@ -6,5 +6,6 @@ image:
 summary: 
 tags:
 - featured
+- featured python
 title: 
 ---

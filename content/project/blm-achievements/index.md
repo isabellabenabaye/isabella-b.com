@@ -6,6 +6,6 @@ image:
 summary: "In celebration of Black lives: A visualization of 479 records of Black Americans breaking the color barrier & achieving firsts in various fields throughout history"
 tags:
 - featured
-- Tidy Tuesday
+- featured R
 title: 
 ---

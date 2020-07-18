@@ -5,7 +5,6 @@ image:
   focal_point: Smart
 summary: What are the ❝best❞ hip hop songs?
 tags:
-- Tidy Tuesday
 - featured
-title: 
+- featured R
 ---

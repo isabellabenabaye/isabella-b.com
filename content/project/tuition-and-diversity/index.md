@@ -7,5 +7,5 @@ summary: Diversity/minorities = all students who are not categorized as white, r
 tags:
 - Tidy Tuesday
 - featured
-title:
+- featured R
 ---
