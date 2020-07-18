@@ -47,7 +47,8 @@ date_format = "Jan 2006"
   location = "Manila, Philippines"
   date_start = "2017-07-01"
   date_end = "2017-09-14"
-  description = """Assisted in performing cluster and profile analysis for the Advanced Analytics team of a telecommunications company using SAS Data Integration Studio and SAS Enterprise Guide.
+  description = """
+  To better understand post-paid customers, performed cluster and profile analysis for the Advanced Analytics team of a telecommunications company using SAS Data Integration Studio and SAS Enterprise Guide.
   """
   
  [[experience]]
