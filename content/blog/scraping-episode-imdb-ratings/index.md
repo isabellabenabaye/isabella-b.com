@@ -1,9 +1,9 @@
 ---
 title: "Step-by-step: Scraping Epsiode IMDb Ratings"
 slug: scraping-episode-imdb-ratings-tutorial
-summary: "There are many tutorials out there that teach you how to scrape movies. This one shows you how to do that for the episodes of a TV series. We use Community as the example."
+summary: "There are many tutorials out there that teach you how to scrape movies. This one shows you how to do that for the episodes of a TV series. We use python, BeautifulSoup, and Community as the example."
 authors: []
-tags: [community, tutorial, python, jupyter notebook, web scraping]
+tags: [community, tutorial, python, jupyter notebook, web scraping, beautifulsoup]
 categories: [tutorial, python, web scraping]
 date: '2020-05-09'
 reading_time: true
