@@ -22,10 +22,10 @@ links:
    url: https://github.com/isabellabenabaye/taxes-irs-free-file-program
    icon_pack: fab
    icon: github
-# - name: ""
-#   url: https://twitter.com/_isabellamb/status/1281368436073836545?s=20
-#   icon_pack: fab
-#   icon: twitter
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1283137038372356096?s=20
+   icon_pack: fab
+   icon: twitter
 ---
 
 {{< figure src="featured.png" title="👆 enlarge" lightbox="true" >}}
