@@ -25,7 +25,7 @@ links:
 #   icon_pack: fab
 #   icon: twitter
 output: hugodown::hugo_document
-rmd_hash: 58d3173c640f2a34
+rmd_hash: 82c468caad9a2772
 
 ---
 
@@ -51,7 +51,7 @@ As of now, it only contains 6 functions, all for use when creating plots with `g
 
 -   **`scale_y_d_ib`:** Sets default values for the `expand` argument of `scale_y_discrete` such that there is no space below the lowest value and the top end of the plot is extended by 5% (eg. for use with bar plots)
 
-#### Exmaples
+#### Examples
 
 The following plots were taken from [Allison Horst](https://twitter.com/allison_horst)'s `palmerpenguins` [README](https://github.com/allisonhorst/palmerpenguins/blob/master/README.md).
 

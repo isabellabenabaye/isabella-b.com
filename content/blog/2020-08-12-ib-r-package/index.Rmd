@@ -47,7 +47,7 @@ As of now, it only contains 6 functions, all for use when creating plots with `g
 
 - **`scale_y_d_ib`:** Sets default values for the `expand` argument of `scale_y_discrete` such that there is no space below the lowest value and the top end of the plot is extended by 5% (eg. for use with bar plots)
 
-#### Exmaples
+#### Examples
 The following plots were taken from [Allison Horst](https://twitter.com/allison_horst)'s `palmerpenguins` [README](https://github.com/allisonhorst/palmerpenguins/blob/master/README.md).
 
 Using `theme_ib` to print a scatter plot with width = 12 inches & height = 8 inches and the `md = TRUE` argument to use `ggtext::element_markdown()` instead of `element_text()` for text elements, in this case the subtitle:
