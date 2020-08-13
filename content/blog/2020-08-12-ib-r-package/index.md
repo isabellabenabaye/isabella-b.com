@@ -20,12 +20,12 @@ links:
    url: https://github.com/isabellabenabaye/ib
    icon_pack: fab
    icon: github
-# - name: ""
-#   url: https://twitter.com/_isabellamb/status/1281368436073836545?s=20
-#   icon_pack: fab
-#   icon: twitter
+ - name: ""
+   url: https://twitter.com/_isabellamb/status/1293718714991251456?s=20
+   icon_pack: fab
+   icon: twitter
 output: hugodown::hugo_document
-rmd_hash: 82c468caad9a2772
+rmd_hash: 64c65f0bf4fd1928
 
 ---
 
