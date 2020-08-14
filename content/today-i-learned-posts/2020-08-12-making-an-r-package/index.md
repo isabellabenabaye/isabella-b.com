@@ -47,4 +47,4 @@ Below are the links to the chapters I used most.
   - [Documenting multiple functions in the same file](https://r-pkgs.org/man.html#multiple-man)
   - [Text formatting reference sheet](https://r-pkgs.org/man.html#text-formatting)
 
-This package has been *very simple*, so that's basically all that I've used from the book so far, but I'm sure I'll be using the other sections in the future. 
+This package has been *very simple*, so that's basically all that I've used from the book so far, but I'm sure I'll be using the other sections in the future. It's a great resource and I love how thorough it is.
