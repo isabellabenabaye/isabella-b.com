@@ -29,7 +29,7 @@
  *  Navigation bar
  **************************************************/
 
- .navbar {
+.navbar {
   height: 70px;
   background: $sta-menu-primary;
   background-image: url(/img/otis-redding.png);
@@ -99,48 +99,6 @@
 
 }
 
-.dark .navbar {
-  box-shadow: none;
-}
-
-// Remove Bootstrap's border from Toggle button.
-.navbar-toggler {
-  border: 0 !important;
-  position: relative;  // For z-index clickable mobile logo.
-  z-index: 1030;
-}
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-@include media-breakpoint-down(md) {  /* Match breakpoint for i18n dropdown in navbar.html. */
-  .i18n-dropdown .nav-link::after {
-    // Remove dropdown arrow on small devices (when language name isn't displayed).
-    content: none;
-  }
-}
-
-// Prevent language and theme selectors rendering off page.
-.i18n-dropdown .dropdown-menu,
-.theme-dropdown .dropdown-menu {
-  /* Use style from uncollapsable dropdowns to prevent dropdown going off page. */
-  position: absolute;
-  /* Below style from .dropdown-menu-right to prevent dropdown going off page. */
-  right: 0;
-  left: auto;
-}
-
-// Allow user to horizontally scroll.
-// Commented out this feature as it causes dropdowns to appear within the menu bar.
-// TODO: re-enable in a way that doesn't break dropdowns.
-/*
-.navbar .collapse {
-  overflow-x: auto;
-}
-*/
-
 .navbar-brand {
   // Set v-padding to 5px to align with 50/70px responsive max navbar heights.
   padding-top: 5px;
@@ -149,23 +107,6 @@
   font-weight: 300;
   position: relative;
   z-index: 1030;  // For z-index clickable mobile logo.
-}
-
-// Dynamically fit logo image to space available.
-// No need to explicitly set a size for each breakpoint.
-// See https://caniuse.com/#feat=mdn-css_properties_width_stretch .
-.navbar-brand img {
-  width: auto;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: -webkit-stretch;
-  height: stretch;
-  max-height: 60px;  // For lg+ responsive sizing. 60px height +10px v-padding = 70px
-  max-width: fit-content;  // Must override default responsive image style.
-}
-
-#navbar-main .main-menu-item ul li .nav-link {
-  color: $sta-menu-text;
 }
 
 @include media-breakpoint-down(md) {
@@ -204,37 +145,6 @@
   #navbar-main .main-menu-item .nav-item .nav-link {
     padding: 5px 25px !important;
   }
-}
-
-ul.nav-icons {
-  list-style-type: none;
-  font-size: 18px;
-  padding: 0.5rem 0 0.5rem 0;
-  margin: 0;
-}
-
-ul.nav-icons li {
-  display: inline;
-  padding-right: 1rem;
-}
-
-ul.nav-icons li:last-of-type {
-  padding-right: 0;
-}
-
-ul.nav-icons li.nav-item a.nav-link {
-  padding: 0;
-}
-
-.dropdown-menu {
-  background-color: $sta-menu-primary !important;
-  color: $sta-menu-text !important;
-  z-index: 1032;  // I18n dropdown over mobile expanded menu.
-}
-
-.dropdown-item {
-  background-color: $sta-menu-primary !important;
-  color: $sta-menu-text !important;
 }
 
 /*************************************************
@@ -383,7 +293,7 @@ ul.nav-icons li.nav-item a.nav-link {
   border-radius: 10px;
   padding: 2rem;
   font-family: 'Work Sans';
-  font-size: .98rem;
+  font-size: .95rem;
   background-color: #F7F7F7;
 }
 
@@ -410,6 +320,17 @@ ul.nav-icons li.nav-item a.nav-link {
 .about-page h1 {
   text-align: right;
   margin-bottom: 25rem;
+}
+
+.about-page .row h3 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: bold;
+
+}
+.about-page .row h3 a {
+  color: rgba(0,0,0,0.8);
 }
 
 @media screen and (max-width: 1199px) {
