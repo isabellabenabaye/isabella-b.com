@@ -23,10 +23,10 @@
 #  url = "#projects"
 #  weight = 30
 
-[[main]]
-  name = "publications"
-  url = "#featured"
-  weight = 40
+#[[main]]
+#  name = "publications"
+#  url = "about/#featured"
+#  weight = 40
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
