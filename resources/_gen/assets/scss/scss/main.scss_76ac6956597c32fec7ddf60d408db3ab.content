@@ -9184,7 +9184,7 @@ div.mermaid {
     .navbar .navbar-nav .nav-link {
       color: rgba(252, 163, 17, 0.85); }
       .navbar .navbar-nav .nav-link.active, .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link:focus {
-        color: #FCA311; }
+        color: #118AB2; }
       .navbar .navbar-nav .nav-link.active {
         font-weight: 900 !important;
         color: #0EAD69 !important; }
@@ -9195,37 +9195,6 @@ div.mermaid {
     font-weight: bold;
     color: #0EAD69 !important; }
 
-.dark .navbar {
-  box-shadow: none; }
-
-.navbar-toggler {
-  border: 0 !important;
-  position: relative;
-  z-index: 1030; }
-
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: none !important;
-  box-shadow: none !important; }
-
-@media (max-width: 991.98px) {
-  /* Match breakpoint for i18n dropdown in navbar.html. */
-  .i18n-dropdown .nav-link::after {
-    content: none; } }
-
-.i18n-dropdown .dropdown-menu,
-.theme-dropdown .dropdown-menu {
-  /* Use style from uncollapsable dropdowns to prevent dropdown going off page. */
-  position: absolute;
-  /* Below style from .dropdown-menu-right to prevent dropdown going off page. */
-  right: 0;
-  left: auto; }
-
-/*
-.navbar .collapse {
-  overflow-x: auto;
-}
-*/
 .navbar-brand {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -9233,18 +9202,6 @@ div.mermaid {
   font-weight: 300;
   position: relative;
   z-index: 1030; }
-
-.navbar-brand img {
-  width: auto;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: -webkit-stretch;
-  height: stretch;
-  max-height: 60px;
-  max-width: fit-content; }
-
-#navbar-main .main-menu-item ul li .nav-link {
-  color: #FCA311; }
 
 @media (max-width: 991.98px) {
   .navbar-brand-mobile-wrapper {
@@ -9272,31 +9229,6 @@ div.mermaid {
     padding: 10px 25px !important; }
   #navbar-main .main-menu-item .nav-item .nav-link {
     padding: 5px 25px !important; } }
-
-ul.nav-icons {
-  list-style-type: none;
-  font-size: 18px;
-  padding: 0.5rem 0 0.5rem 0;
-  margin: 0; }
-
-ul.nav-icons li {
-  display: inline;
-  padding-right: 1rem; }
-
-ul.nav-icons li:last-of-type {
-  padding-right: 0; }
-
-ul.nav-icons li.nav-item a.nav-link {
-  padding: 0; }
-
-.dropdown-menu {
-  background-color: #F7F7F7 !important;
-  color: #FCA311 !important;
-  z-index: 1032; }
-
-.dropdown-item {
-  background-color: #F7F7F7 !important;
-  color: #FCA311 !important; }
 
 /*************************************************
  *  Card component
@@ -9364,9 +9296,6 @@ ul.nav-icons li.nav-item a.nav-link {
 .card .card-text p {
   color: rgba(0, 0, 0, 0.54);
   font-size: 0.75rem; }
-
-.dark .card-text p {
-  color: #f8f8f2; }
 
 .card p:last-child {
   margin-bottom: 0; }
@@ -9446,10 +9375,24 @@ ul.nav-icons li.nav-item a.nav-link {
   text-align: right;
   margin-bottom: 25rem; }
 
+.about-page .row h3 {
+  text-align: center;
+  font-weight: bold; }
+
+.about-page .row h3 a {
+  color: rgba(0, 0, 0, 0.8); }
+
 @media screen and (max-width: 1199px) {
   .about-page h1 {
     text-align: left;
-    margin-bottom: 0rem; } }
+    margin-bottom: 0rem; }
+  .about-page .row {
+    height: auto; }
+  .card-about {
+    font-size: 13pt; }
+  .card .card-text p {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 12pt; } }
 
 @media screen and (max-width: 768px) {
   .about-page h1 {
@@ -9515,6 +9458,11 @@ ul.nav-icons li.nav-item a.nav-link {
 
 .home-section, .wg-portfolio, .btn-toolbar {
   padding: 0.6rem; }
+
+.proj-header {
+  font-size: 28pt;
+  font-family: 'Work Sans';
+  font-weight: 900; }
 
 .home-section, .wg-today-i-learned .container {
   padding-left: 0;
@@ -9776,7 +9724,7 @@ pre code {
 .media.stream-item .article-style,
 .card-simple .article-style {
   margin-top: 15px;
-  font-size: 0.8rem; }
+  font-size: 12pt; }
 
 .media.stream-item .stream-meta {
   margin-top: 20px; }
