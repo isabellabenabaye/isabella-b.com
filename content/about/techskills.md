@@ -1,7 +1,7 @@
 +++
 widget = "tech_skills"
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 45  # Order that this section will appear.
 
 # ... Put Your Section Options Here (title etc.) ...

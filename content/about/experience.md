@@ -2,7 +2,7 @@
 # Experience widget.
 widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "experience"
@@ -80,10 +80,10 @@ date_format = "Jan 2006"
   # color = "navy"
   
   # Background gradient.
-  gradient_start = "#F7F7F7"
+  gradient_start = "#A5DDC5"
   gradient_end = "#FAE8BF"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["0px", "0", "10px", "0"]
+  padding = ["30px", "0", "0", "0"]
 +++

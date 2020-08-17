@@ -2,7 +2,7 @@
 # Accomplishments widget.
 widget = "accomplishments"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
 title = "awards"
@@ -58,8 +58,8 @@ date_format = "Jan 2006"
   # color = "navy"
   
   # Background gradient.
-  gradient_start = "#F7F7F7"
-  gradient_end = "#A5DDC5"
+  gradient_start = "#AED9E0"
+  gradient_end = "#F7F7F7"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
