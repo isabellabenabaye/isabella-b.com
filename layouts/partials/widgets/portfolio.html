@@ -10,7 +10,7 @@
 {{/* Standard dual-column layout. */}}
 
 <div class="row">
-  <div class="col-12 col-lg-4 section-heading">
+  <div class="home-proj col-12 col-lg-4 section-heading">
 
     {{ with $st.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
     {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
@@ -21,7 +21,7 @@
 {{ else }}
 {{/* Single column layout. */}}
 
-<div class="margin-auto">
+<div class="home-proj margin-auto">
 
   <div class="center-text">
     {{ with $st.Title }}<h1 class="proj-header">{{ . | markdownify | emojify }}</h1>{{ end }}

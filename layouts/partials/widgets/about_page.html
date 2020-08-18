@@ -1,11 +1,21 @@
 {{ $ := .root }}
 {{ $page := .page }}
+
+<!-- stylesheet from https://animate.style -->
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+</head>
+
 <style>
   greet  {
     font-weight: 900;
     font-size: 1.5rem;
   }
 </style>
+
 <!-- About me widget -->
 <div class="about-page">
   <div class="row">
@@ -27,7 +37,7 @@
         </div>
     </div>
     <div class="col-12">
-      <h3>my <a href="#experience">experience</a>, <a href="#education">education</a>, & <a href="#featured">publications</a> <br><a href="#experience"><div class="arrow bounce"></div></a></h3>
+      <h3>my <a href="#experience">experience</a>, <a href="#education">education</a>, & <a href="#featured">publications</a><br><a href="#experience"><div class="arrow-bounce"><br><i class="fas fa-chevron-down"></i></div></a></h3>
     </div>
   </div>
 
