@@ -316,17 +316,13 @@
 .about-page h1 {
   text-align: right;
   margin-bottom: 25rem;
-  animation: bounceInLeft;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+  animation: bounceInLeft 1s both;
 }
 
 .about-page .row h3 {
   text-align: center;
   font-weight: bold;
-  animation: fadeInDown;
-  animation-fill-mode: both;
-  animation-duration: 3s;
+  animation: fadeInDown 3s both;
   animation-delay: 1s;
 }
 .about-page .row h3 a {
@@ -813,46 +809,34 @@ lastupdate {
 /* homepage - about */
 
 .about-avatar {
-  animation: zoomIn;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+  animation: zoomIn 1s both;
   animation-delay: 0.5s;
 }
 
 .about-name {
-  animation: flipInX;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+  animation: flipInX 1s both;
   animation-delay: 0.5s;
 }
 
 .card-about { // also applies to card on about page
-  animation: zoomIn;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+  animation: zoomIn 1s both;
   animation-delay: 0.5s;
 }
 
 .network-icon {
-  animation: fadeIn;
-  animation-fill-mode: both;
-  animation-duration: 3s;
+  animation: fadeIn 3s both;
   animation-delay: 1.5s;
 }
 
 /* homepage - projects */
 
 .home-proj {
-  animation: fadeInUpBig;
-  animation-fill-mode: both;
-  animation-duration: 1s;
+  animation: fadeInUpBig 1s both;
 }
 
 /* about page */
 
 .arrow-bounce {
-  animation: bounce;
-  animation-fill-mode: both;
-  animation-duration: 3s;
+  animation: bounce 3s both;
   animation-delay: 4s;
 }
