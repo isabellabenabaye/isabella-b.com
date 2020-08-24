@@ -1,0 +1,54 @@
+---
+title: How I added CSS animations to my Hugo Academic site
+author: Isabella Benabaye
+date: '2020-08-20'
+slug: adding-css-animations
+categories: [hugo, hugo academic, css]
+tags: [hugo, hugo academic, css, creating this website]
+subtitle: ''
+summary: 'A lazy, shortcut approach; inspired by this wonderful [blog post](https://www.connorrothschild.com/post/animate-hugo-academic/) by [Connor Rothschild](https://www.connorrothschild.com).'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: []
+type: today-i-learned
+output: hugodown::hugo_document
+---
+
+The other day I finally got the chance to read [Connor Rothschild](https://www.connorrothschild.com)'s blog post [**"Three Simple Steps to Bring Impressive Animations to your Hugo Academic Site Using Blogdown"**](https://www.connorrothschild.com/post/animate-hugo-academic/), a great resource for Hugo Academic users. Even if you have no HTML/CSS knowledge or are just getting started and would like a site that's already animated, his tutorial's got you! He explains every step and shows how easy it is to implement. If you're a Hugo Academic user, I highly recommend you check it out! 
+
+Upon reading his post, I was excited to get started animating my home page. With zero knowledge in CSS animations, I checked out the resources he linked and proceeded to search for animation examples that I'd like to implement on my home page. I stumbled upon [`Animate.css`](https://animate.style), a library of ready-to-use, cross-browser animations for use in your web projects.
+
+`{{< figure src="./animate css.gif" link="./animate css.gif" >}}`
+
+The library has many different animations that you can choose from and has comprehensive documentation on how to install and use the library. I tested it out and when it worked, I decided to use this approach instead of making `@keyframes` rules as suggested in Connor's tutorial. It's a lazy, shortcut approach, but it works for my needs right now `:sweat_smile:`
+
+To use the library, I added it directly to my home page using a CDN by pasting the following code found in their installation guide in my about widget's HTML before `<!-- About widget -->` [(code here)](https://github.com/isabellabenabaye/isabella-b.com/blob/master/layouts/partials/widgets/about_isabella_extended.html):
+
+```
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+</head>
+```
+
+Then, as in Connor's tutorial, I added classes to the elements I wanted to animate. For example, I made my name displayed at the top of my home page of class `about-name`:
+
+```
+<h1 class="about-name">Isabella Benabaye</h1> 
+```
+
+I targeted that class in my `custom.scss` file to assign the animation I wanted for it. Since the animations are defined in the CDN, all I needed to define were the following animation properties `animation-name`, `animation-duration`, `animation-fill-mode`, and `animation-delay` in the following format: `animation: <animation_name> <animation-duration> <animation-fill_mode>` then `animation-delay` defined separately for clarity.
+
+```
+.about-name {
+  animation: flipInX 1s both;
+  animation-delay: 0.5s;
+}
+```
+
+I did that for each of the classes I wanted to animate, and that's it! Since I already added the style sheet to the head of my [HTML file](https://github.com/isabellabenabaye/isabella-b.com/blob/master/layouts/partials/widgets/about_isabella_extended.html) for my about widget on my [home page](/), I didn't need to add it to the HTML of my projects widget. When adding animations to my [about page](/about/), I added the style sheet once again to my [first widget's HTML](https://github.com/isabellabenabaye/isabella-b.com/blob/master/layouts/partials/widgets/about_page.html) head to be able to use the animations on that webpage.
