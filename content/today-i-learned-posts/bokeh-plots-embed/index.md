@@ -1,5 +1,5 @@
 ---
-title: Bar plots in `Bokeh` & How to Embed Them
+title: Bar Plots in `Bokeh` & How to Embed Them
 author: ''
 date: '2020-06-16'
 categories: [100DaysOfCode, python, bokeh, tutorial]
