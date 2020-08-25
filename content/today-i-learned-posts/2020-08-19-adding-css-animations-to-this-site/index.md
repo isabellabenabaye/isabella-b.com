@@ -1,7 +1,7 @@
 ---
 title: How I added CSS animations to my Hugo Academic site
 author: Isabella Benabaye
-date: '2020-08-20'
+date: '2020-08-23'
 slug: adding-css-animations
 categories: [hugo, hugo academic, css]
 tags: [hugo, hugo academic, css, creating this website]
@@ -15,7 +15,7 @@ image:
 projects: []
 type: today-i-learned
 output: hugodown::hugo_document
-rmd_hash: c456b8e100831d11
+rmd_hash: 229d58b023cd5cc8
 
 ---
 
