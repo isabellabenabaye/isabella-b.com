@@ -17,6 +17,16 @@ date_format = "Jan 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
+
+[[experience]]
+  title = "Data and Reporting Analyst"
+  company = "Didi Hirsch Mental Health Services"
+  company_url = "https://didihirsch.org/"
+  location = "Inglewood, CA, USA"
+  date_start = "2020-09-08"
+  date_end = ""
+  description = ""
+
 [[experience]]
   title = "Associate Technical Consultant"
   company = "SAS Institute"

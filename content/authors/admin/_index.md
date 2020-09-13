@@ -21,7 +21,7 @@ email: "isabellabenabaye@gmail.com"
 #organizations:
 #- name: Stanford University
 #  url: ""
-role: Data Analyst in Los Angeles, CA
+role: Data and Reporting Analyst in Los Angeles, CA
 social:
 - icon: cv
   icon_pack: ai
