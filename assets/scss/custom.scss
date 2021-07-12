@@ -1,9 +1,9 @@
 /* headers in posts */
 .article-style h1 {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 .article-style h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 .article-style h3 {
   font-weight: 700;
@@ -15,15 +15,15 @@
 }
 
 .article-style h1, h2, h3, h4 {
-  font-family: 'Work Sans';
+  font-family: 'Epilogue';
   margin-top: 2rem;
   font-weight: 500;
 }
 
 /* titles on blog index */
 .article-title {
-  font-family: Calistoga;
-  font-weight: 300;
+  font-family: 'Epilogue';
+  font-weight: 700;
 }
 /*************************************************
  *  Navigation bar
@@ -35,7 +35,7 @@
   background-image: url(/img/otis-redding.png);
   box-shadow: none;
   font-size: 18px;
-  font-weight: 900 !important;
+  font-weight: 700;
   position: fixed;
   top: 0;
   right: 0;
@@ -80,7 +80,7 @@
       }
 
       &.active {
-        font-weight: 900 !important;
+        font-weight: 700 !important;
         color: $sta-menu-text-active !important;
       }
     }
@@ -103,7 +103,8 @@
   // Set v-padding to 5px to align with 50/70px responsive max navbar heights.
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: 'Calistoga';
+  font-family: 'Dela Gothic One';
+  //font-style: italic;
   font-weight: 300;
   position: relative;
   z-index: 1030;  // For z-index clickable mobile logo.
@@ -288,7 +289,7 @@
   border: 1px solid #2196BA;
   border-radius: 10px;
   padding: 2rem;
-  font-family: 'Work Sans';
+  font-family: 'Epilogue';
   font-size: .98rem;
   background-color: #F7F7F7;
 }
@@ -402,7 +403,7 @@
 .section-heading h1 {
   margin: 0 0 0px 0;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #585858;
 }
 
@@ -427,9 +428,9 @@
 }
 
 .proj-header {
-  font-size: 28pt;
-  font-family: 'Work Sans';
-  font-weight: 900;
+  font-size: 1.5rem;
+  font-family: 'Dela Gothic One';
+  //font-weight: 800;
 }
 
 .home-section, .wg-today-i-learned .container {
@@ -497,7 +498,7 @@
 div.alert > div {
   position: relative;
   display: block;
-  font-family: 'Work Sans';
+  font-family: 'Epilogue';
   font-size: 0.8rem;
   margin-left: 1.7rem;
   margin-top: 0;
@@ -791,12 +792,12 @@ body {
 }
 
 lastupdate {
-  font-family: 'Work Sans';
+  font-family: 'Epilogue';
   font-size: 0.7rem;
 }
 
 .article-style blockquote {
-  font-family: 'Work Sans';
+  font-family: 'Epilogue';
   font-size: 13pt;
   color: #0A5770;
 }
@@ -816,6 +817,7 @@ lastupdate {
 .about-name {
   animation: flipInX 1s both;
   animation-delay: 0.5s;
+  font-size: 1.8rem;
 }
 
 .card-about { // also applies to card on about page
@@ -839,4 +841,8 @@ lastupdate {
 .arrow-bounce {
   animation: bounce 3s both;
   animation-delay: 4s;
+}
+
+.author-card .media-body {
+  font-family: 'Epilogue';
 }
